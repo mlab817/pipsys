@@ -6,3 +6,7 @@
 
 // Bootstrap
 @import '~@primer/css/index.scss';
+
+.search-result {
+    background-color: var(--color-bg-danger);
+}

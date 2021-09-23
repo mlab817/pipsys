@@ -26390,3 +26390,7 @@ a.branch-name .octicon {
 .z-n2 {
   z-index: -2 !important;
 }
+
+.search-result {
+  background-color: var(--color-bg-danger);
+}

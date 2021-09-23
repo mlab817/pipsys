@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\RefPapType;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -12,11 +13,19 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::paginate();
+        $q = trim($request->q);
 
-        return view('projects.index', compact('projects'));
+        $projects = Project::search($q)->paginate();
+
+        return view('projects.index', compact('projects'))
+            ->with([
+                'sortOptions' => [
+                    'title'         => 'Title',
+                    'updated_at'    => 'Last Updated'
+                ],
+            ]);
     }
 
     /**

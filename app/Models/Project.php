@@ -33,4 +33,12 @@ class Project extends Model
         return $this->belongsTo(RefPapType::class,'ref_pap_type_id')
             ->withDefault(['name' => 'N/A']);
     }
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where(function($q) use ($query) {
+                $q->where('title', 'LIKE', '%'. $query . '%');
+            });
+    }
 }
