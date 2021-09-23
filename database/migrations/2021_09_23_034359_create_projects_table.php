@@ -25,6 +25,7 @@ class CreateProjectsTable extends Migration
             $table->foreignId('ref_spatial_coverage_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('iccable')->nullable()->default(0);
             $table->foreignId('ref_approval_level_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('ref_gad_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('pip')->nullable()->default(0);
             $table->foreignId('ref_pip_typology_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('cip')->nullable()->default(0);
@@ -58,6 +59,7 @@ class CreateProjectsTable extends Migration
             $table->foreignId('creator_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('ref_version_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('original_id')->nullable()->constrained('projects')->nullOnDelete();
+            $table->foreignId('ref_submission_status_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });
