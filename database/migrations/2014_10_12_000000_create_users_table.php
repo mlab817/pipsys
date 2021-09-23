@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('activated_at')->nullable();
             $table->string('avatar')->nullable();
             $table->boolean('is_admin')->default(0);
+            $table->string('social_account_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

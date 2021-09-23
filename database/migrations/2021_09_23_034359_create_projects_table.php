@@ -20,11 +20,15 @@ class CreateProjectsTable extends Migration
             $table->text('title');
             $table->foreignId('ref_pap_type_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('regular_program')->nullable()->default(0);
+            $table->decimal('total_cost', 15, 4)->nullable()->default(0);
             $table->foreignId('office_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('ref_spatial_coverage_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('iccable')->nullable()->default(0);
+            $table->foreignId('ref_approval_level_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('pip')->nullable()->default(0);
+            $table->foreignId('ref_pip_typology_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('cip')->nullable()->default(0);
+            $table->foreignId('ref_cip_type_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('trip')->nullable()->default(0);
             $table->boolean('rdip')->nullable()->default(0);
             $table->boolean('rdc_endorsement_required')->nullable()->default(0);

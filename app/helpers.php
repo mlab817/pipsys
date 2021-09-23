@@ -14,3 +14,12 @@ if (! function_exists('generate_avatar')) {
         return 'https://www.gravatar.com/avatar/' . $hash;
     }
 }
+
+if (! function_exists('nanoid')) {
+    function nanoid(int $length = 21): string
+    {
+        $client = new \Hidehalo\Nanoid\Client();
+
+        return $client->generateId($length, $mode = \Hidehalo\Nanoid\Client::MODE_DYNAMIC);
+    }
+}

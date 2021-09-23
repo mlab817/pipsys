@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -27,5 +28,7 @@ class DatabaseSeeder extends Seeder
         }
 
          \App\Models\User::factory(10)->create();
+
+        Project::factory()->count(50)->create();
     }
 }

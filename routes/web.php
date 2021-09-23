@@ -22,3 +22,8 @@ Route::group(['middleware' => ['auth','activated']], function () {
 });
 
 Auth::routes();
+
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/auth/{driver}', [\App\Http\Controllers\Auth\SocialLoginController::class,'redirectTo'])->name('auth.redirectTo');
+    Route::get('/auth/{driver}/callback', [\App\Http\Controllers\Auth\SocialLoginController::class,'handleCallback'])->name('auth.handleCallback');
+});

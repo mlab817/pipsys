@@ -3,13 +3,20 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Testing\Assert;
+use Laravel\Socialite\Facades\Socialite;
+use Mockery;
 use Tests\TestCase;
 
 class AuthTest extends TestCase
 {
+    use DatabaseTransactions;
+
     public function test_it_shows_login_page()
     {
         $this->get('/login')
@@ -53,5 +60,25 @@ class AuthTest extends TestCase
         $this->get('/home')
             ->assertRedirect('/login')
             ->assertSessionHas('error','User is not activated. Please contact admin');
+    }
+
+    public function test_it_allows_user_to_login_via_gmail()
+    {
+        $abstractUser = Mockery::mock('Laravel\Socialite\Two\User');
+
+        $abstractUser
+            ->shouldReceive('getId')
+            ->andReturn(rand())
+            ->shouldReceive('getName')
+            ->andReturn(str_random(10))
+            ->shouldReceive('getEmail')
+            ->andReturn(str_random(10) . '@gmail.com')
+            ->shouldReceive('getAvatar')
+            ->andReturn('https://en.gravatar.com/userimage');
+
+        Socialite::shouldReceive('driver->user')->andReturn($abstractUser);
+
+        $this->get('/auth/google/callback')
+            ->assertRedirect('/home');
     }
 }
