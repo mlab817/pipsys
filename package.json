@@ -10,6 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@babel/preset-react": "^7.13.13",
         "@primer/css": "^17.11.0",
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
@@ -20,13 +21,9 @@
         "postcss": "^8.1.14",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.11",
-        "sass-loader": "^11.0.1",
-        "vue": "^2.6.12",
-        "vue-loader": "^15.9.7",
-        "vue-template-compiler": "^2.6.12"
+        "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "@inertiajs/inertia": "^0.10.1",
-        "@inertiajs/inertia-vue3": "^0.5.2"
+        "@github/auto-complete-element": "^3.0.2"
     }
 }

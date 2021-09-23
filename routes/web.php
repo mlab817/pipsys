@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/','/login');
+
+Route::group(['middleware' => ['auth','activated']], function () {
+    Route::get('/home', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
+    Route::resource('users', \App\Http\Controllers\UserController::class);
+    Route::resource('projects', \App\Http\Controllers\ProjectController::class);
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

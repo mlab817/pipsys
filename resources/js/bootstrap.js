@@ -1,4 +1,5 @@
 window._ = require('lodash');
+import '@github/auto-complete-element';
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
