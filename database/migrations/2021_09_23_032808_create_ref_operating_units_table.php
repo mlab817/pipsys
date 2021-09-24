@@ -16,6 +16,8 @@ class CreateRefOperatingUnitsTable extends Migration
         Schema::create('ref_operating_units', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('label')->nullable();
+            $table->text('description')->nullable();
             $table->foreignId('ref_ou_type_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });

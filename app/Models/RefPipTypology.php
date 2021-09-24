@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RefPipTypology extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

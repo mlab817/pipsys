@@ -17,7 +17,7 @@ class CreateRefPapTypesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('label');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

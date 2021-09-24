@@ -12,5 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .react()
+    .vue()
+    .webpackConfig({
+        resolve: {
+            alias: {
+                '/images/spinners': false,
+                '/images/modules': false
+            }
+        }
+    })
     .sass('resources/sass/app.scss', 'public/css');

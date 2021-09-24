@@ -59,6 +59,7 @@ class CreateProjectsTable extends Migration
             $table->foreignId('creator_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('ref_version_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('original_id')->nullable()->constrained('projects')->nullOnDelete();
+            $table->foreignId('ref_project_status_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('ref_submission_status_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();

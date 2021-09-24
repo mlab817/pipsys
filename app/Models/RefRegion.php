@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RefRegion extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

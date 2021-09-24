@@ -16,6 +16,8 @@ class CreateRefOuTypesTable extends Migration
         Schema::create('ref_ou_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('label')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

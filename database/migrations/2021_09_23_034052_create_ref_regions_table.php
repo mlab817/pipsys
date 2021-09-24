@@ -18,6 +18,7 @@ class CreateRefRegionsTable extends Migration
             $table->string('name');
             $table->string('label');
             $table->string('description')->nullable();
+            $table->unsignedInteger('order')->nullable();
             $table->timestamps();
         });
     }

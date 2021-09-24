@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectStoreRequest;
+use App\Models\Office;
 use App\Models\Project;
+use App\Models\RefApprovalLevel;
+use App\Models\RefBasis;
+use App\Models\RefCipType;
+use App\Models\RefOperatingUnit;
 use App\Models\RefPapType;
+use App\Models\RefPipTypology;
+use App\Models\RefRegion;
+use App\Models\RefSpatialCoverage;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -35,7 +44,27 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        $no = new \stdClass();
+        $no->id = 0;
+        $no->label = 'No';
+        $yes = new \stdClass();
+        $yes->id = 1;
+        $yes->label = 'Yes';
+        $bool = collect([$yes, $no]);
+
+        return view('projects.create')
+            ->with([
+                'papTypes'          => RefPapType::all(),
+                'bases'             => RefBasis::all(),
+                'offices'           => Office::all(),
+                'operatingUnits'    => RefOperatingUnit::all(),
+                'spatialCoverages'  => RefSpatialCoverage::all(),
+                'regions'           => RefRegion::all(),
+                'bool'              => $bool,
+                'approvalLevels'    => RefApprovalLevel::all(),
+                'pipTypologies'     => RefPipTypology::all(),
+                'cipTypes'          => RefCipType::all(),
+            ]);
     }
 
     /**
@@ -44,7 +73,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectStoreRequest $request)
     {
         //
     }

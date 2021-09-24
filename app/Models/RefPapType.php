@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RefPapType extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

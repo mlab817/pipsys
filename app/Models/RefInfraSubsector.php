@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RefInfraSubsector extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }
