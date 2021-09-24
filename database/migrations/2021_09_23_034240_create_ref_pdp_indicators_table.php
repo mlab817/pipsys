@@ -18,6 +18,7 @@ class CreateRefPdpIndicatorsTable extends Migration
             $table->string('name');
             $table->string('label');
             $table->string('description')->nullable();
+            $table->unsignedInteger('level')->nullable();
             $table->foreignId('parent_id')->nullable()->constrained('ref_pdp_indicators')->nullOnDelete();
             $table->timestamps();
         });

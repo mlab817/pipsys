@@ -1,0 +1,3756 @@
+{
+    "pdp_indicators": [
+        {
+            "id" : 5,
+            "name" : "Chapter 05: Ensuring People-Centered, Clean and Efficient Governance",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 6,
+            "name" : "Chapter 06: Pursuing Swift and Fair Administration of Values Justice",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 7,
+            "name" : "Chapter 07: Promoting Philippine Culture and Values",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 8,
+            "name" : "Chapter 08: Expanding Economic Opportunities in Agriculture, Forestry and Fisheries",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 9,
+            "name" : "Chapter 9: Expanding Economic Opportunities in Industry and Services",
+            "description" : null,05-26 04:56:42",
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 10,
+            "name" : "Chapter 10: Accelerating Human Capital Development",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 11,
+            "name" : "Chapter 11: Reducing Vulnerability of Individuals and Families",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 12,
+            "name" : "Chapter 12: Building Safe and Secure Communities",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 13,
+            "name" : "Chapter 13: Reaching for the Demographic Dividend",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 14,
+            "name" : "Chapter 14: Vigorously Advancing Science, Technology, and Innovation",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 15,
+            "name" : "Chapter 15: Ensuring Sound Macroeconomic Policy",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 16,
+            "name" : "Chapter 16: Formulating the Framework for National Competition Policy",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 17,
+            "name" : "Chapter 17: Attaining Just and Lasting Peace",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 18,
+            "name" : "Chapter 18: Ensuring Security, Public Order, and Safety",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 19,
+            "name" : "Chapter 19: Accelerating Strategic Infrastructure Development",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 20,
+            "name" : "Chapter 20: Ensuring Ecological Integrity, Clean and Healthy Environment",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 51,
+            "name" : "People-centered, innovative, clean, efficient, effective and inclusive delivery of public goods and services ensured",
+            "description" : null
+            "parent_id" : 5,
+            "level" : null
+        },
+        {
+            "id" : 52,
+            "name" : "Percentage of PCMs with the required NGO representation in the Local Development Council (including ARMM) increased: - Provin",
+            "description" : null
+            "parent_id" : null,
+            "level" : null
+        },
+        {
+            "id" : 61,
+            "name" : "Swift and fair administration of justice ensured",
+            "description" : null
+            "parent_id" : 6,
+            "level" : null
+        },
+        {
+            "id" : 71,
+            "name" : "Philippine culture and values promoted",
+            "description" : null
+            "parent_id" : 7,
+            "level" : null
+        },
+        {
+            "id" : 81,
+            "name" : "Economic opportunities in agriculture, forestry and fisheries expanded",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 8,
+            "level" : null
+        },
+        {
+            "id" : 82,
+            "name" : "Access to economic opportunities by small farmers and fisherfolk increased",
+            "description" : null
+            "parent_id" : null,
+            "level" : null
+        },
+        {
+            "id" : 91,
+            "name" : "Economic opportunities in Industry and Services (I&S) expanded",
+            "description" : null
+            "parent_id" : 9,
+            "level" : null
+        },
+        {
+            "id" : 92,
+            "name" : "Increased access to economic opportunities in Industry and Services (I&S) for micro, small and medium enterprises (MSMEs), co",
+            "description" : null
+            "parent_id" : 9,
+            "level" : null
+        },
+        {
+            "id" : 101,
+            "name" : "Human Capital Development Accelerated",
+            "description" : null
+            "parent_id" : 10,
+            "level" : null
+        },
+        {
+            "id" : 111,
+            "name" : "Vulnerability of individuals and families reduced",
+            "description" : null
+            "parent_id" : 11,
+            "level" : null
+        },
+        {
+            "id" : 121,
+            "name" : "Access to affordable, adequate, safe, and secure shelter in well-planned communities expanded",
+            "description" : null
+            "parent_id" : 12,
+            "level" : null
+        },
+        {
+            "id" : 131,
+            "name" : "Demographic transition accelerated",
+            "description" : null
+            "parent_id" : 13,
+            "level" : null
+        },
+        {
+            "id" : 132,
+            "name" : "Maximize gains from the demographic dividend",
+            "description" : null
+            "parent_id" : 13,
+            "level" : null
+        },
+        {
+            "id" : 141,
+            "name" : "Technology adoption promoted and accelerated",
+            "description" : null
+            "parent_id" : 14,
+            "level" : null
+        },
+        {
+            "id" : 142,
+            "name" : "Innovation stimulated",
+            "description" : null
+            "parent_id" : 14,
+            "level" : null
+        },
+        {
+            "id" : 151,
+            "name" : "Stable, sound and supportive macroeconomic environment sustained",
+            "description" : null
+            "parent_id" : 15,
+            "level" : null
+        },
+        {
+            "id" : 161,
+            "name" : "Consumer welfare improved",
+            "description" : null
+            "parent_id" : 16,
+            "level" : null
+        },
+        {
+            "id" : 162,
+            "name" : "Market efficiency improved",
+            "description" : null
+            "parent_id" : 16,
+            "level" : null
+        },
+        {
+            "id" : 171,
+            "name" : "Just and lasting peace attained",
+            "description" : null
+            "parent_id" : 17,
+            "level" : null
+        },
+        {
+            "id" : 172,
+            "name" : "Percentage of conflict-affected and conflict-vulnerable barangays rehabilitated - Percentage of HH with access to potable and",
+            "description" : null
+            "parent_id" : 17,
+            "level" : null
+        },
+        {
+            "id" : 181,
+            "name" : "Security, public order and safety ensured",
+            "description" : null
+            "parent_id" : 18,
+            "level" : null
+        },
+        {
+            "id" : 191,
+            "name" : "Access to economic opportunities increased",
+            "description" : null
+            "parent_id" : 19,
+            "level" : null
+        },
+        {
+            "id" : 192,
+            "name" : "Human capital development accelerated",
+            "description" : null
+            "parent_id" : 19,
+            "level" : null
+        },
+        {
+            "id" : 193,
+            "name" : "Vulnerability of the poor reduced",
+            "description" : null
+            "parent_id" : 19,
+            "level" : null
+        },
+        {
+            "id" : 194,
+            "name" : "Technology adoption advanced and innovation stimulated",
+            "description" : null
+            "parent_id" : 19,
+            "level" : null
+        },
+        {
+            "id" : 201,
+            "name" : "Ecological integrity ensured and socioeconomic condition of resource-based communities improved",
+            "description" : null
+            "parent_id" : 20,
+            "level" : null
+        },
+        {
+            "id" : 202,
+            "name" : "Percentage of the 36 surface metallic mines (operating\/suspended) compliant with Annual Environmental Protection and Enhancem",
+            "description" : null
+            "parent_id" : 20,
+            "level" : null
+        },
+        {
+            "id" : 203,
+            "name" : "Number of reviewed Climate Change (CC)\/Disaster Risk Reduction Management (DRRM)-enhanced plans increased - Comprehensive Lan",
+            "description" : null
+            "parent_id" : 20,
+            "level" : null
+        },
+        {
+            "id" : 511,
+            "name" : "Anti-corruption initiatives improved",
+            "description" : null
+            "parent_id" : 51,
+            "level" : null
+        },
+        {
+            "id" : 512,
+            "name" : "Seamless service delivery achieved",
+            "description" : null
+            "parent_id" : 51,
+            "level" : null
+        },
+        {
+            "id" : 513,
+            "name" : "Administrative governance enhanced",
+            "description" : null
+            "parent_id" : 51,
+            "level" : null
+        },
+        {
+            "id" : 514,
+            "name" : "Citizenry fully engaged and empowered",
+            "description" : null
+            "parent_id" : 51,
+            "level" : null
+        },
+        {
+            "id" : 521,
+            "name" : "Civil service accountability and performance management enhanced",
+            "description" : null
+            "parent_id" : 52,
+            "level" : null
+        },
+        {
+            "id" : 611,
+            "name" : "Civil, criminal, commercial and administrative justice systems enhanced",
+            "description" : null
+            "parent_id" : 61,
+            "level" : null
+        },
+        {
+            "id" : 612,
+            "name" : "Sector efficiency and accountability improved",
+            "description" : null
+            "parent_id" : 61,
+            "level" : null
+        },
+        {
+            "id" : 711,
+            "name" : "Core Indicators",
+            "description" : null
+            "parent_id" : 71,
+            "level" : null
+        },
+        {
+            "id" : 712,
+            "name" : "Sub-sector outcome",
+            "description" : null
+            "parent_id" : 712,
+            "level" : null
+        },
+        {
+            "id" : 811,
+            "name" : "Agriculture, forestry and fisheries productivity within ecological limit improved",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 81,
+            "level" : null
+        },
+        {
+            "id" : 812,
+            "name" : "Agriculture, forestry and fishery-based enterprises increased",
+            "description" : null
+            "parent_id" : 81,
+            "level" : null
+        },
+        {
+            "id" : 821,
+            "name" : "Access to id chains increased",
+            "description" : null
+            "parent_id" : 82,
+            "level" : null
+        },
+        {
+            "id" : 822,
+            "name" : "Access to technology increased",
+            "description" : null
+            "parent_id" : 82,
+            "level" : null
+        },
+        {
+            "id" : 823,
+            "name" : "Access to innovative financing increased",
+            "description" : null
+            "parent_id" : 82,
+            "level" : null
+        },
+        {
+            "id" : 824,
+            "name" : "Access by small farmers and fisherfolk to land and water resources increased and protected",
+            "description" : null
+            "parent_id" : 82,
+            "level" : null
+        },
+        {
+            "id" : 911,
+            "name" : "Local and foreign investments increased",
+            "description" : null
+            "parent_id" : 91,
+            "level" : null
+        },
+        {
+            "id" : 912,
+            "name" : "Competitiveness, innovativeness and resilience increased",
+            "description" : null
+            "parent_id" : 91,
+            "level" : null
+        },
+        {
+            "id" : 913,
+            "name" : "Market access improved",
+            "description" : null
+            "parent_id" : 91,
+            "level" : null
+        },
+        {
+            "id" : 921,
+            "name" : "Access to production networks improved",
+            "description" : null
+            "parent_id" : 92,
+            "level" : null
+        },
+        {
+            "id" : 922,
+            "name" : "Access to finance improved",
+            "description" : null
+            "parent_id" : 92,
+            "level" : null
+        },
+        {
+            "id" : 923,
+            "name" : "Productivity, efficiency and resilience improved",
+            "description" : null
+            "parent_id" : 92,
+            "level" : null
+        },
+        {
+            "id" : 1011,
+            "name" : "Nutrition and health for all improved",
+            "description" : null
+            "parent_id" : 101,
+            "level" : null
+        },
+        {
+            "id" : 1012,
+            "name" : "Lifelong learning opportunities for all ensured",
+            "description" : null
+            "parent_id" : 101,
+            "level" : null
+        },
+        {
+            "id" : 1013,
+            "name" : "Income-earning ability increased",
+            "description" : null
+            "parent_id" : 101,
+            "level" : null
+        },
+        {
+            "id" : 1111,
+            "name" : "Universal and transformative Social Protection (SP) for all achieved",
+            "description" : null
+            "parent_id" : 111,
+            "level" : null
+        },
+        {
+            "id" : 1211,
+            "name" : "-",
+            "description" : null
+            "parent_id" : 121,
+            "level" : null
+        },
+        {
+            "id" : 1411,
+            "name" : "STI (science, technology and innovation) utilization in agriculture, industry and services sectors increased",
+            "description" : null
+            "parent_id" : 141,
+            "level" : null
+        },
+        {
+            "id" : 1412,
+            "name" : "Investments in STI start-ups, enterprises and spin offs increased",
+            "description" : null
+            "parent_id" : 141,
+            "level" : null
+        },
+        {
+            "id" : 1421,
+            "name" : "Creative capacity for knowledge and technology generation, acquisition and adoptions enhanced",
+            "description" : null
+            "parent_id" : 142,
+            "level" : null
+        },
+        {
+            "id" : 1422,
+            "name" : "Open collaboration among actors in STI ecosystem strengthened",
+            "description" : null
+            "parent_id" : 142,
+            "level" : null
+        },
+        {
+            "id" : 1511,
+            "name" : "Responsible, strategic, and supportive fiscal sector achieved",
+            "description" : null
+            "parent_id" : 151,
+            "level" : null
+        },
+        {
+            "id" : 1512,
+            "name" : "Resilient and inclusive monetary and financial sectors achieved",
+            "description" : null
+            "parent_id" : 151,
+            "level" : null
+        },
+        {
+            "id" : 1513,
+            "name" : "Strategic external trade policy regime achieved",
+            "description" : null
+            "parent_id" : 151,
+            "level" : null
+        },
+        {
+            "id" : 1621,
+            "name" : "Anti-competitive practices diminished",
+            "description" : null
+            "parent_id" : 162,
+            "level" : null
+        },
+        {
+            "id" : 1622,
+            "name" : "Barriers to entry reduced",
+            "description" : null
+            "parent_id" : 162,
+            "level" : null
+        },
+        {
+            "id" : 1623,
+            "name" : "Limits to entrepreneurship reduced",
+            "description" : null
+            "parent_id" : 162,
+            "level" : null
+        },
+        {
+            "id" : 1711,
+            "name" : "Peace agreements with all internal armed conflict groups successfully negotiated and implemented",
+            "description" : null
+            "parent_id" : 171,
+            "level" : null
+        },
+        {
+            "id" : 1712,
+            "name" : "Communities in conflict-affected and conflict vulnerable areas protected and developed",
+            "description" : null
+            "parent_id" : 171,
+            "level" : null
+        },
+        {
+            "id" : 1721,
+            "name" : "Number of local government units in conflict-affected and conflict-vulnerable areas with local development plans integrating ",
+            "description" : null
+            "parent_id" : 172,
+            "level" : null
+        },
+        {
+            "id" : 1722,
+            "name" : "Number of formal educational institutions integrating peace education into their curriculum",
+            "description" : null
+            "parent_id" : 172,
+            "level" : null
+        },
+        {
+            "id" : 1723,
+            "name" : "Number of reported human rights and IHL violations cases",
+            "description" : null
+            "parent_id" : 172,
+            "level" : null
+        },
+        {
+            "id" : 1811,
+            "name" : "Territorial integrity and sovereignty upheld and protected",
+            "description" : null
+            "parent_id" : 181,
+            "level" : null
+        },
+        {
+            "id" : 1812,
+            "name" : "All forms of criminality and illegal drugs significantly reduced",
+            "description" : null
+            "parent_id" : 181,
+            "level" : null
+        },
+        {
+            "id" : 1813,
+            "name" : "Public safety ensured",
+            "description" : null
+            "parent_id" : 181,
+            "level" : null
+        },
+        {
+            "id" : 1814,
+            "name" : "Security and safety of overseas Filipinos ensured",
+            "description" : null
+            "parent_id" : 181,
+            "level" : null
+        },
+        {
+            "id" : 1911,
+            "name" : "Competitiveness and productivity of economic sectors increased",
+            "description" : null
+            "parent_id" : 191,
+            "level" : null
+        },
+        {
+            "id" : 1912,
+            "name" : "Gaps in basic infrastructure for human capital development reduced",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 1921,
+            "name" : "Gaps in basic infrastructure for human capital development reduced",
+            "description" : null
+            "parent_id" : 192,
+            "level" : null
+        },
+        {
+            "id" : 1931,
+            "name" : "Safety and security against natural and man-made disasters, especially for the poor improved.",
+            "description" : null
+            "parent_id" : 193,
+            "level" : null
+        },
+        {
+            "id" : 1941,
+            "name" : "Innovative solutions and technologies encouraged\/adopted",
+            "description" : null
+            "parent_id" : 194,
+            "level" : null
+        },
+        {
+            "id" : 2011,
+            "name" : "Biodiversity and functioning of ecosystem services sustained",
+            "description" : null
+            "parent_id" : 201,
+            "level" : null
+        },
+        {
+            "id" : 2012,
+            "name" : "Environmental quality improved",
+            "description" : null
+            "parent_id" : 201,
+            "level" : null
+        },
+        {
+            "id" : 2021,
+            "name" : "Adaptive capacities and resilience of ecosystems increased",
+            "description" : null
+            "parent_id" : 202,
+            "level" : null
+        },
+        {
+            "id" : 2031,
+            "name" : "Number of LGUs with operating early warning systems (EWS) in place increased",
+            "description" : null
+            "parent_id" : 203,
+            "level" : null
+        },
+        {
+            "id" : 2032,
+            "name" : "Number of fully-functional DRRM operations centers increased - Permanent - Temporary",
+            "description" : null
+            "parent_id" : 203,
+            "level" : null
+        },
+        {
+            "id" : 2033,
+            "name" : "GHG emissions per sector reduced (million MT CO2e) - Energy - Industrial - Agriculture - LUCF - Waste - Transport",
+            "description" : null
+            "parent_id" : 203,
+            "level" : null
+        },
+        {
+            "id" : 5121,
+            "name" : "Proportion of children under 5 years of age whose births have been registered with a civil authority increased (%)",
+            "description" : null
+            "parent_id" : 512,
+            "level" : null
+        },
+        {
+            "id" : 5122,
+            "name" : "Number of regulatory agencies covered by the regulatory review increased",
+            "description" : null
+            "parent_id" : 512,
+            "level" : null
+        },
+        {
+            "id" : 5123,
+            "name" : "Number of OFW Help Desks (OHDs) available increased",
+            "description" : null
+            "parent_id" : 512,
+            "level" : null
+        },
+        {
+            "id" : 5131,
+            "name" : "Rightsizing the National Government Act of 2017 passed",
+            "description" : null
+            "parent_id" : 513,
+            "level" : null
+        },
+        {
+            "id" : 5132,
+            "name" : "Proportion of LGUs adopting PFM improvement measures (cumulative, %)",
+            "description" : null
+            "parent_id" : 513,
+            "level" : null
+        },
+        {
+            "id" : 5141,
+            "name" : "Number of voters education and information campaigns conducted increased",
+            "description" : null
+            "parent_id" : null,
+            "level" : null
+        },
+        {
+            "id" : 5211,
+            "name" : "Number of PCMs fully disclosing financial documents to the public: - Provinces; - Cities; and - Municipalities",
+            "description" : null
+            "parent_id" : 521,
+            "level" : null
+        },
+        {
+            "id" : 6111,
+            "name" : "Number of justice zones established increased",
+            "description" : null
+            "parent_id" : 611,
+            "level" : null
+        },
+        {
+            "id" : 6112,
+            "name" : "Number of courts with rolled-out continous trial increased",
+            "description" : null
+            "parent_id" : 611,
+            "level" : null
+        },
+        {
+            "id" : 6113,
+            "name" : "Number of courts with rolled-out e-courts increased",
+            "description" : null
+            "parent_id" : 611,
+            "level" : null
+        },
+        {
+            "id" : 6114,
+            "name" : "Philippine Mediation Center (PMC) units established",
+            "description" : null
+            "parent_id" : 611,
+            "level" : null
+        },
+        {
+            "id" : 6121,
+            "name" : "Percentage of qualified inmates (based on court orders for release) in city\/municipal\/district jails released on time maintai",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 6122,
+            "name" : "Percentage of qualified inmates (granted parole\/pardon and served sentence) in national prisons released on time maintained",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 6123,
+            "name" : "Prosecutor to court ratio improved (cumulative)",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 6124,
+            "name" : "Public attorney to court ratio improved (cumulative)",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 6125,
+            "name" : "All requests for free legal assistance\/representation acted upon within three (3) working days from date of request maintaine",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 6126,
+            "name" : "Victims Compensation Program beneficiaries increased",
+            "description" : null
+            "parent_id" : 612,
+            "level" : null
+        },
+        {
+            "id" : 7111,
+            "name" : "Increased level of awareness of the following: Filipino Values, Cultural diversity, Creativity, Culture sensitivity",
+            "description" : null
+            "parent_id" : 711,
+            "level" : null
+        },
+        {
+            "id" : 7112,
+            "name" : "Enhanced tolerance and respect for others",
+            "description" : null
+            "parent_id" : 711,
+            "level" : null
+        },
+        {
+            "id" : 7113,
+            "name" : "Inclusion of culture in all development plans in key growth areas according to the National Spatial Strategy",
+            "description" : null
+            "parent_id" : 711,
+            "level" : null
+        },
+        {
+            "id" : 7114,
+            "name" : "Heightened pride of place and pride of being Filipino",
+            "description" : null
+            "parent_id" : 711,
+            "level" : null
+        },
+        {
+            "id" : 7115,
+            "name" : "Reached the target number of beneficiaries (individuals, groups, organizations, communities) who were provided support",
+            "description" : null
+            "parent_id" : 711,
+            "level" : null
+        },
+        {
+            "id" : 7121,
+            "name" : "Diverse cultures valued",
+            "description" : null
+            "parent_id" : 712,
+            "level" : null
+        },
+        {
+            "id" : 7122,
+            "name" : "\"Pagkamalikhain\" values of creative excellence advanced",
+            "description" : null
+            "parent_id" : 712,
+            "level" : null
+        },
+        {
+            "id" : 7123,
+            "name" : "Values that foster the common good inculcated",
+            "description" : null
+            "parent_id" : 712,
+            "level" : null
+        },
+        {
+            "id" : 7124,
+            "name" : "Culture-sensitive public governance and development strengthened",
+            "description" : null
+            "parent_id" : 712,
+            "level" : null
+        },
+        {
+            "id" : 8111,
+            "name" : "Program area for perennial crops provided with technical support services increased (ha) (Mango, Coffee, Cacao,Rubber, Banana",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8112,
+            "name" : "Program harvest area for staple crops provided with technical support services increased (ha) (Palay, Yellow Corn and White C",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8113,
+            "name" : "Number of group beneficiaries provided with technical support services increased",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8114,
+            "name" : "Number of fisherfolk provided with production support increased",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8115,
+            "name" : "Number of group beneficiaries provided with agricultural and fishery machineries and equipment increased",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8116,
+            "name" : "Area within the production forest, for tree plantation and non-timber forest products increased (ha, cumulative) (Tree Planta",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 811,
+            "level" : null
+        },
+        {
+            "id" : 8121,
+            "name" : "Number of AFF-enterprises with technical support increased",
+            "description" : null,06-10 07:24:32",
+            "parent_id" : 812,
+            "level" : null
+        },
+        {
+            "id" : 8221,
+            "name" : "Share of AFF research and development (R&D) government budget to total AFF GVA increased (%, cumulative)",
+            "description" : null
+            "parent_id" : 822,
+            "level" : null
+        },
+        {
+            "id" : 8222,
+            "name" : "Number of new technologies increased",
+            "description" : null
+            "parent_id" : 822,
+            "level" : null
+        },
+        {
+            "id" : 8223,
+            "name" : "Number of beneficiaries provided with extension services increased",
+            "description" : null
+            "parent_id" : 822,
+            "level" : null
+        },
+        {
+            "id" : 8231,
+            "name" : "Number of small farmer\/fisherfolk organizations participated in institutional capacity building on innovative financing incre",
+            "description" : null
+            "parent_id" : 823,
+            "level" : null
+        },
+        {
+            "id" : 8232,
+            "name" : "Proportion of LGUs with established partnerships for the implementation of agricultural insurance to the total number of LGUs",
+            "description" : null
+            "parent_id" : 823,
+            "level" : null
+        },
+        {
+            "id" : 8241,
+            "name" : "Area distributed under CARP increased (ha, cumulative)",
+            "description" : null
+            "parent_id" : 824,
+            "level" : null
+        },
+        {
+            "id" : 8242,
+            "name" : "Number of ARBs with EP\/CLOAs increased (cumulative)",
+            "description" : null
+            "parent_id" : 824,
+            "level" : null
+        },
+        {
+            "id" : 8243,
+            "name" : "Area of collective CLOAs subdivided increased (ha, cumulative)",
+            "description" : null
+            "parent_id" : 824,
+            "level" : null
+        },
+        {
+            "id" : 8244,
+            "name" : "Number of registered fisherfolk provided with livelihood projects increased",
+            "description" : null
+            "parent_id" : 824,
+            "level" : null
+        },
+        {
+            "id" : 9111,
+            "name" : "Total approved investments increased (PHP million)",
+            "description" : null
+            "parent_id" : 911,
+            "level" : null
+        },
+        {
+            "id" : 9112,
+            "name" : "Net FDI increased (USD million)  ",
+            "description" : null
+            "parent_id" : 911,
+            "level" : null
+        },
+        {
+            "id" : 9113,
+            "name" : "Number of harmonized investment promotion activities conducted",
+            "description" : null
+            "parent_id" : 911,
+            "level" : null
+        },
+        {
+            "id" : 9121,
+            "name" : "Philippine Business Registry (PBR) fully operationalized (% of agencies involvement)",
+            "description" : null
+            "parent_id" : 912,
+            "level" : null
+        },
+        {
+            "id" : 9122,
+            "name" : "Number of cities\/municipalities with fully- implemented Business Permit and Licensing System connected to the PBR",
+            "description" : null
+            "parent_id" : 912,
+            "level" : null
+        },
+        {
+            "id" : 9123,
+            "name" : "Number of Filipino trademarks registered increased",
+            "description" : null
+            "parent_id" : 912,
+            "level" : null
+        },
+        {
+            "id" : 9131,
+            "name" : "Consumer access to safe and quality goods and services ensured",
+            "description" : null
+            "parent_id" : 913,
+            "level" : null
+        },
+        {
+            "id" : 9132,
+            "name" : "Number of consumer awareness and advocacy initiatives undertaken",
+            "description" : null
+            "parent_id" : 913,
+            "level" : null
+        },
+        {
+            "id" : 9133,
+            "name" : "Number of consumer education, information and communication materials produced",
+            "description" : null
+            "parent_id" : 913,
+            "level" : null
+        },
+        {
+            "id" : 9211,
+            "name" : "Number of MSMEs participating in Global id Chains",
+            "description" : null
+            "parent_id" : 921,
+            "level" : null
+        },
+        {
+            "id" : 9212,
+            "name" : "Number of MSMEs\/Cooperatives integrated into corporate id chains increased",
+            "description" : null
+            "parent_id" : 921,
+            "level" : null
+        },
+        {
+            "id" : 9213,
+            "name" : "Number of Go Negosyo centers established",
+            "description" : null
+            "parent_id" : 921,
+            "level" : null
+        },
+        {
+            "id" : 9231,
+            "name" : "Number of shared service facilities established",
+            "description" : null
+            "parent_id" : 923,
+            "level" : null
+        },
+        {
+            "id" : 9232,
+            "name" : "Number of Small Enterprise Technology Upgrading Program beneficiaries increased",
+            "description" : null
+            "parent_id" : 923,
+            "level" : null
+        },
+        {
+            "id" : 9233,
+            "name" : "Number of clients\/customers provided with testing and calibration services increased",
+            "description" : null
+            "parent_id" : 923,
+            "level" : null
+        },
+        {
+            "id" : 10111,
+            "name" : "Care at all life stages guaranteed",
+            "description" : null
+            "parent_id" : 1011,
+            "level" : null
+        },
+        {
+            "id" : 10112,
+            "name" : "Access through functional service delivery networks ensured",
+            "description" : null
+            "parent_id" : 1011,
+            "level" : null
+        },
+        {
+            "id" : 10113,
+            "name" : "Health financing sustained",
+            "description" : null
+            "parent_id" : 1011,
+            "level" : null
+        },
+        {
+            "id" : 10121,
+            "name" : "Quality, accessible, relevant, and liberating basic education for all achieved",
+            "description" : null
+            "parent_id" : 1012,
+            "level" : null
+        },
+        {
+            "id" : 10122,
+            "name" : "Quality of higher education and technical education and research for equity and global competitiveness improved",
+            "description" : null
+            "parent_id" : 1012,
+            "level" : null
+        },
+        {
+            "id" : 10131,
+            "name" : "-",
+            "description" : null
+            "parent_id" : 1013,
+            "level" : null
+        },
+        {
+            "id" : 10132,
+            "name" : "Employability improved",
+            "description" : null
+            "parent_id" : 1013,
+            "level" : null
+        },
+        {
+            "id" : 10133,
+            "name" : "Productivity improved",
+            "description" : null
+            "parent_id" : 1013,
+            "level" : null
+        },
+        {
+            "id" : 11111,
+            "name" : "Percentage of population covered by PhilHealth insurance (cumulative)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11112,
+            "name" : "Proportion of poor senior citizens covered by social pension (cumulative)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11113,
+            "name" : "Number of Conditional Cash Transfer (CCT) beneficiaries covered (cumulative)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11114,
+            "name" : "Percentage of economically active population contributing to SSS pension scheme increased (cumulative)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11115,
+            "name" : "Percentage of employed in the government covered by GSIS",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11116,
+            "name" : "Number of OFW membership to OWWA increased (cumulative)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11117,
+            "name" : "Number of child laborers assisted",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11118,
+            "name" : "Number of families with child laborers provided with livelihood assistance",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 11119,
+            "name" : "Percentage of families affected by natural and human-induced calamities provided with relief assistance",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 12111,
+            "name" : "Proportion of socialized housing targets met to housing needs improved (%) (cumulative)",
+            "description" : null
+            "parent_id" : 1211,
+            "level" : null
+        },
+        {
+            "id" : 12112,
+            "name" : "Proportion of low-cost housing targets met to housing needs improved (%) (Cumulative)",
+            "description" : null
+            "parent_id" : 1211,
+            "level" : null
+        },
+        {
+            "id" : 12113,
+            "name" : "Number of socialized housing units delivered (cumulative)",
+            "description" : null
+            "parent_id" : 1211,
+            "level" : null
+        },
+        {
+            "id" : 12114,
+            "name" : "Number of low-cost housing units delivered (cumulative)",
+            "description" : null
+            "parent_id" : 1211,
+            "level" : null
+        },
+        {
+            "id" : 14111,
+            "name" : "Number of technology adopters increased (incremental)",
+            "description" : null
+            "parent_id" : 1411,
+            "level" : null
+        },
+        {
+            "id" : 14112,
+            "name" : "Number of Filipino patents granted increased (cumulative)",
+            "description" : null
+            "parent_id" : 1411,
+            "level" : null
+        },
+        {
+            "id" : 14113,
+            "name" : "Number of Filipino utility models registered increased (cumulative)",
+            "description" : null
+            "parent_id" : 1411,
+            "level" : null
+        },
+        {
+            "id" : 14114,
+            "name" : "Number of Filipino industrial designs registered increased (cumulative)",
+            "description" : null
+            "parent_id" : 1411,
+            "level" : null
+        },
+        {
+            "id" : 14121,
+            "name" : "Number of technology business incubators (TBI) graduates increased (i.e. enterprises and spin-offs)",
+            "description" : null
+            "parent_id" : 1412,
+            "level" : null
+        },
+        {
+            "id" : 14122,
+            "name" : "Number of innovation hubs increased (e.g. TBIs, innovation centers, niche centers, etc.) (cumulative)",
+            "description" : null
+            "parent_id" : 1412,
+            "level" : null
+        },
+        {
+            "id" : 14123,
+            "name" : "R&D expenditure of business enterprises increased (in PHP Billion)",
+            "description" : null
+            "parent_id" : 1412,
+            "level" : null
+        },
+        {
+            "id" : 14211,
+            "name" : "R&D expenditure as a proportion of GDP increased (in percent, cumulative)",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14212,
+            "name" : "Number of Researchers, Scientists and Engineers (RSEs) per million population Increased (cumulative)",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14213,
+            "name" : "Number of Science, Technology, Engineering, and Mathematics (STEM) enrollees in higher education institutes (HEIs) increased ",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14214,
+            "name" : "Number of STEM graduates in HEIs increased",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14215,
+            "name" : "Number of STEM enrolled in high school increased",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14216,
+            "name" : "Number of STEM graduates in high school increased",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14217,
+            "name" : "Number of scientific articles published in International Scientific Indexing (ISI)\/Scopus Index Journal by Filipino authors i",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14218,
+            "name" : "Number of Innovation Hubs Established",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14219,
+            "name" : "Number of Balik Scientists Engaged increased (cumulative)",
+            "description" : null
+            "parent_id" : 1421,
+            "level" : null
+        },
+        {
+            "id" : 14221,
+            "name" : "Number of collaborations between HEIs and industries increased (cumulative)",
+            "description" : null
+            "parent_id" : 1422,
+            "level" : null
+        },
+        {
+            "id" : 14222,
+            "name" : "Number of collaborations between HEIs and government increased (NGAs and LGUs) (cumulative)",
+            "description" : null
+            "parent_id" : 1422,
+            "level" : null
+        },
+        {
+            "id" : 14223,
+            "name" : "Number of STI-related international cooperation of HEIs increased (cumulative)",
+            "description" : null
+            "parent_id" : 1422,
+            "level" : null
+        },
+        {
+            "id" : 14224,
+            "name" : "Number of new STI-related international cooperation of NGAs increased",
+            "description" : null
+            "parent_id" : 1422,
+            "level" : null
+        },
+        {
+            "id" : 15111,
+            "name" : "Incremental revenue of BIR with the implementation of tax administration and tax policy reform realized (% of GDP)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15112,
+            "name" : "Incremental revenue of BOC with the implementation of tax administration and tax policy reform realized (% of GDP)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15113,
+            "name" : "Incremental revenue of LTO with the implementation of tax administration and tax policy reform realized (% of GDP)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15114,
+            "name" : "Number of Public Financial Management (PFM) practitioners who attended at least one PFM Competency Program (PFMCP) course inc",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15115,
+            "name" : "Number of training activities conducted on Government Procurement Reform Act (RA 9184) and its revised implementing rules and",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15116,
+            "name" : "Foreign currency debt maintained within debt management targets (% of total outstanding debt)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15117,
+            "name" : "Average maturity of NG debt portfolio maintained within strategic guidelines (residual maturity in years)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15118,
+            "name" : "All LGUs assessed on revenue and assessment performance (% of LGUs)",
+            "description" : null
+            "parent_id" : 1511,
+            "level" : null
+        },
+        {
+            "id" : 15131,
+            "name" : "Number of DTI-assisted technology-enabled and technology-based exporters increased",
+            "description" : null
+            "parent_id" : 1513,
+            "level" : null
+        },
+        {
+            "id" : 15132,
+            "name" : "Number of validated enrollees to the Regional Interactive Platform for Philippine Exporters (RIPPLES) Plus Program exporting ",
+            "description" : null
+            "parent_id" : 1513,
+            "level" : null
+        },
+        {
+            "id" : 15133,
+            "name" : "Number of new export products certified as Halal increased",
+            "description" : null
+            "parent_id" : 1513,
+            "level" : null
+        },
+        {
+            "id" : 16231,
+            "name" : "Proportion of recommendations based on review of legislation and policies that may substantially prevent, restrict, or lessen",
+            "description" : null
+            "parent_id" : 1623,
+            "level" : null
+        },
+        {
+            "id" : 16232,
+            "name" : "Number of rules and regulations reviewed",
+            "description" : null
+            "parent_id" : 1623,
+            "level" : null
+        },
+        {
+            "id" : 16233,
+            "name" : "Proportion of corrective measures for identified GOCCs initiated (%, cumulative)",
+            "description" : null
+            "parent_id" : 1623,
+            "level" : null
+        },
+        {
+            "id" : 17111,
+            "name" : "Number of peace agreements signed",
+            "description" : null
+            "parent_id" : 1711,
+            "level" : null
+        },
+        {
+            "id" : 17112,
+            "name" : "Number of final peace agreements substantially implemented",
+            "description" : null
+            "parent_id" : 1711,
+            "level" : null
+        },
+        {
+            "id" : 17113,
+            "name" : "Number of encounters with internal non-state armed conflict groups",
+            "description" : null
+            "parent_id" : 1711,
+            "level" : null
+        },
+        {
+            "id" : 17114,
+            "name" : "Percentage of former combatants who have completed covered by integration, healing and reconciliation programs",
+            "description" : null
+            "parent_id" : 1711,
+            "level" : null
+        },
+        {
+            "id" : 17115,
+            "name" : "Number of non-state armed groups transitioned into legitimate socioeconomic \/ political organizations",
+            "description" : null
+            "parent_id" : 1711,
+            "level" : null
+        },
+        {
+            "id" : 17121,
+            "name" : "Number of barangays affected by internal armed conflict",
+            "description" : null
+            "parent_id" : 1712,
+            "level" : null
+        },
+        {
+            "id" : 17122,
+            "name" : "Number of individuals displaced due to internal armed conflict",
+            "description" : null
+            "parent_id" : 1712,
+            "level" : null
+        },
+        {
+            "id" : 19111,
+            "name" : "New roads constructed (lane km, cumulative)",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19112,
+            "name" : "Total length of standard gauge rail tracks increased (km, cumulative)",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19113,
+            "name" : "Number of night-rated airports increased",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19114,
+            "name" : "Rehabilitated irrigation service areas increased (Existing Areas (ha))",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19115,
+            "name" : "Rehabilitated irrigation service areas increased (Canals(km))",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19116,
+            "name" : "Restored irrigation service areas increased (ha) - National Irrigation System (NIS)",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19117,
+            "name" : "Restored irrigation service areas increased (ha) - Small-scale Irrigation Systems",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19118,
+            "name" : "Developed new service areas increased (ha) -NIS",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19119,
+            "name" : "Developed new service areas increased (ha) -SSIS",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 19121,
+            "name" : "Proportion of HHs with access to safe water supply to total number of HHs increased (%, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19122,
+            "name" : "Proportion of cities\/municipalities served by water districts with 24\/7 water supply increased (%, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19123,
+            "name" : "Number of households served by WDs with water service connections increased (cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19124,
+            "name" : "Volume of desludged and\/or treated septage in WDs increased (m3)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19125,
+            "name" : "Proportion of HHs with electricity to total number of HHs increased (%, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19126,
+            "name" : "Proportion of barangays with access to Material Recovery Facilities (MRFs) to total no. of barangays (%, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19127,
+            "name" : "Proportion of barangays with access to Sanitary Land Fills (SLFs) to total number of barangays (%, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 19211,
+            "name" : "Proportion of public schools with connection to electricity to total number of public schools increased (%, cumulative) - Pri",
+            "description" : null
+            "parent_id" : 1921,
+            "level" : null
+        },
+        {
+            "id" : 19212,
+            "name" : "Proportion of public schools with internet access to total number of public schools increased (%, cumulative) - Primary (K to",
+            "description" : null
+            "parent_id" : 1921,
+            "level" : null
+        },
+        {
+            "id" : 19213,
+            "name" : "Proportion of public schools with computer packages to total number of public schools increased (%, cumulative) - Primary (K ",
+            "description" : null
+            "parent_id" : 1921,
+            "level" : null
+        },
+        {
+            "id" : 20111,
+            "name" : "Area of denuded and degraded forestland decreased (M ha, cumulative)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20112,
+            "name" : "Area planted with mangroves increased (ha)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20113,
+            "name" : "Area of forestland under effective management increased (M ha, cumulative)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20114,
+            "name" : "Production and protection forests delineated increased (km)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20115,
+            "name" : "Coverage of protected areas in relation to marine areas increased (%)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20116,
+            "name" : "Area of marine protected areas with high biodiversity values effectively managed increased (ha)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20117,
+            "name" : "Number of coastal municipalities and cities with delineated and adopted municipal waters increased (annual)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20118,
+            "name" : "Area of terrestrial protected areas with high biodiversity values effectively managed increased (ha)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20119,
+            "name" : "Area of the 13 priority inland wetlands effectively managed increased (ha)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 20121,
+            "name" : "Number of public utility vehicles that converted to cleaner fuels increased -Compressed natural gas -Electric\/Hybrid",
+            "description" : null
+            "parent_id" : 2012,
+            "level" : null
+        },
+        {
+            "id" : 20122,
+            "name" : "Solid waste diversion rate increased (%, cumulative)",
+            "description" : null
+            "parent_id" : 2012,
+            "level" : null
+        },
+        {
+            "id" : 20123,
+            "name" : "Area assessed and mapped for soil fertility status and soil fertility management increased (ha)",
+            "description" : null
+            "parent_id" : 2012,
+            "level" : null
+        },
+        {
+            "id" : 20124,
+            "name" : "Area of land degradation hotspots decreased (ha)",
+            "description" : null
+            "parent_id" : 2012,
+            "level" : null
+        },
+        {
+            "id" : 20125,
+            "name" : "Interim rehabilitation measures monitored and implemented in 4 abandoned mines increased (%, cumulative) - Bagacay - Palawan ",
+            "description" : null
+            "parent_id" : 2012,
+            "level" : null
+        },
+        {
+            "id" : 20211,
+            "name" : "Number of eco-labeled products increased",
+            "description" : null
+            "parent_id" : 2021,
+            "level" : null
+        },
+        {
+            "id" : 20212,
+            "name" : "Total energy savings in government offices increased (PHP million)",
+            "description" : null
+            "parent_id" : 2021,
+            "level" : null
+        },
+        {
+            "id" : 111110,
+            "name" : "Percentage of emergency shelter assistance provided",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 111111,
+            "name" : "All emergency loan applications by calamity-affected GSIS members and pensioners granted (%)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 111112,
+            "name" : "Ratio of total government spending in SP to GDP increased (%)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 111113,
+            "name" : "Ratio of total government spending in SP to the national budget increased (%)",
+            "description" : null
+            "parent_id" : 1111,
+            "level" : null
+        },
+        {
+            "id" : 191110,
+            "name" : "Coverage area of irrigation facilities increased (ha, cumulative)",
+            "description" : null
+            "parent_id" : 1911,
+            "level" : null
+        },
+        {
+            "id" : 191111,
+            "name" : "Renewable Energy (RE) capacity increased (MW, cumulative)",
+            "description" : null
+            "parent_id" : 1912,
+            "level" : null
+        },
+        {
+            "id" : 201110,
+            "name" : "Number of caves with high conservation id effectively managed increased",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201111,
+            "name" : "Area of residential free patents issued increased (ha)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201112,
+            "name" : "Number of issued Certificate of Ancestral Domain Title (CADTs) increased",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201113,
+            "name" : "Number of Ancestral Domain Sustainable Development and Protection Plan (ADSDPP) formulated",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201114,
+            "name" : "Number of groundwater critical areas with management plan and monitoring wells established",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201115,
+            "name" : "Number of Major River Basins (RB) with Comprehensive Water Assessment increased",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201116,
+            "name" : "Number of biodiversity-friendly enterprises recognized increased",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201117,
+            "name" : "Number of jobs generated from reforestation and non-timber\/agroforestry enterprises, i.e. NGP,CBFM, increased (M)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201118,
+            "name" : "Number of Community Fish Landing Centers (CFLC) established (cumulative)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201119,
+            "name" : "Percentage of new and existing CFLC operationalized (cumulative)",
+            "description" : null
+            "parent_id" : 2011,
+            "level" : null
+        },
+        {
+            "id" : 201120,
+            "name" : "Chapter Outcome 1: Sustainable and resilient production and food availability ensured",
+            "description" : null,
+            "parent_id" : 8,
+            "level" : 2
+        },
+        {
+            "id" : 201121,
+            "name" : "Chapter Outcome 2: Access to markets of small farmers and fisherfolk increased",
+            "description" : null,
+            "parent_id" : 8,
+            "level" : 2
+        },
+        {
+            "id" : 201122,
+            "name" : "Chapter Outcome 3: Access of Consumers to Nutritious, Affordable and Safe Food Improved",
+            "description" : null,
+            "parent_id" : 8,
+            "level" : 2
+        },
+        {
+            "id" : 201123,
+            "name" : "Sub-chapter Outcome 1.1: Growth of GVA in AFF Increased (year-on-year at constant prices, in percent)",
+            "description" : null,
+            "parent_id" : 201120,
+            "level" : 3
+        },
+        {
+            "id" : 201124,
+            "name" : "Sub-chapter Outcome 1.2: Growth in Value of Production of Fisheries Increased (year-on-year at constant prices, in percent)",
+            "description" : null,
+            "parent_id" : 201120,
+            "level" : 3
+        },
+        {
+            "id" : 201125,
+            "name" : "Sub-chapter Outcome 1.3: Growth in Labor Productivity of Farmers and Fisherfolk Increased (year-on-year at constant prices, i",
+            "description" : null,
+            "parent_id" : 201120,
+            "level" : 3
+        },
+        {
+            "id" : 201126,
+            "name" : "Growth in the Value of A&F Exports Increased (year-onyear, FOB value, in percent)",
+            "description" : null,
+            "parent_id" : 201121,
+            "level" : 3
+        },
+        {
+            "id" : 201127,
+            "name" : "Prevalence of Moderate or Severe Food Insecurity in the Population based on the Food Insecurity Experience Scale",
+            "description" : null,
+            "parent_id" : 201122,
+            "level" : 3
+        },
+        {
+            "id" : 201128,
+            "name" : "(a) Crops",
+            "description" : null,
+            "parent_id" : 201123,
+            "level" : 4
+        },
+        {
+            "id" : 201129,
+            "name" : "(b) Livestock",
+            "description" : null,
+            "parent_id" : 201123,
+            "level" : 4
+        },
+        {
+            "id" : 201130,
+            "name" : "(c) Poultry",
+            "description" : null,
+            "parent_id" : 201123,
+            "level" : 4
+        },
+        {
+            "id" : 201131,
+            "name" : "(d) Forestry",
+            "description" : null,
+            "parent_id" : 201123,
+            "level" : 4
+        },
+        {
+            "id" : 201132,
+            "name" : "(a) Commercial",
+            "description" : null,
+            "parent_id" : 201124,
+            "level" : 4
+        },
+        {
+            "id" : 201133,
+            "name" : "(b) Municipal",
+            "description" : null,
+            "parent_id" : 201124,
+            "level" : 4
+        },
+        {
+            "id" : 201134,
+            "name" : "(c) Aquaculture",
+            "description" : null,
+            "parent_id" : 201124,
+            "level" : 4
+        },
+        {
+            "id" : 201135,
+            "name" : "Chapter 21: Protecting the rights, promoting the welfare, and expanding opportunities for Overseas Filipinos",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 201136,
+            "name" : "Chapter 09A: Expanding Economic Opportunities in Industry",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 201137,
+            "name" : "Chapter 09B: Expanding Economic Opportunities in Services",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 201138,
+            "name" : "Chapter 09C: Expanding Access to Economic Opportunities in I&S for Investments, Startups, MSMEs, and Cooperatives",
+            "description" : null,
+            "parent_id" : null,
+            "level" : 1
+        },
+        {
+            "id" : 201139,
+            "name" : "Chapter Outcome 1: Responsive, People-centered, Technology-enabled, and Clean Governance",
+            "description" : null,
+            "parent_id" : 5,
+            "level" : 2
+        },
+        {
+            "id" : 201140,
+            "name" : "Sub-chapter Outcome 1.1: Participatory governance broadened",
+            "description" : null,
+            "parent_id" : 201139,
+            "level" : 3
+        },
+        {
+            "id" : 201141,
+            "name" : "Percentile ranking in the WGI – Voice and Accountability improved",
+            "description" : null,
+            "parent_id" : 201140,
+            "level" : 4
+        },
+        {
+            "id" : 201142,
+            "name" : "Open Budget Index score improved",
+            "description" : null,
+            "parent_id" : 201140,
+            "level" : 4
+        },
+        {
+            "id" : 201143,
+            "name" : "Sub-chapter Outcome 1.2: Seamless service delivery achieved",
+            "description" : null,
+            "parent_id" : 201139,
+            "level" : 3
+        },
+        {
+            "id" : 201144,
+            "name" : "Percentile ranking in the WGI – Regulatory Quality sustained",
+            "description" : null,
+            "parent_id" : 201143,
+            "level" : 4
+        },
+        {
+            "id" : 201145,
+            "name" : "Percentile ranking in the GCI sustained",
+            "description" : null,
+            "parent_id" : 201143,
+            "level" : 4
+        },
+        {
+            "id" : 201146,
+            "name" : "Score in the Global e-GDI improved",
+            "description" : null,
+            "parent_id" : 201143,
+            "level" : 4
+        },
+        {
+            "id" : 201147,
+            "name" : "Percentile ranking in the WGI – Government Effectiveness improved",
+            "description" : null,
+            "parent_id" : 201143,
+            "level" : 4
+        },
+        {
+            "id" : 201148,
+            "name" : "Sub-chapter Outcome 1.3: Smart and resilient public organizations and future-ready public servants developed",
+            "description" : null,
+            "parent_id" : 201139,
+            "level" : 3
+        },
+        {
+            "id" : 201149,
+            "name" : "Sub-chapter Outcome 1.4: Public accountability and integrity strengthened",
+            "description" : null,
+            "parent_id" : 201139,
+            "level" : 3
+        },
+        {
+            "id" : 201150,
+            "name" : "Percentile ranking in the WGI – Control of Corruption improved",
+            "description" : null,
+            "parent_id" : 201149,
+            "level" : 4
+        },
+        {
+            "id" : 201151,
+            "name" : "Percentile ranking in the Corruption Perceptions Index (CPI) improved",
+            "description" : null,
+            "parent_id" : 201149,
+            "level" : 4
+        },
+        {
+            "id" : 201152,
+            "name" : "Score in the CPI improved",
+            "description" : null,
+            "parent_id" : 201149,
+            "level" : 4
+        },
+        {
+            "id" : 201153,
+            "name" : "-",
+            "description" : null,
+            "parent_id" : 201139,
+            "level" : 3
+        },
+        {
+            "id" : 201154,
+            "name" : "Score in the national governance index improved",
+            "description" : null,
+            "parent_id" : 201153,
+            "level" : 4
+        },
+        {
+            "id" : 201155,
+            "name" : "Chapter Outcome 1: Swift, fair, and humane administration of justice ensured",
+            "description" : null,
+            "parent_id" : 6,
+            "level" : 2
+        },
+        {
+            "id" : 201156,
+            "name" : "Sub-chapter Outcome 1.1: Criminal, civil, and economic justice processes ICT enabled and streamlined",
+            "description" : null,
+            "parent_id" : 201155,
+            "level" : 3
+        },
+        {
+            "id" : 201157,
+            "name" : "World Justice Project - Rule of Law Index improved",
+            "description" : null,
+            "parent_id" : 201156,
+            "level" : 4
+        },
+        {
+            "id" : 201158,
+            "name" : "World Justice Project - Rule of Law: Sub-indicator on Fundamental Rights improved",
+            "description" : null,
+            "parent_id" : 201157,
+            "level" : 4
+        },
+        {
+            "id" : 201159,
+            "name" : "World Justice Project - Rule of Law: Sub-indicator on Civil Justice improved",
+            "description" : null,
+            "parent_id" : 201157,
+            "level" : 4
+        },
+        {
+            "id" : 201160,
+            "name" : "World Justice Project - Rule of Law: Sub-indicator on Criminal Justice improved",
+            "description" : null,
+            "parent_id" : 201157,
+            "level" : 4
+        },
+        {
+            "id" : 201161,
+            "name" : "Sub-chapter Outcome 1.2: Sector efficiency and accountability improved",
+            "description" : null,
+            "parent_id" : 201155,
+            "level" : 3
+        },
+        {
+            "id" : 201162,
+            "name" : "Percentile rank in the World Governance Indicator – Rule of Law improved",
+            "description" : null,
+            "parent_id" : 201161,
+            "level" : 4
+        },
+        {
+            "id" : 201163,
+            "name" : "Chapter Outcome 1: Philippine Culture and Values towards Bayanihan Promoted",
+            "description" : null,
+            "parent_id" : 7,
+            "level" : 2
+        },
+        {
+            "id" : 201164,
+            "name" : "-",
+            "description" : null,
+            "parent_id" : 201163,
+            "level" : 3
+        },
+        {
+            "id" : 201165,
+            "name" : "Pride of being Filipino increased (%)",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201166,
+            "name" : "Legatum Prosperity Index (LPI) - Social Capital pillar score improved",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201167,
+            "name" : "Legatum Prosperity Index (LPI) - Social Capital pillar percentile rank improved",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201168,
+            "name" : "World Intellectual Property Organization (WIPO) - Creative Outputs score improved",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201169,
+            "name" : "World Intellectual Property Organization (WIPO) - Creative Outputs percentile rank improved",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201170,
+            "name" : "Number of Regional Development Plans with culture components increased (cumulative)",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201171,
+            "name" : "Percentage of LGUs with Local Culture and Arts Councils (LCACs) increased (cumulative; Total P\/C\/M = 1,715)",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201172,
+            "name" : "Percentage of LGUs with local cultural inventories submitted increased (cumulative; Total P\/C\/M = 1,715)",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201173,
+            "name" : "Percentage of municipalities, cities, and provinces with Indigenous Peoples Mandatory Representation (IPMR) increased (Thresh",
+            "description" : null,
+            "parent_id" : 201164,
+            "level" : 4
+        },
+        {
+            "id" : 201174,
+            "name" : "Sub-chapter Outcome 1.1: Diverse cultures valued",
+            "description" : null,
+            "parent_id" : 201163,
+            "level" : 3
+        },
+        {
+            "id" : 201175,
+            "name" : "Sub-chapter Outcome 1.3: \"Pagkamalikhain\" values of creative excellence advanced",
+            "description" : null,
+            "parent_id" : 201163,
+            "level" : 4
+        },
+        {
+            "id" : 201176,
+            "name" : "Sub-chapter Outcome 1.2: Values that foster the common good inculcated",
+            "description" : null,
+            "parent_id" : 201163,
+            "level" : 4
+        },
+        {
+            "id" : 201177,
+            "name" : "Sub-chapter Outcome 1.4: Culture-sensitive public governance and development strengthened",
+            "description" : null,
+            "parent_id" : 201163,
+            "level" : 3
+        },
+        {
+            "id" : 201178,
+            "name" : "Chapter Outcome 1: Economic opportunities in Industry expanded",
+            "description" : null,
+            "parent_id" : 201136,
+            "level" : 2
+        },
+        {
+            "id" : 201179,
+            "name" : "Sub-chapter Outcome 1.1: Local and foreign investments increased",
+            "description" : null,
+            "parent_id" : 201178,
+            "level" : 3
+        },
+        {
+            "id" : 201180,
+            "name" : "Total approved investments increased (PHP million)",
+            "description" : null,
+            "parent_id" : 201178,
+            "level" : 3
+        },
+        {
+            "id" : 201181,
+            "name" : "Net FDI increased (USD million)",
+            "description" : null,
+            "parent_id" : 201179,
+            "level" : 4
+        },
+        {
+            "id" : 201182,
+            "name" : "Number of harmonized investment promotion activities conducted",
+            "description" : null,
+            "parent_id" : 201179,
+            "level" : 4
+        },
+        {
+            "id" : 201183,
+            "name" : "Sub-chapter Outcome 1.2: Competitiveness, innovativeness and resilience increased",
+            "description" : null,
+            "parent_id" : 201178,
+            "level" : 3
+        },
+        {
+            "id" : 201184,
+            "name" : "Philippine Business Registry (PBR) fully operationalized (% of agencies' involvement)",
+            "description" : null,
+            "parent_id" : 201183,
+            "level" : 4
+        },
+        {
+            "id" : 201185,
+            "name" : "Number of cities\/municipalities with fully- implemented Business Permit and Licensing System connected to the PBR",
+            "description" : null,
+            "parent_id" : 201183,
+            "level" : 4
+        },
+        {
+            "id" : 201186,
+            "name" : "Number of Filipino trademarks registered increased",
+            "description" : null,
+            "parent_id" : 201183,
+            "level" : 4
+        },
+        {
+            "id" : 201187,
+            "name" : "Sub-chapter Outcome 1.3: Market access improved",
+            "description" : null,
+            "parent_id" : 201178,
+            "level" : 4
+        },
+        {
+            "id" : 201188,
+            "name" : "Sub-chapter Outcome 1.4: Consumer access to safe and quality goods and services ensured",
+            "description" : null,
+            "parent_id" : 201178,
+            "level" : 3
+        },
+        {
+            "id" : 201189,
+            "name" : "Number of consumer awareness and advocacy initiatives undertaken",
+            "description" : null,
+            "parent_id" : 201188,
+            "level" : 4
+        },
+        {
+            "id" : 201190,
+            "name" : "Number of consumer education, information and communication materials produced",
+            "description" : null,
+            "parent_id" : 201188,
+            "level" : 4
+        },
+        {
+            "id" : 201191,
+            "name" : "Chapter Outcome 2: Economic opportunities in Services expanded",
+            "description" : null,
+            "parent_id" : 201137,
+            "level" : 2
+        },
+        {
+            "id" : 201192,
+            "name" : "Chapter Outcome 3: Expand access to economic opportunities in Industry and Services (I&S) for startups, micro, small and medi",
+            "description" : null,
+            "parent_id" : 201138,
+            "level" : 2
+        },
+        {
+            "id" : 201193,
+            "name" : "Sub-chapter Outcome 2.1: Access to production networks improved",
+            "description" : null,
+            "parent_id" : 201192,
+            "level" : 3
+        },
+        {
+            "id" : 201194,
+            "name" : "Number of MSMEs participating in Global Value Chains",
+            "description" : null,
+            "parent_id" : 201193,
+            "level" : 4
+        },
+        {
+            "id" : 201195,
+            "name" : "Number of MSMEs\/Cooperatives integrated into corporate value chains increased",
+            "description" : null,
+            "parent_id" : 201193,
+            "level" : 4
+        },
+        {
+            "id" : 201196,
+            "name" : "Number of Go Negosyo centers established",
+            "description" : null,
+            "parent_id" : 201193,
+            "level" : 4
+        },
+        {
+            "id" : 201197,
+            "name" : "Sub-chapter Outcome 2.2: Access to finance improved",
+            "description" : null,
+            "parent_id" : 201192,
+            "level" : 3
+        },
+        {
+            "id" : 201198,
+            "name" : "Sub-chapter Outcome 2.3: Productivity, efficiency and resilience improved",
+            "description" : null,
+            "parent_id" : 201192,
+            "level" : 3
+        },
+        {
+            "id" : 201199,
+            "name" : "Number of shared service facilities established",
+            "description" : null,
+            "parent_id" : 201198,
+            "level" : 4
+        },
+        {
+            "id" : 201200,
+            "name" : "Number of Small Enterprise Technology Upgrading Program beneficiaries increased",
+            "description" : null,
+            "parent_id" : 201198,
+            "level" : 4
+        },
+        {
+            "id" : 201201,
+            "name" : "Number of clients\/customers provided with testing and calibration services increased",
+            "description" : null,
+            "parent_id" : 201198,
+            "level" : 4
+        },
+        {
+            "id" : 201202,
+            "name" : "Chapter Outcome 1: Human Capital Development towards Greater Agility",
+            "description" : null,
+            "parent_id" : 10,
+            "level" : 2
+        },
+        {
+            "id" : 201203,
+            "name" : "Sub-chapter Outcome 1.1: Nutrition and health outcomes for all improved",
+            "description" : null,
+            "parent_id" : 201202,
+            "level" : 3
+        },
+        {
+            "id" : 201204,
+            "name" : "Care at all life stages guaranteed",
+            "description" : null,
+            "parent_id" : 201203,
+            "level" : 4
+        },
+        {
+            "id" : 201205,
+            "name" : "Maternal mortality ratio decreased (per 100,000 live births)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201206,
+            "name" : "Neonatal mortality rate decreased (per 1,000 live births)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201207,
+            "name" : "Infant mortality rate decreased (per 1,000 live births)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201208,
+            "name" : "Under-five mortality rate decreased (per 1,000 live births)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201209,
+            "name" : "Mortality rate attributed to cardiovascular disease, cancer, diabetes, and chronic respiratory diseases decreased (number of ",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201210,
+            "name" : "Prevalence of stunting among children under 5 decreased (%)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201211,
+            "name" : "Tuberculosis incidence decreased (per 100,000 population)",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201212,
+            "name" : "Number of newly diagnosed HIV cases decreased",
+            "description" : null,
+            "parent_id" : 201204,
+            "level" : 4
+        },
+        {
+            "id" : 201213,
+            "name" : "Responsive and resilient health system ensured",
+            "description" : null,
+            "parent_id" : 201203,
+            "level" : 4
+        },
+        {
+            "id" : 201214,
+            "name" : "Proportion of women who are using modern contraceptive methods increased (%) - Among women of reproductive age (15-49 years o",
+            "description" : null,
+            "parent_id" : 201203,
+            "level" : 4
+        },
+        {
+            "id" : 201215,
+            "name" : "Proportion of women who are using modern contraceptive methods increased (%) - Among women of reproductive age (15-49 years o",
+            "description" : null,
+            "parent_id" : 201213,
+            "level" : 4
+        },
+        {
+            "id" : 201216,
+            "name" : "Proportion of fully immunized children increased (%)",
+            "description" : null,
+            "parent_id" : 201213,
+            "level" : 4
+        },
+        {
+            "id" : 201217,
+            "name" : "Percentage of regions with at least one Biosafety Laboratory Level 2 (BSL2) (with RT-PCR)",
+            "description" : null,
+            "parent_id" : 201213,
+            "level" : 4
+        },
+        {
+            "id" : 201218,
+            "name" : "Equitable health financing sustained",
+            "description" : null,
+            "parent_id" : 201213,
+            "level" : 4
+        },
+        {
+            "id" : 201219,
+            "name" : "Percentage of population covered by social health insurance",
+            "description" : null,
+            "parent_id" : 201218,
+            "level" : 4
+        },
+        {
+            "id" : 201220,
+            "name" : "Out-of-pocket health spending as percentage of total health expenditure decreased",
+            "description" : null,
+            "parent_id" : 201218,
+            "level" : 4
+        },
+        {
+            "id" : 201221,
+            "name" : "National Health Insurance Program availment rate (%)",
+            "description" : null,
+            "parent_id" : 201218,
+            "level" : 4
+        },
+        {
+            "id" : 201222,
+            "name" : "Percentage of population covered by social health insurance",
+            "description" : null,
+            "parent_id" : 201218,
+            "level" : 4
+        },
+        {
+            "id" : 201223,
+            "name" : "Sub-chapter Outcome 1.2: Lifelong learning opportunities for all ensured",
+            "description" : null,
+            "parent_id" : 201202,
+            "level" : 3
+        },
+        {
+            "id" : 201224,
+            "name" : "Quality, accessible, relevant, and liberating basic education for all achieved",
+            "description" : null,
+            "parent_id" : 201223,
+            "level" : 4
+        },
+        {
+            "id" : 201225,
+            "name" : "Proportion of learners achieving at least nearly proficient in the National Achievement Test (%) increased - Grade 6",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201226,
+            "name" : "Proportion of learners completing levels of education (Completion Rate) increased (%) - Elementary",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201227,
+            "name" : "Proportion of school-aged population participating in basic education (Net Enrollment Rate) increased (%) - Kinder",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201228,
+            "name" : "Proportion of students performing at Moving Towards Mastery, Closely Approximating Mastery, or Mastered increased (%) - Eleme",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201229,
+            "name" : "Proportion of students at Low Mastery reduced (%) - Junior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201230,
+            "name" : "Quality of higher education and technical education and research for equity and global competitiveness improved - Number of H",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201231,
+            "name" : "Quality of higher education and technical education and research for equity and global competitiveness improved - Certificati",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201232,
+            "name" : "Proportion of learners completing levels of education (Completion Rate) increased (%) - Junior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201233,
+            "name" : "Proportion of learners completing levels of education (Completion Rate) increased (%) - Senior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201234,
+            "name" : "Proportion of school-aged population participating in basic education (Net Enrollment Rate) increased (%) - Elementary",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201235,
+            "name" : "Proportion of school-aged population participating in basic education (Net Enrollment Rate) increased (%) - Junior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201236,
+            "name" : "Proportion of school-aged population participating in basic education (Net Enrollment Rate) increased (%) - Senior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201237,
+            "name" : "Proportion of students performing at Moving Towards Mastery, Closely Approximating Mastery, or Mastered increased (%) - Junior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201238,
+            "name" : "Proportion of students performing at Moving Towards Mastery, Closely Approximating Mastery, or Mastered increased (%) - Senior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201239,
+            "name" : "Proportion of students at Low Mastery reduced (%) - Senior High",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201240,
+            "name" : "Proportion of learners completing levels of education (Completion Rate) increased (%) - Kinder",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201241,
+            "name" : "Proportion of learners achieving at least nearly proficient in the National Achievement Test (%) increased - Grade 10",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201242,
+            "name" : "Proportion of learners achieving at least nearly proficient in the National Achievement Test (%) increased - Grade 12",
+            "description" : null,
+            "parent_id" : 201224,
+            "level" : 4
+        },
+        {
+            "id" : 201243,
+            "name" : "Quality of higher education and technical education and research for equity and global competitiveness improved",
+            "description" : null,
+            "parent_id" : 201223,
+            "level" : 4
+        },
+        {
+            "id" : 201244,
+            "name" : "Number of HEIs in reputable international rankings increased",
+            "description" : null,
+            "parent_id" : 201243,
+            "level" : 4
+        },
+        {
+            "id" : 201245,
+            "name" : "Certification rate of TVET graduates increased (%)",
+            "description" : null,
+            "parent_id" : 201243,
+            "level" : 4
+        },
+        {
+            "id" : 201246,
+            "name" : "Sub-chapter Outcome 1.3: Income-earning ability increased",
+            "description" : null,
+            "parent_id" : 201202,
+            "level" : 3
+        },
+        {
+            "id" : 201247,
+            "name" : "Employability improved",
+            "description" : null,
+            "parent_id" : 201246,
+            "level" : 4
+        },
+        {
+            "id" : 201248,
+            "name" : "Duration of school-to-work transition of college graduates reduced (years)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201249,
+            "name" : "Duration of school-to-work transition of high school graduates reduced (years)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201250,
+            "name" : "Duration of school-to-work transition of TESDA graduates reduced (months)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201251,
+            "name" : "Percentage of discouraged workers reduced (%)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201252,
+            "name" : "Unemployment rate of college graduates decreased (%)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201253,
+            "name" : "Employment rate of TVET graduates increased (%)",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201254,
+            "name" : "Percentage of females with advanced degrees employed increased",
+            "description" : null,
+            "parent_id" : 201247,
+            "level" : 4
+        },
+        {
+            "id" : 201255,
+            "name" : "Productivity improved",
+            "description" : null,
+            "parent_id" : 201246,
+            "level" : 4
+        },
+        {
+            "id" : 201256,
+            "name" : "Labor productivity in the industry sector increased (% growth)",
+            "description" : null,
+            "parent_id" : 201255,
+            "level" : 4
+        },
+        {
+            "id" : 201257,
+            "name" : "Labor productivity in the service sector increased (% growth)",
+            "description" : null,
+            "parent_id" : 201255,
+            "level" : 4
+        },
+        {
+            "id" : 201258,
+            "name" : "Labor mobility and income security enhanced",
+            "description" : null,
+            "parent_id" : 201246,
+            "level" : 4
+        },
+        {
+            "id" : 201259,
+            "name" : "Share of employees in precarious work to total employed (%) reduced",
+            "description" : null,
+            "parent_id" : 201258,
+            "level" : 4
+        },
+        {
+            "id" : 201260,
+            "name" : "Share of wage and salary workers in precarious work to total wage and salary workers (%) reduced",
+            "description" : null,
+            "parent_id" : 201258,
+            "level" : 4
+        },
+        {
+            "id" : 201261,
+            "name" : "Chapter Outcome 1: Ensuring Food Resiliency and Reducing Vulnerabilities of Filipinos",
+            "description" : null,
+            "parent_id" : 11,
+            "level" : 2
+        },
+        {
+            "id" : 201262,
+            "name" : "Chapter Outcome 1:Safe, Resilient, and Sustainable Communities Built",
+            "description" : null,
+            "parent_id" : 12,
+            "level" : 2
+        },
+        {
+            "id" : 201263,
+            "name" : "Sub-chapter Outcome 1:1: Integrating public health goals in the design of human settlements",
+            "description" : null,
+            "parent_id" : 201262,
+            "level" : 3
+        },
+        {
+            "id" : 201264,
+            "name" : "Proportion of LGUs with approved\/ updated Comprehensive Land Use Plan (CLUP) increased",
+            "description" : null,
+            "parent_id" : 201263,
+            "level" : 4
+        },
+        {
+            "id" : 201265,
+            "name" : "Sub-chapter Outcome 1.2: Accelerating housing production that incorporates hazard and health standards",
+            "description" : null,
+            "parent_id" : 201262,
+            "level" : 3
+        },
+        {
+            "id" : 201266,
+            "name" : "Percentage of socialized housing units delivered to socialized housing targets (Annual)",
+            "description" : null,
+            "parent_id" : 201265,
+            "level" : 4
+        },
+        {
+            "id" : 201267,
+            "name" : "Percentage of low-cost housing units delivered to low-cost housing targets improved (Annual)",
+            "description" : null,
+            "parent_id" : 201265,
+            "level" : 4
+        },
+        {
+            "id" : 201268,
+            "name" : "Proportion of urban population living in informal settlements decreased",
+            "description" : null,
+            "parent_id" : 201265,
+            "level" : 4
+        },
+        {
+            "id" : 201269,
+            "name" : "Proportion of families with owned or owner-like possession of housing units",
+            "description" : null,
+            "parent_id" : 201265,
+            "level" : 4
+        },
+        {
+            "id" : 201270,
+            "name" : "Proportion of families with access to secure tenure",
+            "description" : null,
+            "parent_id" : 201265,
+            "level" : 4
+        },
+        {
+            "id" : 201271,
+            "name" : "Sub-chapter Outcome 1.3: Adopting alternative housing solutions for low-income market",
+            "description" : null,
+            "parent_id" : 201262,
+            "level" : 3
+        },
+        {
+            "id" : 201272,
+            "name" : "Sub-chapter Outcome 1.4: Stakeholders Empowerment",
+            "description" : null,
+            "parent_id" : 201261,
+            "level" : 3
+        },
+        {
+            "id" : 201273,
+            "name" : "Chapter Outcome 1: Demographic transition accelerated",
+            "description" : null,
+            "parent_id" : 13,
+            "level" : 2
+        },
+        {
+            "id" : 201274,
+            "name" : "Sub-chapter Outcome 1.1: Mortaility rates reduced",
+            "description" : null,
+            "parent_id" : 201273,
+            "level" : 3
+        },
+        {
+            "id" : 201275,
+            "name" : "Sub-chapter Outcome 1.2: Wanted fertility rates achieved",
+            "description" : null,
+            "parent_id" : 201273,
+            "level" : 3
+        },
+        {
+            "id" : 201276,
+            "name" : "Chapter Outcome 2: Gains from demographic dividend maximized",
+            "description" : null,
+            "parent_id" : 13,
+            "level" : 2
+        },
+        {
+            "id" : 201277,
+            "name" : "Sub-chapter Outcome 2.1: Quality of human capital improved",
+            "description" : null,
+            "parent_id" : 201276,
+            "level" : 3
+        },
+        {
+            "id" : 201278,
+            "name" : "Sub-chapter Outcome 2.2: Savings build-up improved",
+            "description" : null,
+            "parent_id" : 201276,
+            "level" : 3
+        },
+        {
+            "id" : 201279,
+            "name" : "Sub-chapter Outcome 2.3: Youth and female labor force participation increased",
+            "description" : null,
+            "parent_id" : 201276,
+            "level" : 3
+        },
+        {
+            "id" : 201280,
+            "name" : "Sub-chapter Outcome 2.4: Population and development integration and youth participation improved",
+            "description" : null,
+            "parent_id" : 201276,
+            "level" : 3
+        },
+        {
+            "id" : 201281,
+            "name" : "Chapter Outcome 1: Scale-up Technology Adoption",
+            "description" : null,
+            "parent_id" : 14,
+            "level" : 2
+        },
+        {
+            "id" : 201282,
+            "name" : "Sub-chapter Outcome 1.1: Increased STI (science, technology and innovation) utilization in agriculture, industry, services, and health sectors",
+            "description" : null,
+            "parent_id" : 201281,
+            "level" : 3
+        },
+        {
+            "id" : 201283,
+            "name" : "Number of Filipino patents granted increased (incremental)",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201284,
+            "name" : "Number of Filipino patents granted increased (incremental)",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201285,
+            "name" : "Number of Filipino industrial designs registered increased (incremental)",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201286,
+            "name" : "Proportion of intellectual property products expenditures to GDP increased (%)",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201287,
+            "name" : "Number of Filipino patents filed increased",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201288,
+            "name" : "Number of Filipino utility models filed increased",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201289,
+            "name" : "Number of Filipino industrial designs filed increased",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201290,
+            "name" : "Number of Filipino patents filed under Patent Cooperation Treaty (PCT) increased",
+            "description" : null,
+            "parent_id" : 201282,
+            "level" : 4
+        },
+        {
+            "id" : 201291,
+            "name" : "Sub-chapter Outcome 1.2: Increased Investments in STI-based start-ups, enterprises and spin-offs",
+            "description" : null,
+            "parent_id" : 201281,
+            "level" : 3
+        },
+        {
+            "id" : 201292,
+            "name" : "Number of technology business incubators (TBI) graduates increased (i.e. enterprises and spin-offs)",
+            "description" : null,
+            "parent_id" : 201291,
+            "level" : 4
+        },
+        {
+            "id" : 201293,
+            "name" : "Number of innovation hubs increased (e.g. TBIs, innovation centers, niche centers, etc.) (incremental)",
+            "description" : null,
+            "parent_id" : 201291,
+            "level" : 4
+        },
+        {
+            "id" : 201294,
+            "name" : "Global Innovation Index (GII) - Investment Index percentile rank improved",
+            "description" : null,
+            "parent_id" : 201291,
+            "level" : 4
+        },
+        {
+            "id" : 201295,
+            "name" : "Chapter Outcome 2: Accelerate Innovation",
+            "description" : null,
+            "parent_id" : 14,
+            "level" : 2
+        },
+        {
+            "id" : 201296,
+            "name" : "Sub-chapter Outcome 2.1: Enhanced creative capacity for knowledge and technology generation, acquisition and adoption",
+            "description" : null,
+            "parent_id" : 201295,
+            "level" : 3
+        },
+        {
+            "id" : 201297,
+            "name" : "R&D expenditure as a proportion of GDP increased (in percent, incremental)",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201298,
+            "name" : "Number of Researchers, Scientists and Engineers (RSEs) per million population increased (incremental)",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201299,
+            "name" : "Number of Science, Technology, Engineering, and Mathematics (STEM) enrollees in higher education institutes (HEIs) increased (in million, incremental)",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201300,
+            "name" : "Number of STEM graduates in HEIs increased",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201301,
+            "name" : "Number of Balik Scientists Engaged increased (incremental)",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201302,
+            "name" : "Overall Global Innovation Index (GII) rank improved",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201303,
+            "name" : "GII - Knowledge and Technology Outputs percentile rank improved",
+            "description" : null,
+            "parent_id" : 201296,
+            "level" : 4
+        },
+        {
+            "id" : 201304,
+            "name" : "Sub-chapter Outcome 2.2: Strengthened open collaboration among actors in the STI ecosystem",
+            "description" : null,
+            "parent_id" : 201295,
+            "level" : 3
+        },
+        {
+            "id" : 201305,
+            "name" : "Number of collaborations between HEIs and industries increased (incremental)",
+            "description" : null,
+            "parent_id" : 201304,
+            "level" : 4
+        },
+        {
+            "id" : 201306,
+            "name" : "Number of collaborations between HEIs and government increased (NGAs and LGUs) (incremental)",
+            "description" : null,
+            "parent_id" : 201304,
+            "level" : 4
+        },
+        {
+            "id" : 201307,
+            "name" : "Number of STI-related international cooperations of HEIs increased (incremental)",
+            "description" : null,
+            "parent_id" : 201304,
+            "level" : 4
+        },
+        {
+            "id" : 201308,
+            "name" : "GII University - Industry Collaboration percentile rank improved",
+            "description" : null,
+            "parent_id" : 201304,
+            "level" : 4
+        },
+        {
+            "id" : 201309,
+            "name" : "Chapter Outcome 1: Sound, Stable, and Supportive Macroeconomic Environment Sustained",
+            "description" : null,
+            "parent_id" : 15,
+            "level" : 2
+        },
+        {
+            "id" : 201310,
+            "name" : "Sub-chapter Outcome 1.1: Responsible, strategic, supportive, and sustainable fiscal sector",
+            "description" : null,
+            "parent_id" : 201309,
+            "level" : 3
+        },
+        {
+            "id" : 201311,
+            "name" : "Sub-Sector Outcome 1.2. Resilient and inclusive monetary and financial sector",
+            "description" : null,
+            "parent_id" : 201309,
+            "level" : 4
+        },
+        {
+            "id" : 201312,
+            "name" : "Sub-sector Outcome 1.3. Sustainable and resilient external sector",
+            "description" : null,
+            "parent_id" : 201309,
+            "level" : 3
+        },
+        {
+            "id" : 201313,
+            "name" : "Chapter Outcome 1: Consumer welfare improved",
+            "description" : null,
+            "parent_id" : 16,
+            "level" : 2
+        },
+        {
+            "id" : 201314,
+            "name" : "-",
+            "description" : null,
+            "parent_id" : 201313,
+            "level" : 3
+        },
+        {
+            "id" : 201315,
+            "name" : "Global Competitiveness Index (GCI) score improved",
+            "description" : null,
+            "parent_id" : 201314,
+            "level" : 4
+        },
+        {
+            "id" : 201316,
+            "name" : "Sub-Chapter Outcome 2.1: Diminishing Anticompetitive practices",
+            "description" : null,
+            "parent_id" : 201319,
+            "level" : 3
+        },
+        {
+            "id" : 201317,
+            "name" : "Sub-Chapter Outcome 2.2: Reducing barriers to entry and re-entry",
+            "description" : null,
+            "parent_id" : 201319,
+            "level" : 3
+        },
+        {
+            "id" : 201318,
+            "name" : "Sub-Chapter Outcome 2.3: Reducing limits to entrepreneurship",
+            "description" : null,
+            "parent_id" : 201319,
+            "level" : 3
+        },
+        {
+            "id" : 201319,
+            "name" : "Chapter Outcome 2: Market efficiency improved",
+            "description" : null,
+            "parent_id" : 16,
+            "level" : 2
+        },
+        {
+            "id" : 201320,
+            "name" : "Sub-Chapter Outcome 1.1: Diminishing Anticompetitive practices",
+            "description" : null,
+            "parent_id" : 201313,
+            "level" : 3
+        },
+        {
+            "id" : 201321,
+            "name" : "GCI Business Dynamism improved",
+            "description" : null,
+            "parent_id" : 201320,
+            "level" : 4
+        },
+        {
+            "id" : 201322,
+            "name" : "GCI Goods\/Product Market Efficiency improved",
+            "description" : null,
+            "parent_id" : 201320,
+            "level" : 4
+        },
+        {
+            "id" : 201323,
+            "name" : "GCI Extent of Market Dominance improved",
+            "description" : null,
+            "parent_id" : 201320,
+            "level" : 4
+        },
+        {
+            "id" : 201324,
+            "name" : "Sub-Chapter Outcome 1.2: Reducing barriers to entry and re-entry",
+            "description" : null,
+            "parent_id" : 201313,
+            "level" : 3
+        },
+        {
+            "id" : 201325,
+            "name" : "GCI Market size improved",
+            "description" : null,
+            "parent_id" : 201313,
+            "level" : 3
+        },
+        {
+            "id" : 201326,
+            "name" : "Sub-Chapter Outcome 1.3: Reducing limits to entrepreneurship",
+            "description" : null,
+            "parent_id" : 201313,
+            "level" : 3
+        },
+        {
+            "id" : 201327,
+            "name" : "Burden of government regulation improved",
+            "description" : null,
+            "parent_id" : 201326,
+            "level" : 4
+        },
+        {
+            "id" : 201328,
+            "name" : "Starting a Business Score Improved",
+            "description" : null,
+            "parent_id" : 201326,
+            "level" : 4
+        },
+        {
+            "id" : 201329,
+            "name" : "Chapter Outcome 1: Just and lasting peace attained",
+            "description" : null,
+            "parent_id" : 17,
+            "level" : 2
+        },
+        {
+            "id" : 201330,
+            "name" : "Sub-chapter Outcome 1.1: Peace agreements with all internal armed conflict groups successfully negotiated and implemented",
+            "description" : null,
+            "parent_id" : 201329,
+            "level" : 3
+        },
+        {
+            "id" : 201331,
+            "name" : "Sub-chapter Outcome 1.2: Communities in conflict-affected and conflict-vulnerable areas protected and developed",
+            "description" : null,
+            "parent_id" : 201329,
+            "level" : 3
+        },
+        {
+            "id" : 201332,
+            "name" : "Chapter Outcome 1: Security, public order, and safety ensured",
+            "description" : null,
+            "parent_id" : 18,
+            "level" : 2
+        },
+        {
+            "id" : 201333,
+            "name" : "Sub-chapter Outcome 1.1: Public safety ensured",
+            "description" : null,
+            "parent_id" : 201332,
+            "level" : 3
+        },
+        {
+            "id" : 201334,
+            "name" : "Sub-chapter Outcome 1.2: All forms of criminality and illegal drugs significantly reduced",
+            "description" : null,
+            "parent_id" : 201332,
+            "level" : 3
+        },
+        {
+            "id" : 201335,
+            "name" : "Sub-chapter Outcome 1.3: Territorial integrity and sovereignty upheld and protected",
+            "description" : null,
+            "parent_id" : 201332,
+            "level" : 3
+        },
+        {
+            "id" : 201336,
+            "name" : "Sub-chapter Outcome 1.4: Security and safety of overseas Filipinos ensured",
+            "description" : null,
+            "parent_id" : 201332,
+            "level" : 3
+        },
+        {
+            "id" : 201337,
+            "name" : "Infrastructure development accelerated and operations sustained",
+            "description" : null,
+            "parent_id" : 19,
+            "level" : 2
+        },
+        {
+            "id" : 201338,
+            "name" : "Re-programming for the new normal",
+            "description" : null,
+            "parent_id" : 201337,
+            "level" : 4
+        },
+        {
+            "id" : 201339,
+            "name" : "Implementing strategic infrastructure",
+            "description" : null,
+            "parent_id" : 201337,
+            "level" : 3
+        },
+        {
+            "id" : 201340,
+            "name" : "Ensuring asset preservation",
+            "description" : null,
+            "parent_id" : 201337,
+            "level" : 3
+        },
+        {
+            "id" : 201341,
+            "name" : "Intensifying infrastructure-related research and development",
+            "description" : null,
+            "parent_id" : 201337,
+            "level" : 3
+        },
+        {
+            "id" : 201342,
+            "name" : "Clean and healthy environment protected",
+            "description" : null,
+            "parent_id" : 19,
+            "level" : 2
+        },
+        {
+            "id" : 201343,
+            "name" : "Re-programming for the new normal",
+            "description" : null,
+            "parent_id" : 201342,
+            "level" : 3
+        },
+        {
+            "id" : 201344,
+            "name" : "Implementing strategic infrastructure",
+            "description" : null,
+            "parent_id" : 201342,
+            "level" : 3
+        },
+        {
+            "id" : 201345,
+            "name" : "Ensuring asset preservation",
+            "description" : null,
+            "parent_id" : 201342,
+            "level" : 3
+        },
+        {
+            "id" : 201346,
+            "name" : "Intensifying infrastructure-related research and development",
+            "description" : null,
+            "parent_id" : 201342,
+            "level" : 3
+        },
+        {
+            "id" : 201347,
+            "name" : "Chapter Outcome 1: Ecological integrity and socioeconomic resilience of resource-dependent communities improved",
+            "description" : null,
+            "parent_id" : 20,
+            "level" : 2
+        },
+        {
+            "id" : 201348,
+            "name" : "Sub-chapter Outcome 1.1: Biodiversity and ecosystem services sustained",
+            "description" : null,
+            "parent_id" : 201347,
+            "level" : 3
+        },
+        {
+            "id" : 201349,
+            "name" : "Forest cover increased (in million ha)",
+            "description" : null,
+            "parent_id" : 201348,
+            "level" : 4
+        },
+        {
+            "id" : 201350,
+            "name" : "Quality of coastal and marine habitats under NIPAS marine protected areas and other priority coastal and marine conservation areas improved",
+            "description" : null,
+            "parent_id" : 201348,
+            "level" : 4
+        },
+        {
+            "id" : 201351,
+            "name" : "Percentage of hard coral cover (HCC) in MPAs (in number of MPAs)",
+            "description" : null,
+            "parent_id" : 201348,
+            "level" : 4
+        },
+        {
+            "id" : 201352,
+            "name" : "No baseline data",
+            "description" : null,
+            "parent_id" : 201351,
+            "level" : 4
+        },
+        {
+            "id" : 201353,
+            "name" : "Poor (0-22%)",
+            "description" : null,
+            "parent_id" : 201351,
+            "level" : 4
+        },
+        {
+            "id" : 201354,
+            "name" : "Fair (>22%- 33%)",
+            "description" : null,
+            "parent_id" : 201351,
+            "level" : 4
+        },
+        {
+            "id" : 201355,
+            "name" : "Good (>33%-44%)",
+            "description" : null,
+            "parent_id" : 201351,
+            "level" : 4
+        },
+        {
+            "id" : 201356,
+            "name" : "Excellent (>44%)",
+            "description" : null,
+            "parent_id" : 201351,
+            "level" : 4
+        },
+        {
+            "id" : 201357,
+            "name" : "Percentage of seagrass cover in MPAs (in number of MPAs)",
+            "description" : null,
+            "parent_id" : 201348,
+            "level" : 4
+        },
+        {
+            "id" : 201358,
+            "name" : "No baseline data",
+            "description" : null,
+            "parent_id" : 201357,
+            "level" : 4
+        },
+        {
+            "id" : 201359,
+            "name" : "Poor (0-25%)",
+            "description" : null,
+            "parent_id" : 201357,
+            "level" : 4
+        },
+        {
+            "id" : 201360,
+            "name" : "Fair (26-50%)",
+            "description" : null,
+            "parent_id" : 201357,
+            "level" : 4
+        },
+        {
+            "id" : 201361,
+            "name" : "Good (51-75%)",
+            "description" : null,
+            "parent_id" : 201357,
+            "level" : 4
+        },
+        {
+            "id" : 201362,
+            "name" : "Excellent (76-100%)",
+            "description" : null,
+            "parent_id" : 201357,
+            "level" : 4
+        },
+        {
+            "id" : 201363,
+            "name" : "Number of free patents issued",
+            "description" : null,
+            "parent_id" : 201348,
+            "level" : 3
+        },
+        {
+            "id" : 201364,
+            "name" : "Sub-chapter Outcome 1.2: Environmental quality improved",
+            "description" : null,
+            "parent_id" : 201347,
+            "level" : 3
+        },
+        {
+            "id" : 201365,
+            "name" : "Area assessed and mapped for soil fertility status and soil fertility management increased (ha)",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201366,
+            "name" : "Area of land degradation hotspots decreased (ha)",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201367,
+            "name" : "Percentage of priority water bodies within water quality guidelines increased (e.g. BOD, DO, pH, temperature, P, TSS, fecal coliform)",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201368,
+            "name" : "Public Water Supply (%)",
+            "description" : null,
+            "parent_id" : 201367,
+            "level" : 4
+        },
+        {
+            "id" : 201369,
+            "name" : "Food Production (%)",
+            "description" : null,
+            "parent_id" : 201367,
+            "level" : 4
+        },
+        {
+            "id" : 201370,
+            "name" : "Recreational (%)",
+            "description" : null,
+            "parent_id" : 201367,
+            "level" : 4
+        },
+        {
+            "id" : 201371,
+            "name" : "Percentage of highly urbanized and other major urban centers within ambient air quality guideline value (i.e., PM10 and PM2.5) increased (%)",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201372,
+            "name" : "Solid waste diversion rate increased (% )",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201373,
+            "name" : "Percentage of healthcare waste managed (%)",
+            "description" : null,
+            "parent_id" : 201364,
+            "level" : 4
+        },
+        {
+            "id" : 201374,
+            "name" : "Sub-chapter Outcome 1.3: Resilience of communities and their livelihood increased",
+            "description" : null,
+            "parent_id" : 201347,
+            "level" : 3
+        },
+        {
+            "id" : 201375,
+            "name" : "Number of LGUs with operating early warning systems (EWS) in place increased",
+            "description" : null,
+            "parent_id" : 201374,
+            "level" : 4
+        },
+        {
+            "id" : 201376,
+            "name" : "Number of fully-functional DRRM operations centers increased - Permanent - Temporary",
+            "description" : null,
+            "parent_id" : 201374,
+            "level" : 4
+        },
+        {
+            "id" : 201377,
+            "name" : "Percentage of LGUs with climate change and disaster risk-informed plans increased (%)",
+            "description" : null,
+            "parent_id" : 201374,
+            "level" : 4
+        },
+        {
+            "id" : 201378,
+            "name" : "Employment from biodiversity-friendly enterprises and other sustainable resource-based industries increased (cumulative)",
+            "description" : null,
+            "parent_id" : 201374,
+            "level" : 4
+        },
+        {
+            "id" : 201379,
+            "name" : "From NIPAS-PAs and ecotourism sites",
+            "description" : null,
+            "parent_id" : 201378,
+            "level" : 4
+        },
+        {
+            "id" : 201380,
+            "name" : "From reforestation and non-timber\/agroforestry enterprises (i.e. NGP, CBFM)",
+            "description" : null,
+            "parent_id" : 201378,
+            "level" : 4
+        },
+        {
+            "id" : 201381,
+            "name" : "Chapter Outcome 1: Protect the rights, promote the welfare, and expand opportunities for Overseas Filipinos to contribute to the country's development",
+            "description" : null,
+            "parent_id" : 201135,
+            "level" : 2
+        },
+        {
+            "id" : 201382,
+            "name" : "Sub-chapter Outcome 1.1: OFs' rights protected and well-being improved",
+            "description" : null,
+            "parent_id" : 201381,
+            "level" : 4
+        },
+        {
+            "id" : 201383,
+            "name" : "Sub-chapter Outcome 1.2: OFs' participation in the country's development and reintegration in the Philippine society facilitated",
+            "description" : null,
+            "parent_id" : 201381,
+            "level" : 3
+        },
+        {
+            "id" : 201384,
+            "name" : "Sub-chapter Outcome 1.3: Engagement of OFs, families, and other stakeholders in governance strengthened",
+            "description" : null,
+            "parent_id" : 201381,
+            "level" : 3
+        },
+        {
+            "id" : 201385,
+            "name" : "Sub-chapter Outcome 1.4: Rights protected and well-being improved for foreign nationals in the country       -",
+            "description" : null,
+            "parent_id" : 201381,
+            "level" : 3
+        }
+    ]
+}

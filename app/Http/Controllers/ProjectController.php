@@ -8,9 +8,14 @@ use App\Models\Project;
 use App\Models\RefApprovalLevel;
 use App\Models\RefBasis;
 use App\Models\RefCipType;
+use App\Models\RefCovidType;
 use App\Models\RefOperatingUnit;
 use App\Models\RefPapType;
+use App\Models\RefPdpChapter;
+use App\Models\RefPdpIndicator;
 use App\Models\RefPipTypology;
+use App\Models\RefProjectStatus;
+use App\Models\RefReadiness;
 use App\Models\RefRegion;
 use App\Models\RefSpatialCoverage;
 use Illuminate\Http\Request;
@@ -52,6 +57,31 @@ class ProjectController extends Controller
         $yes->label = 'Yes';
         $bool = collect([$yes, $no]);
 
+        $year = 2016;
+        $years = collect();
+
+        while ($year <= 2030) {
+            $newYear = new \stdClass();
+            $newYear->id = $year;
+            $newYear->label = $year;
+            $years->add($newYear);
+            $year++;
+        }
+
+
+
+
+        $menuItems = [
+            '#general-information'      => 'General Information',
+            '#implementing-agency'      => 'Implementing Agency',
+            '#spatial-coverage'         => 'Spatial Coverage',
+            '#approval-level'           => 'Approval Level',
+            '#programming-document'     => 'Program/Project for Inclusion in Which Programming Document',
+            '#physical-financial-status'=> 'Physical & Financial Status',
+            '#implementation-period'    => 'Implementation Period',
+            '#pdp-indicators'           => 'Main PDP Chapter Outcome Statements/Outputs',
+        ];
+
         return view('projects.create')
             ->with([
                 'papTypes'          => RefPapType::all(),
@@ -64,6 +94,12 @@ class ProjectController extends Controller
                 'approvalLevels'    => RefApprovalLevel::all(),
                 'pipTypologies'     => RefPipTypology::all(),
                 'cipTypes'          => RefCipType::all(),
+                'covidInterventions'=> RefCovidType::all(),
+                'projectStatuses'   => RefProjectStatus::all(),
+                'menuItems'         => $menuItems,
+                'years'             => $years,
+                'pdpChapters'       => RefPdpChapter::orderBy('name')->get(),
+                'pdpIndicators'     => RefPdpIndicator::all(),
             ]);
     }
 

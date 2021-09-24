@@ -3,14 +3,18 @@
 namespace App\Models;
 
 use App\Traits\HasUuid;
+use Bkwld\Cloner\Cloneable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Venturecraft\Revisionable\RevisionableTrait;
 
 class Project extends Model
 {
     use HasFactory;
     use HasUuid;
+    use Cloneable;
+    use RevisionableTrait;
 
     protected static function booted()
     {

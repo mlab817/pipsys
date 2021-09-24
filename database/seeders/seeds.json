@@ -1785,23 +1785,7 @@
         },
         {
             "id": 4,
-            "name": "Conceptual Stage"
-        },
-        {
-            "id": 5,
-            "name": "Approved but not yet ongoing"
-        },
-        {
-            "id": 6,
-            "name": "Temporarily Stopped"
-        },
-        {
-            "id": 7,
-            "name": "Cancelled\/Terminated"
-        },
-        {
-            "id": 8,
-            "name": "Dropped from pipeline"
+            "name": "Dropped"
         }
     ],
     "submission_statuses": [
@@ -1897,6 +1881,64 @@
             "id" : 6,
             "name" : "Not Applicable",
             "description" : ""
+        }
+    ],
+    "covid_interventions": [
+        {
+            "id" : 1,
+            "name" : "Republic Act 11469 Bayanihan To Heal As One Act",
+            "slug" : "republic-act-11469-bayanihan-to-heal-as-one-act",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 2,
+            "name" : "Republic Act 11494 Bayanihan to Recover As One Act",
+            "slug" : "republic-act-11494-bayanihan-to-recover-as-one-act",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 3,
+            "name" : "Socioeconomic Strategy Against COVID-19 Pillar I: Emergency support for vulnerable groups",
+            "slug" : "socioeconomic-strategy-against-covid-19-pillar-i-emergency-support-for-vulnerable-groups",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 4,
+            "name" : "Socioeconomic Strategy Against COVID-19 Pillar II: Marshalling resources to fight COVID-19",
+            "slug" : "socioeconomic-strategy-against-covid-19-pillar-ii-marshalling-resources-to-fight-covid-19",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 5,
+            "name" : "Socioeconomic Strategy Against COVID-19 Pillar III: Monetary actions and other financing support",
+            "slug" : "socioeconomic-strategy-against-covid-19-pillar-iii-monetary-actions-and-other-financing-support",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 6,
+            "name" : "Socioeconomic Strategy Against COVID-19 Pillar IV: An economic recovery program to create jobs and sustain growth",
+            "slug" : "socioeconomic-strategy-against-covid-19-pillar-iv-an-economic-recovery-program-to-create-jobs-and-sustain-growth",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
+        },
+        {
+            "id" : 7,
+            "name" : "We Recover as One report",
+            "slug" : "we-recover-as-one-report",
+            "created_at" : "2021-05-24 06:27:46",
+            "updated_at" : "2021-05-24 06:27:46",
+            "deleted_at" : null
         }
     ]
 }

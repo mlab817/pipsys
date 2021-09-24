@@ -2,24 +2,23 @@
 
 namespace App\View\Components;
 
-use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
-class Select extends Component
+class InputDate extends Component
 {
     public string $fieldName;
 
-    public Collection $options;
+    public string $value;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, Collection $options)
+    public function __construct($fieldName, $value = '')
     {
         $this->fieldName    = $fieldName;
-        $this->options      = $options;
+        $this->value        = $value;
     }
 
     /**
@@ -29,6 +28,6 @@ class Select extends Component
      */
     public function render()
     {
-        return view('components.select');
+        return view('components.input-date');
     }
 }

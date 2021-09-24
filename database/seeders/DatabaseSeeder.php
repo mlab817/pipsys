@@ -6,6 +6,7 @@ use App\Models\Office;
 use App\Models\RefApprovalLevel;
 use App\Models\RefBasis;
 use App\Models\RefCipType;
+use App\Models\RefCovidType;
 use App\Models\RefFundingInstitution;
 use App\Models\RefFundSource;
 use App\Models\RefGad;
@@ -16,6 +17,7 @@ use App\Models\RefOperatingUnit;
 use App\Models\RefOuType;
 use App\Models\RefPapType;
 use App\Models\RefPdpChapter;
+use App\Models\RefPdpIndicator;
 use App\Models\RefPipTypology;
 use App\Models\RefPrerequisite;
 use App\Models\RefProjectStatus;
@@ -55,6 +57,7 @@ class DatabaseSeeder extends Seeder
         "pap_types"         => RefPapType::class,
         "bases"             => RefBasis::class,
         "approval_levels"   => RefApprovalLevel::class,
+        "covid_interventions"=> RefCovidType::class,
     ];
 
     /**
@@ -83,5 +86,11 @@ class DatabaseSeeder extends Seeder
             'activated_at'  => now(),
             'office_id'     => 1,
         ]);
+
+        $pdpIndicators = json_decode(file_get_contents(database_path('seeders/pdp_indicators.json')));
+
+        foreach ($pdpIndicators as $indicator) {
+            RefPdpIndicator::create($indicator);
+        }
     }
 }
