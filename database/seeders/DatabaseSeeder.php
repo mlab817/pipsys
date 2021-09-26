@@ -29,7 +29,9 @@ use App\Models\RefSustainableDevtAgenda;
 use App\Models\RefTier;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -73,7 +75,7 @@ class DatabaseSeeder extends Seeder
                     'id'    => $item['id'],
                     'name'  => $item['name'],
                     'label' => $item['name'],
-                    'description' => isset($item['description']) ? $item['description'] : '',
+                    'description' => $item['description'] ?? '',
                 ]);
             }
         }
@@ -87,10 +89,24 @@ class DatabaseSeeder extends Seeder
             'office_id'     => 1,
         ]);
 
-        $pdpIndicators = json_decode(file_get_contents(database_path('seeders/pdp_indicators.json')));
+        Schema::disableForeignKeyConstraints();
 
-        foreach ($pdpIndicators as $indicator) {
-            RefPdpIndicator::create($indicator);
+        DB::table('ref_pdp_indicators')->truncate();
+
+        $pdpIndicators = json_decode(file_get_contents(database_path('seeders/pdp_indicators.json')), true);
+
+        foreach ($pdpIndicators['pdp_indicators'] as $indicator) {
+            // validate parent_id
+            RefPdpIndicator::create([
+                'id' => $indicator['id'],
+                'name' => $indicator['name'],
+                'label' => $indicator['name'],
+                'description' => $indicator['description'] ?? '',
+                'parent_id' => $indicator['parent_id'] ?? null,
+                'level' => $indicator['level'],
+            ]);
         }
+
+        Schema::enableForeignKeyConstraints();
     }
 }
