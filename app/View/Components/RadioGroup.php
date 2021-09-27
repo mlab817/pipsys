@@ -11,15 +11,18 @@ class RadioGroup extends Component
 
     public Collection $options;
 
+    public bool $checked;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, Collection $options)
+    public function __construct($fieldName, Collection $options, $checked = false)
     {
         $this->fieldName    = $fieldName;
         $this->options      = $options;
+        $this->checked      = $checked;
     }
 
     /**

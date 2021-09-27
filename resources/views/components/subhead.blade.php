@@ -1,4 +1,4 @@
-<div class="Subhead" id="{{ $id }}">
+<div class="Subhead Subhead--spacious" id="{{ $id }}">
     <div class="Subhead-heading">{{ $subhead }}</div>
     <div class="Subhead-actions">
         {{ $slot }}

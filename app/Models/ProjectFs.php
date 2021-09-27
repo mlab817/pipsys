@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectFs extends Model
 {
     use HasFactory;
+
+    const FS_STATUS = [
+        'completed'         => 'Completed',
+        'ongoing'           => 'Ongoing',
+        'for_preparation'   => 'For Preparation',
+    ];
 }

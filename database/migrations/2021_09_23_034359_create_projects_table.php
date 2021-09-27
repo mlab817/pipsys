@@ -52,6 +52,7 @@ class CreateProjectsTable extends Migration
             $table->string('employment_generated')->nullable();
             $table->foreignId('ref_fund_source_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('ref_implementation_mode_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('other_mode')->nullable();
             $table->boolean('financial_accomp_na')->nullable()->default(0);
             $table->foreignId('ref_tier_id')->nullable()->constrained()->nullOnDelete();
             $table->string('uacs_code')->nullable();

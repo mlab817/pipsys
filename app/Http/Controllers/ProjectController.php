@@ -5,19 +5,29 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProjectStoreRequest;
 use App\Models\Office;
 use App\Models\Project;
+use App\Models\ProjectFs;
 use App\Models\RefApprovalLevel;
 use App\Models\RefBasis;
 use App\Models\RefCipType;
 use App\Models\RefCovidType;
+use App\Models\RefFundingInstitution;
+use App\Models\RefFundSource;
+use App\Models\RefImplementationMode;
+use App\Models\RefInfraSector;
 use App\Models\RefOperatingUnit;
 use App\Models\RefPapType;
 use App\Models\RefPdpChapter;
 use App\Models\RefPdpIndicator;
 use App\Models\RefPipTypology;
+use App\Models\RefPrepDocument;
+use App\Models\RefPrerequisite;
 use App\Models\RefProjectStatus;
 use App\Models\RefReadiness;
 use App\Models\RefRegion;
+use App\Models\RefSocioEconAgenda;
 use App\Models\RefSpatialCoverage;
+use App\Models\RefSustainableDevtAgenda;
+use App\Models\RefTier;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -99,7 +109,17 @@ class ProjectController extends Controller
                 'menuItems'         => $menuItems,
                 'years'             => $years,
                 'pdpChapters'       => RefPdpChapter::orderBy('name')->get(),
-                'pdpIndicators'     => RefPdpIndicator::all(),
+                'pdpIndicators'     => RefPdpIndicator::where('level',1)->orderBy('name')->get(),
+                'socioEconAgenda'   => RefSocioEconAgenda::all(),
+                'sdgs'              => RefSustainableDevtAgenda::all(),
+                'prepDocuments'     => RefPrepDocument::all(),
+                'fsStatus'          => ProjectFs::FS_STATUS,
+                'fundSources'       => RefFundSource::all(),
+                'implementationModes' => RefImplementationMode::all(),
+                'fundingInstitutions' => RefFundingInstitution::all(),
+                'tiers'             => RefTier::all(),
+                'infraSectors'      => RefInfraSector::with('infra_subsectors')->get(),
+                'prerequisites'     => RefPrerequisite::all(),
             ]);
     }
 
@@ -111,7 +131,13 @@ class ProjectController extends Controller
      */
     public function store(ProjectStoreRequest $request)
     {
-        //
+        $project = Project::create($request->validated());
+
+        return redirect()->route('projects.index')
+            ->with([
+                'status'    => 'success',
+                'message'   => 'A new project has been created. You may view it <a href='. route('projects.show', $project) .' class=\"btn-link\">here</a>'
+            ]);
     }
 
     /**
@@ -122,7 +148,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('projects.show', compact('project'));
     }
 
     /**

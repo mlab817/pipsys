@@ -16,14 +16,30 @@ class Project extends Model
     use Cloneable;
     use RevisionableTrait;
 
+    protected $fillable = [
+        'title',
+        'ref_pap_type_id',
+    ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
+
     protected static function booted()
     {
         static::addGlobalScope('user_type', function (Builder $builder) {
             // if user is not admin, return only projects belonging to the same office
             if (! auth()->user()->is_admin) {
-                $builder->where('office_id', '=', auth()->user()->office_id);
+                $builder->where('office_id', '=', auth()->user()->office_id)
+                    ->orWhere('creator_id', auth()->id());
             }
         });
+    }
+
+    public function creator(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class,'creator_id');
     }
 
     public function description(): \Illuminate\Database\Eloquent\Relations\HasOne
@@ -38,7 +54,37 @@ class Project extends Model
             ->withDefault(['name' => 'N/A']);
     }
 
-    public static function search($query)
+    public function gaa(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectGaa::class);
+    }
+
+    public function disbursement(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectDisbursement::class);
+    }
+
+    public function nep(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectNep::class);
+    }
+
+    public function bases(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefBasis::class, 'project_basis', 'ref_basis_id', 'project_id');
+    }
+
+    public function operating_units(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefOperatingUnit::class, 'project_ou', 'ref_ou_id','project_id');
+    }
+
+    public function regions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefRegion::class, 'project_region', 'ref_region_id', 'project_id');
+    }
+
+    public static function search($query): Builder
     {
         return empty($query) ? static::query()
             : static::where(function($q) use ($query) {

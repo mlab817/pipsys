@@ -19,6 +19,7 @@ use App\Models\RefPapType;
 use App\Models\RefPdpChapter;
 use App\Models\RefPdpIndicator;
 use App\Models\RefPipTypology;
+use App\Models\RefPrepDocument;
 use App\Models\RefPrerequisite;
 use App\Models\RefProjectStatus;
 use App\Models\RefRegion;
@@ -60,6 +61,7 @@ class DatabaseSeeder extends Seeder
         "bases"             => RefBasis::class,
         "approval_levels"   => RefApprovalLevel::class,
         "covid_interventions"=> RefCovidType::class,
+        "preparation_documents" => RefPrepDocument::class,
     ];
 
     /**
@@ -71,12 +73,17 @@ class DatabaseSeeder extends Seeder
 
         foreach ($seeds as $key => $items) {
             foreach ($items as $item) {
-                $this->seeds[$key]::create([
+                $modelCreated = $this->seeds[$key]::create([
                     'id'    => $item['id'],
                     'name'  => $item['name'],
                     'label' => $item['name'],
                     'description' => $item['description'] ?? '',
                 ]);
+
+                if ($this->seeds[$key] == 'App\\Models\\RefInfraSubsector') {
+                    $modelCreated->ref_infra_sector_id = $item['infrastructure_sector_id'];
+                    $modelCreated->save();
+                }
             }
         }
 

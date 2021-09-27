@@ -14,7 +14,43 @@
     <div class="Header-item Header-item--full">
 
     </div>
+    <div class="Header-item position-relative d-none d-md-flex">
+        <details class="details-overlay details-reset">
+            <summary class="Header-link" aria-label="Create new…" aria-haspopup="menu" role="button">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-plus">
+                    <path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path>
+                </svg> <span class="dropdown-caret"></span>
+            </summary>
+            <details-menu class="dropdown-menu dropdown-menu-sw" role="menu">
+                <a role="menuitem" class="dropdown-item" href="{{ route('projects.create') }}">
+                    New project
+                </a>
+            </details-menu>
+        </details>
+
+    </div>
     <div class="Header-item mr-0">
-        <img class="avatar" height="20" alt="@octocat" src="https://github.com/octocat.png" width="20">
+        <div class="position-relative">
+            <details class="dropdown details-reset details-overlay d-inline-block">
+                <summary aria-haspopup="true">
+                    <img class="avatar" height="30" alt="@octocat" src="https://github.com/octocat.png" width="30">
+                </summary>
+
+                <div class="dropdown-menu dropdown-menu-sw">
+                    <div class="dropdown-header">
+                        Dropdown header
+                    </div>
+                    <ul>
+                        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+                        <li><a class="dropdown-item" href="#url">Dropdown item</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a class="dropdown-item" href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">Logout</a></li>
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                            @csrf
+                        </form>
+                    </ul>
+                </div>
+            </details>
+        </div>
     </div>
 </div>

@@ -50,7 +50,7 @@
         },
         {
             "id": 10,
-            "name": "Norther Mindanao",
+            "name": "Northern Mindanao",
             "label": "Region X",
             "order": 13
         },
@@ -1295,6 +1295,10 @@
             "name": "Transportation"
         },
         {
+            "id": 4,
+            "name": "Water Resources"
+        },
+        {
             "id": 5,
             "name": "Information and Communications Technology"
         },
@@ -1306,75 +1310,98 @@
     "infrastructure_subsectors": [
         {
             "id": 11,
-            "name": "Health"
+            "name": "Health",
+            "infrastructure_sector_id": 1
         },
         {
             "id": 12,
-            "name": "Education"
+            "name": "Education",
+            "infrastructure_sector_id": 1
         },
         {
             "id": 13,
-            "name": "Solid Waste Management"
+            "name": "Solid Waste Management",
+            "infrastructure_sector_id": 1
         },
         {
             "id": 14,
-            "name": "Housing"
+            "name": "Housing",
+            "infrastructure_sector_id": 1
         },
         {
             "id": 15,
-            "name": "Public Safety\/Security"
+            "name": "Public Safety\/Security",
+            "infrastructure_sector_id": 1
         },
         {
             "id": 31,
-            "name": "Roads and Bridges"
+            "name": "Roads and Bridges",
+            "infrastructure_sector_id": 3
         },
         {
             "id": 32,
-            "name": "Water Transportation"
+            "name": "Water Transportation",
+            "infrastructure_sector_id": 3
         },
         {
             "id": 33,
-            "name": "Air Transportation"
+            "name": "Air Transportation",
+            "infrastructure_sector_id": 3
         },
         {
             "id": 34,
-            "name": "Rail Transportation"
+            "name": "Rail Transportation",
+            "infrastructure_sector_id": 3
         },
         {
             "id": 35,
-            "name": "Urban Transportation"
+            "name": "Urban Transportation",
+            "infrastructure_sector_id": 3
+        },
+        {
+            "id": 41,
+            "name": "Irrigation",
+            "infrastructure_sector_id": 4
         },
         {
             "id": 42,
-            "name": "Water Supply"
+            "name": "Water Supply",
+            "infrastructure_sector_id": 4
         },
         {
             "id": 43,
-            "name": "Flood Management"
+            "name": "Flood Management",
+            "infrastructure_sector_id": 4
         },
         {
             "id": 44,
-            "name": "Sanitation\/Sewerage\/Septage"
+            "name": "Sanitation\/Sewerage\/Septage",
+            "infrastructure_sector_id": 4
         },
         {
             "id": 61,
-            "name": "Urban\/Heritage Renewal"
+            "name": "Urban\/Heritage Renewal",
+            "infrastructure_sector_id": 6
         },
         {
             "id": 62,
-            "name": "Reclamation"
+            "name": "Reclamation",
+            "infrastructure_sector_id": 6
         },
         {
             "id": 63,
-            "name": "Government Building"
+            "name": "Government Building",
+            "infrastructure_sector_id": 6
         },
         {
             "id": 64,
-            "name": "Multipurpose Facilities"
+            "name": "Multipurpose Facilities",
+            "infrastructure_sector_id": 6
         },
         {
             "id": 65,
-            "name": "Others"
+            "name": "Others",
+            "infrastructure_sector_id": 6
         }
     ],
     "funding_sources": [
@@ -1939,6 +1966,32 @@
             "created_at" : "2021-05-24 06:27:46",
             "updated_at" : "2021-05-24 06:27:46",
             "deleted_at" : null
+        }
+    ],
+    "preparation_documents": [
+        {
+            "id": 1,
+            "name": "Feasibility Study"
+        },
+        {
+            "id": 2,
+            "name": "Business Case"
+        },
+        {
+            "id": 3,
+            "name": "Project Proposal"
+        },
+        {
+            "id": 4,
+            "name": "Concept Note"
+        },
+        {
+            "id": 5,
+            "name": "Others"
+        },
+        {
+            "id": 6,
+            "name": "Not Applicable"
         }
     ]
 }

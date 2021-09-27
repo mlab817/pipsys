@@ -22,6 +22,10 @@
 <body>
 @include('partials.header')
 
+@if(session('status'))
+<x-flash status="{{ session('status') }}" :message="session('message')"></x-flash>
+@endif
+
 @yield('page-header')
 
 <main class="mx-auto">
@@ -31,5 +35,6 @@
 </main>
 
 @stack('scripts')
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>

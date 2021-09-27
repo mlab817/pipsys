@@ -24,7 +24,7 @@
                                 </dt>
 
                                 <dd>
-                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username" autofocus>
+                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" autocomplete="username" autofocus tabindex="0">
 
                                     @error('username')
                                         <p class="note error" role="alert">
@@ -40,13 +40,13 @@
                                         <label for="password" class="col-form-label text-md-right">{{ __('Password') }}</label>
                                     </d>
                                     @if (Route::has('password.request'))
-                                        <a class="btn-link no-underline" href="{{ route('password.request') }}">
+                                        <a class="btn-link no-underline" href="{{ route('password.request') }}" tabindex="3">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
                                 </dt>
                                 <dd>
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password" tabindex="1">
 
                                     @error('password')
                                     <p class="note error" role="alert">
@@ -57,7 +57,7 @@
                             </dl>
 
                             <div class="form-group row mb-0">
-                                <button type="submit" class="btn btn-primary btn-block">
+                                <button type="submit" class="btn btn-primary btn-block" tabindex="2">
                                     {{ __('Login') }}
                                 </button>
                             </div>

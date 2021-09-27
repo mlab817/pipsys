@@ -31,6 +31,7 @@ class CreateProjectResettlementsTable extends Migration
             $table->decimal('y2028', 15, 4)->nullable()->default(0);
             $table->decimal('y2029', 15, 4)->nullable()->default(0);
             $table->decimal('y2030', 15, 4)->nullable()->default(0);
+            $table->string('hh_affected')->nullable();
             $table->timestamps();
 
             $table->unique('project_id','project_resettlement_id');

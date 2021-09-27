@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class TextArea extends Component
+class Textarea extends Component
 {
     public string $fieldName;
 
@@ -31,6 +31,6 @@ class TextArea extends Component
      */
     public function render()
     {
-        return view('components.text-area');
+        return view('components.textarea');
     }
 }

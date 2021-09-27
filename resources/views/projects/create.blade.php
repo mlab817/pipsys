@@ -4,6 +4,10 @@
     <x-page-header title="New Program/Project"></x-page-header>
 @stop
 
+@php
+    $project = new \App\Models\Project;
+@endphp
+
 @section('content')
     <form action="{{ route('projects.store') }}" method="POST" accept-charset="UTF-8" class="mt-4 mb-4">
         @csrf
@@ -55,12 +59,18 @@
 
                 <x-form-group field-name="bases" label="Basis for Implementation">
                     @foreach($bases as $option)
-                        <x-checkbox field-name="bases[]" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}"></x-checkbox>
+                        <x-checkbox
+                            field-name="bases[]"
+                            value="{{ $option->id }}"
+                            label="{{ $option->label }}"
+                            description="{{ $option->description }}"
+                            :checked="old('bases', $project->bases->pluck('id')->toArray() ?? [])"
+                        ></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="description" label="PAP Description">
-                    <textarea name="description" id="description" class="form-control" rows="6" style="resize: none;">{{ old('description') }}</textarea>
+                    <x-textarea field-name="description" value="{{ old('description', $project->description->description ?? '') }}">{{ old('description') }}</x-textarea>
                     <p class="note">
                         Identify the Components of the Program/Project. If a Program, please identify the sub-programs/projects and explain the objective of the program/project in terms of responding to the PDP/ RM. <br/>If the PAP will involve construction of a government facility, specify the definite purpose for the facility to be constructed.
                     </p>
@@ -74,36 +84,37 @@
 
                 <x-form-group field-name="operating_units" label="Other Implementing Agencies">
                     @foreach($operatingUnits as $option)
-                        <x-checkbox field-name="operating_units[]" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}"></x-checkbox>
+                        <x-checkbox field-name="operating_units[]" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}" :checked="old('operating_units', $project->operating_units->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Spatial Coverage" id="spatial-coverage"></x-subhead>
 
                 <x-form-group field-name="ref_spatial_coverage_id" label="Spatial Coverage">
-                    <x-select field-name="ref_spatial_coverage_id" :options="$spatialCoverages"></x-select>
+                    <x-select field-name="ref_spatial_coverage_id" :options="$spatialCoverages" :selected="old('ref_spatial_coverage_id', $project->ref_spatial_coverage_id)"></x-select>
                 </x-form-group>
 
                 <x-form-group field-name="regions" label="Regions">
                     @foreach($regions as $option)
-                        <x-checkbox field-name="regions[]" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}"></x-checkbox>
+                        <x-checkbox field-name="regions[]" value="{{ $option->id }}" label="{{ $option->label }}" :checked="old('operating_units', $project->regions->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Approval Level" id="approval-level"></x-subhead>
 
                 <x-form-group field-name="iccable" label="Will require Investment Coordination Committee/NEDA Board Approval (ICC-able)?">
-                    <x-radio-group field-name="iccable" :options="$bool"></x-radio-group>
+                    <x-radio-group field-name="iccable" :options="$bool" :checked="old('iccable', $project->iccable ?? false)"></x-radio-group>
                 </x-form-group>
 
                 <x-form-group field-name="ref_approval_level_id" label="Level of Approval">
-                    @foreach($approvalLevels as $option)
-                        <x-checkbox  field-name="ref_approval_level_id" type="radio" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
-                    @endforeach
+                    <x-select
+                        field-name="ref_approval_level_id"
+                        :options="$approvalLevels"
+                        :selected="old('ref_approval_level_id', $project->ref_approval_level_id)"></x-select>
                 </x-form-group>
 
                 <x-form-group field-name="approval_date" label="Target/Actual Date of Submission">
-                    <input type="date" name="approval_date" id="approval_date" class="form-control input-contrast">
+                    <x-input-date field-name="approval_date" :value="old('approval_date', $project->approval_date)"></x-input-date>
                 </x-form-group>
 
                 <x-subhead subhead="Program/Project for Inclusion in Which Programming Document" id="programming-document"></x-subhead>
@@ -255,6 +266,415 @@
                     @endforeach
                 </x-form-group>
 
+                <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable" value="1"></x-checkbox>
+
+                <x-form-group field-name="expected_outputs" label="Expected Outputs">
+                    <x-textarea field-name="expected_outputs" label="Expected Outputs" note="Actual Deliverables, i.e. 100km of paved roads"></x-textarea>
+                </x-form-group>
+
+                <x-subhead subhead="0-10 Point Socioeconomic Agenda" id="socio-econ-agenda"></x-subhead>
+
+                <x-form-group field-name="ref_sea" label="0-10 Point Socioeconomic Agenda">
+                    @foreach($socioEconAgenda as $option)
+                        <x-checkbox field-name="ref_sea[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                    @endforeach
+                </x-form-group>
+
+                <x-subhead subhead="Sustainable Development Goals (SDG)" id="sustainable-devt-agenda"></x-subhead>
+
+                <x-form-group field-name="ref_sdg" label="Sustainable Development Goals (SDG)">
+                    @foreach($sdgs as $option)
+                        <x-checkbox field-name="ref_sdg[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                    @endforeach
+                </x-form-group>
+
+                <x-subhead subhead="Project Preparation Details" id="project-prep-details"></x-subhead>
+
+                <x-form-group field-name="ref_project_prep_document_id" label="Project Preparation Document">
+                    <x-select field-name="ref_project_prep_document_id" :options="$prepDocuments"></x-select>
+                </x-form-group>
+
+                <x-form-group field-name="has_fs" label="Will require assistance for the conduct of Feasibility Study?">
+                    @foreach($bool as $option)
+                        <x-checkbox-trigger field-name="has_fs" label="{{ $option->label }}" value="{{ $option->id }}">
+                            @if($option->id == 1)
+                                <span class="d-block mb-1">
+                                    Status of Feasibility Study:
+                                </span>
+                                <span>
+                                    @foreach($fsStatus as $key => $option2)
+                                        <x-checkbox-trigger type="radio" field-name="fs[status]" label="{{ $option2 }}" value="{{ $key }}">
+                                            @if($key == 'for_preparation')
+                                                <x-input-date label="Start date:" field-name="fs[completion_date]"></x-input-date>
+                                            @endif
+
+                                            @if($key == 'ongoing')
+                                                <x-input-date label="Expected completion date:" field-name="start_date"></x-input-date>
+                                            @endif
+                                        </x-checkbox-trigger>
+                                    @endforeach
+                                </span>
+                                <div class="d-flex flex-column">
+                                    <span class="d-block mb-1">
+                                        Schedule of Feasibility Cost:
+                                        <p class="note">
+                                            Please reflect actual or estimated cost (In Exact Amount in PhP).
+                                        </p>
+                                    </span>
+                                    <div class="d-flex flex-justify-between">
+                                        <div class="col-2">
+                                            <input type="number" placeholder="2017" name="fs[y2017]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2018" name="fs[y2018]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2019" name="fs[y2019]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2020" name="fs[y2020]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2021" name="fs[y2021]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2022" name="fs[y2022]" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </x-checkbox-trigger>
+                    @endforeach
+                </x-form-group>
+
+                <x-subhead subhead="Pre-construction Costs" id="pre-construction-costs"></x-subhead>
+
+                <x-form-group field-name="has_row" label="With Right of Way Acquisition (ROWA) Component">
+                    @foreach($bool as $option)
+                        <x-checkbox-trigger field-name="has_row" label="{{ $option->label }}" value="{{ $option->id }}">
+                            @if($option->id == 1)
+                                <div class="d-flex flex-column">
+                                    <span class="d-block mb-1">
+                                        Schedule of ROWA Cost:
+                                        <p class="note">
+                                            Please reflect actual or estimated cost (In Exact Amount in PhP).
+                                        </p>
+                                    </span>
+                                    <div class="d-flex flex-justify-between">
+                                        <div class="col-2">
+                                            <input type="number" placeholder="2017" name="rowa[y2017]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2018" name="rowa[y2018]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2019" name="rowa[y2019]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2020" name="rowa[y2020]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2021" name="rowa[y2021]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2022" name="rowa[y2022]" class="form-control">
+                                        </div>
+                                    </div>
+                                    <span class="d-block mb-1">
+                                        Affected households:
+                                    </span>
+                                    <div class="d-flex">
+                                        <input type="text" name="rowa[hh_affected]" class="form-control">
+                                    </div>
+                                </div>
+                            @endif
+                        </x-checkbox-trigger>
+                    @endforeach
+                </x-form-group>
+
+                <x-form-group field-name="has_rap" label="With Resettlement Component?">
+                    @foreach($bool as $option)
+                        <x-checkbox-trigger field-name="has_rap" label="{{ $option->label }}" value="{{ $option->id }}">
+                            @if($option->id == 1)
+                                <div class="d-flex flex-column">
+                                    <span class="d-block mb-1">
+                                        Schedule of ROWA Cost:
+                                        <p class="note">
+                                            Please reflect actual or estimated cost (In Exact Amount in PhP).
+                                        </p>
+                                    </span>
+                                    <div class="d-flex flex-justify-between">
+                                        <div class="col-2">
+                                            <input type="number" placeholder="2017" name="rap[y2017]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2018" name="rap[y2018]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2019" name="rap[y2019]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2020" name="rap[y2020]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2021" name="rap[y2021]" class="form-control">
+                                        </div>
+                                        <div class="col-2 ml-1">
+                                            <input type="number" placeholder="2022" name="rap[y2022]" class="form-control">
+                                        </div>
+                                    </div>
+                                    <span class="d-block mb-1">
+                                        Affected households:
+                                    </span>
+                                    <div class="d-flex">
+                                        <input type="text" name="rap[hh_affected]" class="form-control">
+                                    </div>
+                                </div>
+                            @endif
+                        </x-checkbox-trigger>
+                    @endforeach
+                </x-form-group>
+
+                <x-form-group field-name="has_row_rap" label="With ROWA and Resettlement Action Plan?">
+                    @foreach($bool as $option)
+                        <x-checkbox type="radio" field-name="has_row_rap" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                    @endforeach
+                </x-form-group>
+
+                <x-subhead subhead="Employment Generation" id="employment-generated" description="Please indicate the no. of persons to be employed by the project outside of the implementing agency only"></x-subhead>
+
+                <x-form-group field-name="employment_generated" label="No. of persons to be employed">
+                    <input type="text" field-name="employment_generated" id="employment_generated" class="form-control">
+                </x-form-group>
+
+                <x-subhead subhead="Funding Source and Mode of Implementation" id="funding-source"></x-subhead>
+
+                <x-form-group field-name="ref_fund_source_id" label="Main Funding Source">
+                    <x-select field-name="ref_fund_source_id" :options="$fundSources"></x-select>
+                </x-form-group>
+
+                <x-form-group field-name="ref_funding_institution_id" label="ODA Funding Institution">
+                    <x-select field-name="ref_funding_institution_id" :options="$fundingInstitutions"></x-select>
+                    <p class="note">
+                        Required only if fund source is ODA-Loan/ODA-grant
+                    </p>
+                </x-form-group>
+
+                <x-form-group field-name="ref_implementation_mode_id" label="Mode of Implementation/Procurement">
+                    <x-select field-name="ref_implementation_mode_id" :options="$implementationModes"></x-select>
+                </x-form-group>
+
+                <x-form-group field-name="other_mode" label="Other Mode">
+                    <input type="text" name="other_mode" class="form-control">
+                </x-form-group>
+
+                <x-subhead subhead="Project Cost by Fund Sources" id="project-cost-fund-source" description="Total cost should be at least PHP50,000."></x-subhead>
+
+                <div>
+                    <table class="d-table col-12 v-align-middle">
+                        <thead>
+                            <tr class="border-y">
+                                <th class="col-1 p-1">Fund Source</th>
+                                <th class="col-1 p-1">2016 &amp; Prior</th>
+                                <th class="col-1 p-1">2017</th>
+                                <th class="col-1 p-1">2018</th>
+                                <th class="col-1 p-1">2019</th>
+                                <th class="col-1 p-1">2021</th>
+                                <th class="col-1 p-1">2022</th>
+                                <th class="col-1 p-1">2023 &amp; Beyond</th>
+                                <th class="col-1 p-1">Total</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                        @foreach($fundSources as $fs)
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">{{ $fs->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
+
+                <x-subhead subhead="Project Cost by Regions" id="project-cost-by-region" description="Total cost should be at least PHP50,000."></x-subhead>
+
+                <div>
+                    <table class="d-table col-12 v-align-middle">
+                        <thead>
+                        <tr class="border-y">
+                            <th class="col-1 p-1">Region</th>
+                            <th class="col-1 p-1">2016 &amp; Prior</th>
+                            <th class="col-1 p-1">2017</th>
+                            <th class="col-1 p-1">2018</th>
+                            <th class="col-1 p-1">2019</th>
+                            <th class="col-1 p-1">2021</th>
+                            <th class="col-1 p-1">2022</th>
+                            <th class="col-1 p-1">2023 &amp; Beyond</th>
+                            <th class="col-1 p-1">Total</th>
+                        </tr>
+                        </thead>
+                        <thead>
+                        @foreach($regions as $region)
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">{{ $region->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
+
+                <x-subhead subhead="Financial Accomplishments" id="financial-accomplishments" description="In exact amount in PhP"></x-subhead>
+
+                <x-checkbox field-name="financial_accomp_na" value="1" label="Not Applicable (For PAPs not for funding in the GAA)"></x-checkbox>
+
+                <x-form-group label="PAP Code" field-name="pap_code">
+                    <input type="text" class="form-control" name="pap_code">
+                </x-form-group>
+
+                <x-form-group label="Category" field-name="ref_tier_id">
+                    <x-select field-name="ref_tier_id" :options="$tiers"></x-select>
+                </x-form-group>
+
+                <x-form-group label="UACS Code" field-name="uacs_code">
+                    <input type="text" class="form-control" name="uacs_code">
+                </x-form-group>
+
+                <div>
+                    <table class="d-table col-12">
+                        <thead>
+                            <tr class="border-y">
+                                <th class="col-1 p-1">Year</th>
+                                <th class="col-1 p-1">Amount included in the NEP</th>
+                                <th class="col-1 p-1">Amount Allocated in the Budget/GAA</th>
+                                <th class="col-1 p-1">Actual Amount Disbursed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for($i = 2017; $i <= 2022; $i++)
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">{{ $i }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                            </tr>
+                            @endfor
+                        </tbody>
+                    </table>
+                </div>
+
+                <x-subhead subhead="Infrastructure Information" id="infrastructure-information"></x-subhead>
+
+                <x-form-group label="Infrastructure Sector" field-name="infra_sectors">
+                    @foreach($infraSectors as $infraSector)
+                        <x-checkbox value="{{ $infraSector->id }}" label="{{ $infraSector->label }}" field-name="infra_sectors[]"></x-checkbox>
+                    @endforeach
+                </x-form-group>
+
+                <x-form-group label="Status of Implementation Readiness" field-name="prerequisites">
+                    @foreach($prerequisites as $option)
+                        <x-checkbox value="{{ $option->id }}" label="{{ $option->label }}" field-name="prerequisites[]"></x-checkbox>
+                    @endforeach
+                </x-form-group>
+
+                <x-form-group label="Implementation Risks and Mitigation Strategies" field-name="risk">
+                    <x-textarea field-name="risk"></x-textarea>
+                </x-form-group>
+
+                <x-subhead subhead="Infrastructure Cost by Fund Source" id="infrastructure-cost-by-fund-source" description="Total cost should be at least PHP50,000."></x-subhead>
+
+                <div>
+                    <table class="d-table col-12 v-align-middle">
+                        <thead>
+                        <tr class="border-y">
+                            <th class="col-1 p-1">Fund Source</th>
+                            <th class="col-1 p-1">2016 &amp; Prior</th>
+                            <th class="col-1 p-1">2017</th>
+                            <th class="col-1 p-1">2018</th>
+                            <th class="col-1 p-1">2019</th>
+                            <th class="col-1 p-1">2021</th>
+                            <th class="col-1 p-1">2022</th>
+                            <th class="col-1 p-1">2023 &amp; Beyond</th>
+                            <th class="col-1 p-1">Total</th>
+                        </tr>
+                        </thead>
+                        <thead>
+                        @foreach($fundSources as $fs)
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">{{ $fs->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                </td>
+                            </tr>
+                        @endforeach
+                        </thead>
+                    </table>
+                </div>
+
             </div>
 
             <div class="Box-footer">
@@ -262,7 +682,6 @@
             </div>
 
         </div>
-
 
     </form>
 @stop

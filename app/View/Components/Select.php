@@ -11,15 +11,18 @@ class Select extends Component
 
     public Collection $options;
 
+    public mixed $selected;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, Collection $options)
+    public function __construct($fieldName, Collection $options, $selected = null)
     {
         $this->fieldName    = $fieldName;
         $this->options      = $options;
+        $this->selected     = $selected;
     }
 
     /**

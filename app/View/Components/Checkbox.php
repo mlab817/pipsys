@@ -16,6 +16,8 @@ class Checkbox extends Component
 
     public string $description;
 
+    public bool $checked;
+
     /**
      * Create a new component instance.
      *
@@ -25,13 +27,15 @@ class Checkbox extends Component
         $fieldName,
         $label,
         $value,
+        $checked = null,
         $description = '',
-        $type = 'checkbox'
+        $type = 'checkbox',
     )
     {
         $this->fieldName = $fieldName;
         $this->label = $label;
         $this->value = $value;
+        $this->checked = $type == 'checkbox' && !is_null($checked) ? in_array($value, $checked) : $value == $checked;
         $this->description = $description;
         $this->type = $type;
     }

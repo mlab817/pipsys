@@ -1,5 +1,9 @@
 @extends('layouts.header-only')
 
+@section('page-header')
+    <x-page-header title="Projects"></x-page-header>
+@stop
+
 @section('content')
     <div class="flex-shrink-0 mb-4 mb-md-0 mt-3">
         <div class="border-bottom color-border-secondary py-3">
@@ -69,7 +73,7 @@
                 <div class="col-10 col-lg-9 d-inline-block">
                     <div class="d-inline-block mb-1">
                         <h3 class="wb-break-all">
-                            <a href="#" class="">
+                            <a href="{{ route('projects.show', $project) }}" class="btn-link">
                                 {!! highlight_search($project->title, request()->query('q') ?? '') !!}
                             </a>
                             <span class="Label Label--secondary v-align-middle ml-1 mb-1">

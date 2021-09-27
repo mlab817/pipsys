@@ -5,7 +5,9 @@
             id="{{ $fieldName }}-{{ $value }}"
             value="{{ $value }}"
             type="{{ $type }}"
-            aria-describedby="{{ $fieldName }}-{{ $value }}-help-text" />
+            aria-describedby="{{ $fieldName }}-{{ $value }}-help-text"
+            @if($checked) checked @endif
+            >
             {{ $label }}
     </label>
     @if($description)
