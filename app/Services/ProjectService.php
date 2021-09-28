@@ -8,6 +8,8 @@ class ProjectService
 {
     public function create(array $data): Project
     {
+        dd($data);
+
         $project = Project::create($data);
 
         if (isset($data['description'])) {

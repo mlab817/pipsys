@@ -26394,3 +26394,7 @@ a.branch-name .octicon {
 .search-result {
   background-color: var(--color-bg-danger);
 }
+
+[x-cloak] {
+  display: none !important;
+}

@@ -72,6 +72,12 @@
                     </p>
                 </x-form-group>
 
+                <x-form-group field-name="total_cost" label="Total Project/Program Cost">
+                    <div class="col-6">
+                        <x-input.number field-name="total_cost"></x-input.number>
+                    </div>
+                </x-form-group>
+
                 <x-subhead subhead="Implementing Agency" id="implementing-agency"></x-subhead>
 
                 <x-form-group field-name="office_id" label="Office">
@@ -319,22 +325,22 @@
                                     </span>
                                     <div class="d-flex flex-justify-between">
                                         <div class="col-2">
-                                            <input type="number" placeholder="2017" name="fs[y2017]" class="form-control">
+                                            <x-input.number field-name="fs[y2017]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2018" name="fs[y2018]" class="form-control">
+                                            <x-input.number field-name="fs[y2018]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2019" name="fs[y2019]" class="form-control">
+                                            <x-input.number field-name="fs[y2019]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2020" name="fs[y2020]" class="form-control">
+                                            <x-input.number field-name="fs[y2020]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2021" name="fs[y2021]" class="form-control">
+                                            <x-input.number field-name="fs[y2021]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2022" name="fs[y2022]" class="form-control">
+                                            <x-input.number field-name="fs[y2022]" value="0"></x-input.number>
                                         </div>
                                     </div>
                                 </div>
@@ -358,22 +364,22 @@
                                     </span>
                                     <div class="d-flex flex-justify-between">
                                         <div class="col-2">
-                                            <input type="number" placeholder="2017" name="rowa[y2017]" class="form-control">
+                                            <x-input.number field-name="rowa[y2017]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2018" name="rowa[y2018]" class="form-control">
+                                            <x-input.number field-name="rowa[y2018]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2019" name="rowa[y2019]" class="form-control">
+                                            <x-input.number field-name="rowa[y2019]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2020" name="rowa[y2020]" class="form-control">
+                                            <x-input.number field-name="rowa[y2020]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2021" name="rowa[y2021]" class="form-control">
+                                            <x-input.number field-name="rowa[y2021]" value="0"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2022" name="rowa[y2022]" class="form-control">
+                                            <x-input.number field-name="rowa[y2022]" value="0"></x-input.number>
                                         </div>
                                     </div>
                                     <span class="d-block mb-1">
@@ -486,25 +492,25 @@
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $fs->name }}</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2016]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2017]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2018]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2019]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2020]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2021]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2022]" value="0"></x-input.number>
                                 </td>
                             </tr>
                         @endforeach
@@ -523,6 +529,7 @@
                             <th class="col-1 p-1">2017</th>
                             <th class="col-1 p-1">2018</th>
                             <th class="col-1 p-1">2019</th>
+                            <th class="col-1 p-1">2020</th>
                             <th class="col-1 p-1">2021</th>
                             <th class="col-1 p-1">2022</th>
                             <th class="col-1 p-1">2023 &amp; Beyond</th>
@@ -534,25 +541,28 @@
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $region->name }}</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2016]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2017]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2018]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2019]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2020]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2021]"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2022]"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="region_investments[{{ $region->id }}][y2023]"></x-input.number>
                                 </td>
                             </tr>
                         @endforeach
@@ -587,21 +597,78 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for($i = 2017; $i <= 2022; $i++)
-                                @php($year = 'y' . $i)
                             <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $i }}</td>
+                                <td class="col-1 p-1">2017</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="nep[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("nep.{$year}", $project->nep->{$year} ?? 0) }}">
+                                    <x-input.number field-name="nep[y2017]" value="{{ old('nep.y2017', $project->nep->y2017 ?? 0) }}"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="gaa[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("gaa.{$year}", $project->gaa->{$year} ?? 0) }}">
+                                    <x-input.number field-name="gaa[y2017]" value="{{ old('gaa.y2017', $project->gaa->y2017 ?? 0) }}"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="disbursement[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("disbursement.{$year}", $project->disbursement->{$year} ?? 0) }}">
+                                    <x-input.number field-name="disbursement[y2017]" value="{{ old('disbursement.y2017', $project->disbursement->y2017 ?? 0) }}"></x-input.number>
                                 </td>
                             </tr>
-                            @endfor
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">2017</td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="nep[y2018]" value="{{ old('nep.y2018', $project->nep->y2018 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="gaa[y2018]" value="{{ old('gaa.y2018', $project->gaa->y2018 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="disbursement[y2018]" value="{{ old('disbursement.y2018', $project->disbursement->y2018 ?? 0) }}"></x-input.number>
+                                </td>
+                            </tr>
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">2017</td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="nep[y2019]" value="{{ old('nep.y2019', $project->nep->y2019 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="gaa[y2019]" value="{{ old('gaa.y2019', $project->gaa->y2019 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="disbursement[y2019]" value="{{ old('disbursement.y2019', $project->disbursement->y2019 ?? 0) }}"></x-input.number>
+                                </td>
+                            </tr>
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">2017</td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="nep[y2020]" value="{{ old('nep.y2020', $project->nep->y2020 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="gaa[y2020]" value="{{ old('gaa.y2020', $project->gaa->y2020 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="disbursement[y2020]" value="{{ old('disbursement.y2020', $project->disbursement->y2020 ?? 0) }}"></x-input.number>
+                                </td>
+                            </tr>
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">2021</td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="nep[y2021]" value="{{ old('nep.y2021', $project->nep->y2021 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="gaa[y2021]" value="{{ old('gaa.y2021', $project->gaa->y2021 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="disbursement[y2021]" value="{{ old('disbursement.y2021', $project->disbursement->y2021 ?? 0) }}"></x-input.number>
+                                </td>
+                            </tr>
+                            <tr class="col-12 border-bottom">
+                                <td class="col-1 p-1">2017</td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="nep[y2022]" value="{{ old('nep.y2022', $project->nep->y2022 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="gaa[y2022]" value="{{ old('gaa.y2022', $project->gaa->y2022 ?? 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="disbursement[y2022]" value="{{ old('disbursement.y2022', $project->disbursement->y2022 ?? 0) }}"></x-input.number>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -635,6 +702,7 @@
                             <th class="col-1 p-1">2017</th>
                             <th class="col-1 p-1">2018</th>
                             <th class="col-1 p-1">2019</th>
+                            <th class="col-1 p-1">2020</th>
                             <th class="col-1 p-1">2021</th>
                             <th class="col-1 p-1">2022</th>
                             <th class="col-1 p-1">2023 &amp; Beyond</th>
@@ -646,28 +714,28 @@
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $fs->name }}</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2016]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2016]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2017]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2017]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2018]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2018]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2019]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2019]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2020]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2020]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2021]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2021]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2022]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2022]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2023]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2023]" value="0"></x-input.number>
                                 </td>
                                 <td class="col-1 p-1"></td>
                             </tr>

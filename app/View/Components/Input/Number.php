@@ -1,29 +1,27 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
 
 use Illuminate\View\Component;
 
-class CheckboxTrigger extends Component
+class Number extends Component
 {
     public string $fieldName;
 
-    public string|int| bool $value;
+    public float|int $value;
 
-    public string $label;
+    public string $xRef;
 
-    public bool $checked;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, $value, $label, $checked = false)
+    public function __construct($fieldName, $value = 0)
     {
         $this->fieldName    = $fieldName;
         $this->value        = $value;
-        $this->label        = $label;
-        $this->checked      = $checked;
+        $this->xRef         = slugify($fieldName);
     }
 
     /**
@@ -33,6 +31,6 @@ class CheckboxTrigger extends Component
      */
     public function render()
     {
-        return view('components.checkbox-trigger');
+        return view('components.input.number');
     }
 }

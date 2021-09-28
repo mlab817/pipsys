@@ -48,7 +48,38 @@ class ProjectStoreRequest extends FormRequest
                 'sometimes',
                 'array',
             ],
-            'operating_units.*' => ['exists:ref_operating_units,id'],
+            'operating_units.*' => [
+                'exists:ref_operating_units,id'
+            ],
+            'ref_spatial_coverage_id' => [
+                'required',
+                'exists:ref_spatial_coverages,id',
+            ],
+            'regions' => [
+                'sometimes',
+                'array'
+            ],
+            'regions.*' => [
+                'exists:ref_regions,id'
+            ],
+            'iccable' => [
+                'sometimes',
+                'bool',
+            ],
+            'ref_approval_level_id' => [
+                'required',
+                'exists:ref_approval_levels,id'
+            ],
+            'total_cost' => [
+                'required',
+                'numeric',
+                'min:0',
+            ],
+            'risk' => [
+                'sometimes',
+                'string',
+                'max:255',
+            ],
 
         ];
     }

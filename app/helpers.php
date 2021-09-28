@@ -43,3 +43,10 @@ if (! function_exists('highlight_search')) {
         return str_ireplace($q, $highlighted, $text);
     }
 }
+
+if (! function_exists('slugify')) {
+    function slugify($text): string
+    {
+        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $text)));
+    }
+}
