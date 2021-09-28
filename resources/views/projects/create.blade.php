@@ -4,10 +4,6 @@
     <x-page-header title="New Program/Project"></x-page-header>
 @stop
 
-@php
-    $project = new \App\Models\Project;
-@endphp
-
 @section('content')
     <form action="{{ route('projects.store') }}" method="POST" accept-charset="UTF-8" class="mt-4 mb-4">
         @csrf
@@ -45,7 +41,7 @@
                 <x-subhead subhead="General Information" id="general-information"></x-subhead>
 
                 <x-form-group field-name="title" label="Title">
-                    <input type="text" class="form-control input-block" name="title" id="title" value="{{ old('title') }}">
+                    <input type="text" class="form-control input-block" name="title" id="title" value="{{ old('title', $project->title) }}">
                     <p class="note">
                         The project title should be identical with the project's title in the budget proposal submitted to DBM.
                     </p>
@@ -223,11 +219,11 @@
                 </x-form-group>
 
                 <x-form-group field-name="updates" label="Updates">
-                    <x-textarea field-name="updates" note="For proposed program/project, please indicate the physical status of the program/project in terms of project preparation, approval, funding, etc. If ongoing or completed, please provide information on the delivery of outputs, percentage of completion and financial status/ accomplishment in terms of utilization rate." value="{{ old('updates') }}"></x-textarea>
+                    <x-textarea field-name="updates" note="For proposed program/project, please indicate the physical status of the program/project in terms of project preparation, approval, funding, etc. If ongoing or completed, please provide information on the delivery of outputs, percentage of completion and financial status/ accomplishment in terms of utilization rate." value="{{ old('updates', $project->project_update->updates ?? '') }}"></x-textarea>
                 </x-form-group>
 
-                <x-form-group field-name="date" label="As of">
-                    <x-input-date field-name="date" value="{{ old('date') }}"></x-input-date>
+                <x-form-group field-name="updates_date" label="As of">
+                    <x-input-date field-name="updates_date" value="{{ old('updates_date', $project->project_update->date ?? '') }}"></x-input-date>
                 </x-form-group>
 
                 <x-form-group field-name="icc_resubmission" label="Will this require resubmission to the ICC? ">
@@ -239,22 +235,22 @@
                 <x-subhead subhead="Implementation Period " id="implementation-period"></x-subhead>
 
                 <x-form-group field-name="target_start_year" label="Start of Project Implementation">
-                    <x-select field-name="target_start_year" :options="$years"></x-select>
+                    <x-select field-name="target_start_year" :options="$years" :selected="old('target_start_year', $project->target_start_year)"></x-select>
                 </x-form-group>
 
                 <x-form-group field-name="target_end_year" label="Year of Project Completion">
-                    <x-select field-name="target_end_year" :options="$years"></x-select>
+                    <x-select field-name="target_end_year" :options="$years" :selected="old('target_end_year', $project->target_end_year)"></x-select>
                 </x-form-group>
 
                 <x-subhead subhead="Philippine Development Plan (PDP) Chapter" id="pdp-chapter"></x-subhead>
 
                 <x-form-group field-name="pdp_chapter_id" label="Main PDP Midterm Update Chapter">
-                    <x-select field-name="pdp_chapter_id" :options="$pdpChapters"></x-select>
+                    <x-select field-name="pdp_chapter_id" :options="$pdpChapters" :checked="old('ref_pdp_chapter_id', $project->ref_pdp_chapter_id)"></x-select>
                 </x-form-group>
 
                 <x-form-group field-name="pdp_chapters" label="Other PDP Midterm Update Chapters">
                     @foreach($pdpChapters as $option)
-                        <x-checkbox field-name="pdp_chapters[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox field-name="pdp_chapters[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pdp_chapters', $project->pdp_chapters->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -262,7 +258,7 @@
 
                 <x-form-group field-name="pdp_indicators" label="Main PDP Chapter Outcome Statements/Outputs">
                     @foreach($pdpIndicators as $option)
-                        <x-checkbox field-name="pdp_indicators[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox field-name="pdp_indicators[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pdp_indicators', $project->pdp_indicators->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -592,16 +588,17 @@
                         </thead>
                         <tbody>
                             @for($i = 2017; $i <= 2022; $i++)
+                                @php($year = 'y' . $i)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $i }}</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="nep[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("nep.{$year}", $project->nep->{$year} ?? 0) }}">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="gaa[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("gaa.{$year}", $project->gaa->{$year} ?? 0) }}">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" name="" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="disbursement[{{ $year }}]" class="form-control text-right border-0 pr-1 width-full" value="{{ old("disbursement.{$year}", $project->disbursement->{$year} ?? 0) }}">
                                 </td>
                             </tr>
                             @endfor
@@ -645,30 +642,34 @@
                         </tr>
                         </thead>
                         <thead>
-                        @foreach($fundSources as $fs)
+                        @foreach($fundSources as $key => $fs)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $fs->name }}</td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2016]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2017]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2018]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2019]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2020]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2021]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
                                 <td class="col-1 p-1">
-                                    <input type="number" class="form-control text-right border-0 pr-1 width-full">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2022]" class="form-control text-right border-0 pr-1 width-full" value="">
                                 </td>
+                                <td class="col-1 p-1">
+                                    <input type="number" name="fs_infrastructures[{{ $key }}][y2023]" class="form-control text-right border-0 pr-1 width-full" value="">
+                                </td>
+                                <td class="col-1 p-1"></td>
                             </tr>
                         @endforeach
                         </thead>

@@ -16,6 +16,11 @@ class ProjectStoreRequest extends FormRequest
         return true;
     }
 
+    public function prepareForValidation()
+    {
+        //
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +29,27 @@ class ProjectStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:10|max:255',
+            'title' => [
+                'required',
+                'min:10',
+                'max:255',
+            ],
+            'ref_pap_type_id' => [
+                'required',
+                'exists:ref_pap_types,id',
+            ],
+            'bases' => [
+                'sometimes',
+                'array',
+            ],
+            'bases.*' => ['exists:ref_bases,id'],
+            'office_id' => ['exists:offices,id'],
+            'operating_units' => [
+                'sometimes',
+                'array',
+            ],
+            'operating_units.*' => ['exists:ref_operating_units,id'],
+
         ];
     }
 }

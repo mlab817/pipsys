@@ -69,6 +69,11 @@ class Project extends Model
         return $this->hasOne(ProjectNep::class);
     }
 
+    public function project_update(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectUpdate::class);
+    }
+
     public function bases(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(RefBasis::class, 'project_basis', 'ref_basis_id', 'project_id');
@@ -76,8 +81,19 @@ class Project extends Model
 
     public function operating_units(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefOperatingUnit::class, 'project_ou', 'ref_ou_id','project_id');
+        return $this->belongsToMany(RefOperatingUnit::class, 'project_ou', 'ref_operating_unit_id','project_id');
     }
+
+    public function pdp_chapters(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefPdpChapter::class, 'project_pdp_chapter', 'ref_pdp_chapter_id','project_id');
+    }
+
+    public function pdp_indicators(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefPdpIndicator::class, 'project_pdp_indicator', 'ref_pdp_indicator_id','project_id');
+    }
+
 
     public function regions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
