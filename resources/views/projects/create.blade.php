@@ -651,7 +651,7 @@
                 <x-subhead subhead="Financial Accomplishments" id="financial-accomplishments"
                            description="In exact amount in PhP"></x-subhead>
 
-                <x-checkbox type="radio" field-name="financial_accomp_na" value="1"
+                <x-checkbox field-name="financial_accomp_na" value="1"
                             label="Not Applicable (For PAPs not for funding in the GAA)" :checked="old('financial_accomp_na', false)"></x-checkbox>
 
                 <x-form-group label="PAP Code" field-name="pap_code">
@@ -679,7 +679,7 @@
                         </thead>
                         <tbody>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2017</td>
+                            <td class="col-1 p-1 text-center">2017</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2017]"
                                                 value="{{ old('nep.y2017', 0) }}"></x-input.number>
@@ -694,7 +694,7 @@
                             </td>
                         </tr>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2017</td>
+                            <td class="col-1 p-1 text-center">2018</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2018]"
                                                 value="{{ old('nep.y2018', 0) }}"></x-input.number>
@@ -709,7 +709,7 @@
                             </td>
                         </tr>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2017</td>
+                            <td class="col-1 p-1 text-center">2019</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2019]"
                                                 value="{{ old('nep.y2019', $project->nep->y2019 ?? 0) }}"></x-input.number>
@@ -724,7 +724,7 @@
                             </td>
                         </tr>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2017</td>
+                            <td class="col-1 p-1 text-center">2020</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2020]"
                                                 value="{{ old('nep.y2020', $project->nep->y2020 ?? 0) }}"></x-input.number>
@@ -739,7 +739,7 @@
                             </td>
                         </tr>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2021</td>
+                            <td class="col-1 p-1 text-center">2021</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2021]"
                                                 value="{{ old('nep.y2021', $project->nep->y2021 ?? 0) }}"></x-input.number>
@@ -754,7 +754,7 @@
                             </td>
                         </tr>
                         <tr class="col-12 border-bottom">
-                            <td class="col-1 p-1">2017</td>
+                            <td class="col-1 p-1 text-center">2022</td>
                             <td class="col-1 p-1">
                                 <x-input.number field-name="nep[y2022]"
                                                 value="{{ old('nep.y2022', $project->nep->y2022 ?? 0) }}"></x-input.number>

@@ -81,4 +81,9 @@ class User extends Authenticatable
     {
         return !!$this->is_admin;
     }
+
+    public function stars(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Project::class,'stars', 'project_id','user_id');
+    }
 }

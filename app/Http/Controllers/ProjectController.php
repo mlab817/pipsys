@@ -117,7 +117,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        if ($request->has('star')) {
+            auth()->user()->stars()->toggle($project->id);
+        }
     }
 
     /**

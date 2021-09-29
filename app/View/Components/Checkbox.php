@@ -8,7 +8,7 @@ class Checkbox extends Component
 {
     public string $fieldName;
 
-    public string|int $value;
+    public mixed $value;
 
     public string $type;
 
@@ -35,7 +35,7 @@ class Checkbox extends Component
         $this->fieldName = $fieldName;
         $this->label = $label;
         $this->value = $value;
-        $this->checked = $type == 'checkbox' && !is_null($checked) ? in_array($value, $checked) : $value == $checked;
+        $this->checked = !is_null($checked) && gettype($checked) == 'array' ? in_array($value, $checked) : $value == $checked;
         $this->description = $description;
         $this->type = $type;
     }
