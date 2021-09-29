@@ -25,5 +25,6 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('projects.create', ProjectComposer::class);
+        view()->composer('projects.edit', ProjectComposer::class);
     }
 }

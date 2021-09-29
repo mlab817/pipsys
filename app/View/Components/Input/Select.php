@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
 
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
@@ -32,6 +32,6 @@ class Select extends Component
      */
     public function render()
     {
-        return view('components.select');
+        return view('components.input.select');
     }
 }

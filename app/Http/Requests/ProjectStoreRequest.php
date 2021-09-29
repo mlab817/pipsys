@@ -43,6 +43,7 @@ class ProjectStoreRequest extends FormRequest
                 'array',
             ],
             'bases.*' => ['exists:ref_bases,id'],
+            'description'   => ['required','string','max:255'],
             'office_id' => ['exists:offices,id'],
             'operating_units' => [
                 'sometimes',
@@ -69,6 +70,30 @@ class ProjectStoreRequest extends FormRequest
             'ref_approval_level_id' => [
                 'required',
                 'exists:ref_approval_levels,id'
+            ],
+            'approval_date' => [
+                'sometimes',
+                'date',
+            ],
+            'pip' => [
+                'required',
+                'bool',
+            ],
+            'ref_pip_typology_id' => [
+                'sometimes',
+                'exists:ref_pip_typologies,id',
+            ],
+            'cip' => [
+                'required',
+                'bool',
+            ],
+            'ref_cip_type_id' => [
+                'sometimes',
+                'exists:ref_cip_types,id',
+            ],
+            'trip' => [
+                'required',
+                'bool',
             ],
             'total_cost' => [
                 'required',

@@ -48,6 +48,12 @@ class Project extends Model
             ->withDefault(['description' => '_No description_']);
     }
 
+    public function risk(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectRisk::class)
+            ->withDefault(['risk' => '_No risk_']);
+    }
+
     public function pap_type(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(RefPapType::class,'ref_pap_type_id')

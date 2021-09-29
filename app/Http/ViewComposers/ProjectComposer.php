@@ -54,14 +54,26 @@ class ProjectComposer
         $this->years = $years;
 
         $menuItems = [
-            '#general-information'      => 'General Information',
-            '#implementing-agency'      => 'Implementing Agency',
-            '#spatial-coverage'         => 'Spatial Coverage',
-            '#approval-level'           => 'Approval Level',
-            '#programming-document'     => 'Program/Project for Inclusion in Which Programming Document',
-            '#physical-financial-status'=> 'Physical & Financial Status',
-            '#implementation-period'    => 'Implementation Period',
-            '#pdp-indicators'           => 'Main PDP Chapter Outcome Statements/Outputs',
+            '#general-information'                  => 'General Information',
+            '#implementing-agency'                  => 'Implementing Agency',
+            '#spatial-coverage'                     => 'Spatial Coverage',
+            '#approval-level'                       => 'Approval Level',
+            '#programming-document'                 => 'Program/Project for Inclusion in Which Programming Document',
+            '#physical-financial-status'            => 'Physical & Financial Status',
+            '#implementation-period'                => 'Implementation Period',
+            '#pdp-chapter'                          => 'Philippine Development Plan (PDP) Chapter',
+            '#pdp-indicators'                       => 'Main PDP Chapter Outcome Statements/Outputs',
+            '#socio-econ-agenda'                    => '0-10 Point Socioeconomic Agenda',
+            '#sustainable-devt-agenda'              => 'Sustainable Development Goals (SDG)',
+            '#project-prep-details'                 => 'Project Preparation Details',
+            '#pre-construction-costs'               => 'Pre-construction Costs',
+            '#employment-generated'                 => 'Employment Generation',
+            '#funding-source'                       => 'Funding Source and Mode of Implementation',
+            '#project-cost-fund-source'             => 'Project Cost by Fund Sources',
+            '#project-cost-by-region'               => 'Project Cost by Regions',
+            '#financial-accomplishments'            => 'Financial Accomplishments',
+            '#infrastructure-information'           => 'Infrastructure Information',
+            '#infrastructure-cost-by-fund-source'   => 'Infrastructure Cost by Fund Source'
         ];
 
         $view->with('menuItems',$menuItems)

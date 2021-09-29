@@ -1,24 +1,24 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Input;
 
 use Illuminate\View\Component;
 
-class InputDate extends Component
+class Text extends Component
 {
     public string $fieldName;
 
-    public mixed $value;
+    public string $value;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, $value = '')
+    public function __construct($fieldName, $value)
     {
-        $this->fieldName    = $fieldName;
-        $this->value        = $value;
+        $this->fieldName = $fieldName;
+        $this->value = $value ?? '';
     }
 
     /**
@@ -28,6 +28,6 @@ class InputDate extends Component
      */
     public function render()
     {
-        return view('components.input-date');
+        return view('components.input.text');
     }
 }

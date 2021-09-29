@@ -5,9 +5,6 @@
         </dt>
         <dd class="form-group-body">
             {{ $slot }}
-            @error($fieldName)
-                <p class="note error">{{ $message }}</p>
-            @enderror
         </dd>
     </dl>
 </div>

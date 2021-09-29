@@ -8,7 +8,7 @@ class Textarea extends Component
 {
     public string $fieldName;
 
-    public string $value;
+    public string|null $value;
 
     public string|null $note;
 
@@ -20,7 +20,7 @@ class Textarea extends Component
     public function __construct($fieldName, $value = '', $note = null)
     {
         $this->fieldName = $fieldName;
-        $this->value = $value;
+        $this->value = $value ?? '';
         $this->note = $note;
     }
 
