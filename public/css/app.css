@@ -26398,3 +26398,7 @@ a.branch-name .octicon {
 [x-cloak] {
   display: none !important;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

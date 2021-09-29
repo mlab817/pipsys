@@ -39,7 +39,6 @@ class CreateProjectsTable extends Migration
             $table->boolean('ict')->nullable()->default(0);
             $table->boolean('ifp')->nullable()->default(0);
             $table->boolean('covid')->nullable()->default(0);
-            $table->foreignId('ref_readiness_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('icc_resubmission')->nullable()->default(0);
             $table->year('target_start_year')->nullable();
             $table->year('target_end_year')->nullable();

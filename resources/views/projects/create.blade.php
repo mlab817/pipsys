@@ -34,6 +34,9 @@
                     </h2>
                 </div>
 
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
             </div>
 
             <div class="Box-body">
