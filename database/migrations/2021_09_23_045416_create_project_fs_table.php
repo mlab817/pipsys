@@ -35,7 +35,7 @@ class CreateProjectFsTable extends Migration
             $table->decimal('y2030', 15, 4)->nullable()->default(0);
             $table->timestamps();
 
-            $table->unique('project_id','project_fs_id');
+            $table->unique('project_id','project_feasib_id');
         });
     }
 

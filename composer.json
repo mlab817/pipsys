@@ -8,6 +8,7 @@
         "php": "^8.0",
         "barryvdh/laravel-debugbar": "^3.6",
         "bkwld/cloner": "^3.9",
+        "doctrine/dbal": "^3.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "hidehalo/nanoid-php": "^1.1",

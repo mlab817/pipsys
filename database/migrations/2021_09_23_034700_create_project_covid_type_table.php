@@ -18,7 +18,7 @@ class CreateProjectCovidTypeTable extends Migration
             $table->foreignId('ref_covid_type_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_covid_type_id'],'project_covid_type');
+            $table->unique(['project_id','ref_covid_type_id'],'project_covid_type_id');
         });
     }
 

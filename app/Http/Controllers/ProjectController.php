@@ -41,6 +41,10 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
+        if ($request->ajax()) {
+            return Project::with('creator')->get();
+        }
+
         $q = trim($request->q);
 
         $projects = Project::search($q)->paginate();
@@ -92,9 +96,9 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Project $project, Request $request)
     {
-        return view('projects.create', compact('project'));
+        return view('projects.edit', compact('project'));
     }
 
     /**

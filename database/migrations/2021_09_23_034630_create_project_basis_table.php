@@ -18,7 +18,7 @@ class CreateProjectBasisTable extends Migration
             $table->foreignId('ref_basis_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_basis_id'],'project_basis');
+            $table->unique(['project_id','ref_basis_id'],'project_basis_id');
         });
     }
 

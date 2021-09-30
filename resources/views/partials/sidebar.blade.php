@@ -26,12 +26,49 @@
             <div class="mt-2 mb-3 position-relative" role="search" aria-label="Projects">
                 <input type="text" class="form-control input-contrast input-block" id="filter-projects" placeholder="Filter PAPs…" aria-label="Filter PAPs…" autocomplete="off">
             </div>
-            <ul class="list-style-none">
-                <!-- TODO: list of projects of the user -->
-                <li>
-                    <div class="width-full text-bold"></div>
-                </li>
-            </ul>
+            <div x-data='{
+                projects: @json($projects),
+                loading: false,
+                noMore: false,
+                showMore() {
+                    this.loading = true;
+                    axios.get("{{ route("projects.index") }}")
+                        .then((res) => {
+                            this.projects = res.data;
+                        })
+                        .finally(() => {
+                            this.loading = false;
+                            this.noMore = true;
+                        });
+                },
+                generateUrl(project) {
+                    const baseUrl = `{{ route('projects.show', ':id') }}`;
+                    return baseUrl.replace(":id", project.uuid);
+                }
+            }'>
+                <ul class="list-style-none">
+                    <template x-for="project in projects">
+                        <li>
+                            <div class="width-full d-flex mt-2">
+                                <a href="" class="mr-2 d-flex flex-items-center">
+                                    <img :src="project.creator && project.creator.avatar" alt="" class="avatar avatar-small circle" width="16" height="16">
+                                </a>
+                                <div class="break-word">
+                                    <a :href="generateUrl(project)" class="color-text-primary lh-0 mb-2 markdown-title">
+                                        <span x-html="project.title"></span>
+                                    </a>
+    {{--                                <a href="{{ route('projects.show', $project) }}" class="color-text-primary lh-0 mb-2 markdown-title">--}}
+    {{--                                    {{ $project->title }}--}}
+    {{--                                </a>--}}
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+                <button x-show="!noMore" @click="showMore()" type="button" class="width-full text-left btn-link f6 Link--muted text-left mt-3 border-md-0 border-top py-md-0 py-3 px-md-0 px-2">
+                    <span x-html="loading ? 'Loading more...' : 'Show more'"></span>
+                </button>
+            </div>
         </div>
     </div>
 </div>

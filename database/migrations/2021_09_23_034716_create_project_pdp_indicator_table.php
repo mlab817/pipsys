@@ -18,7 +18,7 @@ class CreateProjectPdpIndicatorTable extends Migration
             $table->foreignId('ref_pdp_indicator_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_pdp_indicator_id'],'project_indicator');
+            $table->unique(['project_id','ref_pdp_indicator_id'],'project_indicator_id');
         });
     }
 

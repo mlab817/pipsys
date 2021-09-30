@@ -18,7 +18,7 @@ class CreateProjectProvinceTable extends Migration
             $table->foreignId('ref_province_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_province_id'],'project_province');
+            $table->unique(['project_id','ref_province_id'],'project_province_id');
         });
     }
 

@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <form action="{{ route('projects.update', $project) }}" method="PUT" accept-charset="UTF-8" class="mt-4 mb-4">
+    <form action="{{ route('projects.update', $project) }}" method="POST" accept-charset="UTF-8" class="mt-4 mb-4">
         @csrf
         @method('PUT')
 
@@ -45,7 +45,7 @@
                 <x-subhead subhead="General Information" id="general-information"></x-subhead>
 
                 <x-form-group field-name="title" label="Title">
-                    <input type="text" class="form-control input-block" name="title" id="title" value="{{ old('title', $project->title) }}">
+                    <input type="text" class="form-control input-block" name="title" id="title" :value="old('title', $project->title">
                     <p class="note">
                         The project title should be identical with the project's title in the budget proposal submitted to DBM.
                     </p>
@@ -53,7 +53,7 @@
 
                 <x-form-group field-name="ref_pap_type_id" label="Program or Project">
                     @foreach($papTypes as $option)
-                        <x-checkbox type="radio" field-name="ref_pap_type_id" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="ref_pap_type_id" value="{{ $option->id }}" label="{{ $option->label }}" description="{{ $option->description }}" :checked="old('ref_pap_type_id', $project->ref_pap_type_id)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -70,22 +70,19 @@
                 </x-form-group>
 
                 <x-form-group field-name="description" label="PAP Description">
-                    <x-textarea field-name="description" value="{{ old('description', $project->description->description ?? '') }}">{{ old('description') }}</x-textarea>
-                    <p class="note">
-                        Identify the Components of the Program/Project. If a Program, please identify the sub-programs/projects and explain the objective of the program/project in terms of responding to the PDP/ RM. <br/>If the PAP will involve construction of a government facility, specify the definite purpose for the facility to be constructed.
-                    </p>
+                    <x-textarea field-name="description" :value="old('description', $project->description->description ?? '')" note="Identify the Components of the Program/Project. If a Program, please identify the sub-programs/projects and explain the objective of the program/project in terms of responding to the PDP/ RM. <br/>If the PAP will involve construction of a government facility, specify the definite purpose for the facility to be constructed."></x-textarea>
                 </x-form-group>
 
                 <x-form-group field-name="total_cost" label="Total Project/Program Cost">
                     <div class="col-6">
-                        <x-input.number field-name="total_cost"></x-input.number>
+                        <x-input.number field-name="total_cost" :value="old('total_cost', $project->total_cost ?? 0)"></x-input.number>
                     </div>
                 </x-form-group>
 
                 <x-subhead subhead="Implementing Agency" id="implementing-agency"></x-subhead>
 
                 <x-form-group field-name="office_id" label="Office">
-                    <x-select field-name="office_id" :options="$offices"></x-select>
+                    <x-input.select field-name="office_id" :options="$offices" :selected="old('office_id', $project->office_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="operating_units" label="Other Implementing Agencies">
@@ -97,7 +94,7 @@
                 <x-subhead subhead="Spatial Coverage" id="spatial-coverage"></x-subhead>
 
                 <x-form-group field-name="ref_spatial_coverage_id" label="Spatial Coverage">
-                    <x-select field-name="ref_spatial_coverage_id" :options="$spatialCoverages" :selected="old('ref_spatial_coverage_id', $project->ref_spatial_coverage_id)"></x-select>
+                    <x-input.select field-name="ref_spatial_coverage_id" :options="$spatialCoverages" :selected="old('ref_spatial_coverage_id', $project->ref_spatial_coverage_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="regions" label="Regions">
@@ -113,70 +110,68 @@
                 </x-form-group>
 
                 <x-form-group field-name="ref_approval_level_id" label="Level of Approval">
-                    <x-select
+                    <x-input.select
                         field-name="ref_approval_level_id"
                         :options="$approvalLevels"
-                        :selected="old('ref_approval_level_id', $project->ref_approval_level_id)"></x-select>
+                        :selected="old('ref_approval_level_id', $project->ref_approval_level_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="approval_date" label="Target/Actual Date of Submission">
-                    <x-input-date field-name="approval_date" :value="old('approval_date', $project->approval_date)"></x-input-date>
+                    <x-input.date field-name="approval_date" :value="old('approval_date', $project->approval_date)"></x-input.date>
                 </x-form-group>
 
                 <x-subhead subhead="Program/Project for Inclusion in Which Programming Document" id="programming-document"></x-subhead>
 
                 <x-form-group field-name="pip" label="Public Investment Program">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="pip" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="pip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pip', $project->pip ?? false)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Type of PIP:
                                 </span>
                                 @foreach($pipTypologies as $option)
                                     <x-checkbox type="radio" field-name="ref_pip_typology_id" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
-                                    @endforeach
-                                    </span>
-                                    @endif
+                                @endforeach
+                            @endif
                         </x-checkbox-trigger>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="cip" label="Core Investment Program/Project">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('cip', $project->cip ?? false)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Type of CIP:
                                 </span>
                                 @foreach($cipTypes as $option)
-                                    <x-checkbox type="radio" field-name="ref_pip_typology_id" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
-                                    @endforeach
-                                    </span>
-                                    @endif
+                                    <x-checkbox type="radio" field-name="ref_cip_type_id" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ref_cip_type_id', $project->ref_cip_type_id)"></x-checkbox>
+                                @endforeach
+                            @endif
                         </x-checkbox-trigger>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="trip" label="Three-Year Rolling Infrastructure Program/Project">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="trip" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="trip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('trip', $project->trip ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="rdip" label="Is the Program/Project included in the RDIP?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdip', $project->rdip ?? false)">
                             @if($option->id == 1)
                                 <span class="d-inline-block mt-1">Will require Regional Development Council (RDC) Endorsement?</span>
                                 @foreach($bool as $option)
-                                    <x-checkbox-trigger field-name="rdc_endorsement_required" label="{{ $option->label }}" value="{{ $option->id }}">
+                                    <x-checkbox-trigger field-name="rdc_endorsement_required" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsement_required', $project->rdc_endorsement_required ?? false)">
                                         @if($option->id == 1)
                                             <span class="d-inline-block mt-1">Endorsed by the RDC?</span>
                                             @foreach($bool as $option)
-                                                <x-checkbox-trigger field-name="rdc_endorsed" label="{{ $option->label }}" value="{{ $option->id }}">
+                                                <x-checkbox-trigger field-name="rdc_endorsed" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsed', $project->rdc_endorsed ?? false)">
                                                     @if($option->id == 1)
                                                         <span class="d-inline-block mt-1">Date Endorsed</span>
-                                                        <input type="date" class="form-control" name="rdc_endorsed_date" id="rdc_endorsed_date">
+                                                        <x-input.date field-name="rdc_endorsed_date" :value="old('rdc_endorsed_date', $project->rdc_endorsed_date)"></x-input.date>
                                                     @endif
                                                 </x-checkbox-trigger>
                                             @endforeach
@@ -190,34 +185,33 @@
 
                 <x-form-group field-name="research" label="Is it a Research and Development Program/Project?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="research" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="research" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('research', $project->research ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="ifp" label="Is it an Infrastructure Flagship Project(IFP)?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="ifp" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="ifp" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ifp', $project->ifp ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="ict" label="Is it an ICT program/project?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="ict" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="ict" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ict', $project->ict ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="covid" label="Is it responsive to COVID-19/New Normal Intervention?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="covid" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="covid" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('covid', $project->covid ?? false)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     COVID Interventions
                                 </span>
                                 @foreach($covidInterventions as $option)
-                                    <x-checkbox type="checkbox" field-name="covid_interventions" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
-                                    @endforeach
-                                    </span>
-                                    @endif
+                                    <x-checkbox type="checkbox" field-name="covid_interventions" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('covid_interventions', $project->covid_interventions->pluck('id')->toArray() ?? [])"></x-checkbox>
+                                @endforeach
+                            @endif
                         </x-checkbox-trigger>
                     @endforeach
                 </x-form-group>
@@ -225,37 +219,37 @@
                 <x-subhead subhead="Physical & Financial Status" id="physical-financial-status"></x-subhead>
 
                 <x-form-group field-name="ref_project_status_id" label="Status of Implementation Readiness">
-                    <x-select field-name="ref_project_status_id" :options="$projectStatuses"></x-select>
+                    <x-input.select field-name="ref_project_status_id" :options="$projectStatuses" :selected="old('ref_project_status_id', $project->ref_project_status_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="updates" label="Updates">
-                    <x-textarea field-name="updates" note="For proposed program/project, please indicate the physical status of the program/project in terms of project preparation, approval, funding, etc. If ongoing or completed, please provide information on the delivery of outputs, percentage of completion and financial status/ accomplishment in terms of utilization rate." value="{{ old('updates', $project->project_update->updates ?? '') }}"></x-textarea>
+                    <x-textarea field-name="updates" note="For proposed program/project, please indicate the physical status of the program/project in terms of project preparation, approval, funding, etc. If ongoing or completed, please provide information on the delivery of outputs, percentage of completion and financial status/ accomplishment in terms of utilization rate." :value="old('updates', $project->project_update->updates ?? '')"></x-textarea>
                 </x-form-group>
 
                 <x-form-group field-name="updates_date" label="As of">
-                    <x-input-date field-name="updates_date" value="{{ old('updates_date', $project->project_update->date ?? '') }}"></x-input-date>
+                    <x-input.date field-name="updates_date" :value="old('updates_date', $project->project_update->date ?? '')"></x-input.date>
                 </x-form-group>
 
                 <x-form-group field-name="icc_resubmission" label="Will this require resubmission to the ICC? ">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="icc_resubmission" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="icc_resubmission" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('icc_resubmission', $project->icc_resubmission ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Implementation Period " id="implementation-period"></x-subhead>
 
                 <x-form-group field-name="target_start_year" label="Start of Project Implementation">
-                    <x-select field-name="target_start_year" :options="$years" :selected="old('target_start_year', $project->target_start_year)"></x-select>
+                    <x-input.select field-name="target_start_year" :options="$years" :selected="old('target_start_year', $project->target_start_year)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="target_end_year" label="Year of Project Completion">
-                    <x-select field-name="target_end_year" :options="$years" :selected="old('target_end_year', $project->target_end_year)"></x-select>
+                    <x-input.select field-name="target_end_year" :options="$years" :selected="old('target_end_year', $project->target_end_year)"></x-input.select>
                 </x-form-group>
 
                 <x-subhead subhead="Philippine Development Plan (PDP) Chapter" id="pdp-chapter"></x-subhead>
 
                 <x-form-group field-name="pdp_chapter_id" label="Main PDP Midterm Update Chapter">
-                    <x-select field-name="pdp_chapter_id" :options="$pdpChapters" :checked="old('ref_pdp_chapter_id', $project->ref_pdp_chapter_id)"></x-select>
+                    <x-input.select field-name="pdp_chapter_id" :options="$pdpChapters" :checked="old('ref_pdp_chapter_id', $project->ref_pdp_chapter_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="pdp_chapters" label="Other PDP Midterm Update Chapters">
@@ -275,14 +269,14 @@
                 <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable" value="1"></x-checkbox>
 
                 <x-form-group field-name="expected_outputs" label="Expected Outputs">
-                    <x-textarea field-name="expected_outputs" label="Expected Outputs" note="Actual Deliverables, i.e. 100km of paved roads"></x-textarea>
+                    <x-textarea field-name="expected_outputs" label="Expected Outputs" note="Actual Deliverables, i.e. 100km of paved roads" :value="old('expected_outputs', $project->output->output ?? '')"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="0-10 Point Socioeconomic Agenda" id="socio-econ-agenda"></x-subhead>
 
                 <x-form-group field-name="ref_sea" label="0-10 Point Socioeconomic Agenda">
                     @foreach($socioEconAgenda as $option)
-                        <x-checkbox field-name="ref_sea[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox field-name="socio_econ_agendas[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ref_sea', $project->socio_econ_agendas->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -290,32 +284,32 @@
 
                 <x-form-group field-name="ref_sdg" label="Sustainable Development Goals (SDG)">
                     @foreach($sdgs as $option)
-                        <x-checkbox field-name="ref_sdg[]" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox field-name="sdgs[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ref_sdg', $project->sdgs->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Project Preparation Details" id="project-prep-details"></x-subhead>
 
                 <x-form-group field-name="ref_project_prep_document_id" label="Project Preparation Document">
-                    <x-select field-name="ref_project_prep_document_id" :options="$prepDocuments"></x-select>
+                    <x-input.select field-name="ref_project_prep_document_id" :options="$prepDocuments" :selected="old('ref_project_prep_document_id', $project->ref_project_prep_document_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="has_fs" label="Will require assistance for the conduct of Feasibility Study?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_fs" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="has_fs" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_fs', $project->has_fs ?? false)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Status of Feasibility Study:
                                 </span>
                                 <span>
                                     @foreach($fsStatus as $key => $option2)
-                                        <x-checkbox-trigger type="radio" field-name="fs[status]" label="{{ $option2 }}" value="{{ $key }}">
+                                        <x-checkbox-trigger type="radio" field-name="fs[status]" label="{{ $option2 }}" value="{{ $key }}" :checked="old('fs.status', $project->feasibility_study->status ?? '')">
                                             @if($key == 'for_preparation')
-                                                <x-input-date label="Start date:" field-name="fs[completion_date]"></x-input-date>
+                                                <x-input.date label="Start date:" field-name="fs[completion_date]" :checked="old('fs.completion_date', $project->feasibility_study->completion_date ?? '')"></x-input.date>
                                             @endif
 
                                             @if($key == 'ongoing')
-                                                <x-input-date label="Expected completion date:" field-name="start_date"></x-input-date>
+                                                <x-input.date label="Expected completion date:" field-name="fs[start_date]" :checked="old('fs.start_date', $project->feasibility_study->start_date ?? '')"></x-input.date>
                                             @endif
                                         </x-checkbox-trigger>
                                     @endforeach
@@ -329,22 +323,22 @@
                                     </span>
                                     <div class="d-flex flex-justify-between">
                                         <div class="col-2">
-                                            <x-input.number field-name="fs[y2017]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2017]" value="{{ old('fs.y2017', $project->feasibility_study->y2017 ?? 0) }}"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="fs[y2018]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2018]" value="{{ old('fs.y2018', $project->feasibility_study->y2018 ?? 0) }}"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="fs[y2019]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2019]" value="{{ old('fs.y2019', $project->feasibility_study->y2019 ?? 0) }}"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="fs[y2020]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2020]" value="{{ old('fs.y2020', $project->feasibility_study->y2020 ?? 0) }}"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="fs[y2021]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2021]" value="{{ old('fs.y2021', $project->feasibility_study->y2021 ?? 0) }}"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="fs[y2022]" value="0"></x-input.number>
+                                            <x-input.number field-name="fs[y2022]" value="{{ old('fs.y2022', $project->feasibility_study->y2022 ?? 0) }}"></x-input.number>
                                         </div>
                                     </div>
                                 </div>
@@ -357,40 +351,40 @@
 
                 <x-form-group field-name="has_row" label="With Right of Way Acquisition (ROWA) Component">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_row" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="has_row" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row', $project->has_row ?? false)">
                             @if($option->id == 1)
                                 <div class="d-flex flex-column">
                                     <span class="d-block mb-1">
                                         Schedule of ROWA Cost:
-                                        <p class="note">
-                                            Please reflect actual or estimated cost (In Exact Amount in PhP).
-                                        </p>
                                     </span>
+                                    <p class="note">
+                                        Please reflect actual or estimated cost (In Exact Amount in PhP).
+                                    </p>
                                     <div class="d-flex flex-justify-between">
                                         <div class="col-2">
-                                            <x-input.number field-name="rowa[y2017]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2017]" :value="old('rowa.y2017', $project->rowa->y2017 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="rowa[y2018]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2018]" :value="old('rowa.y2018', $project->rowa->y2018 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="rowa[y2019]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2019]" :value="old('rowa.y2019', $project->rowa->y2019 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="rowa[y2020]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2020]" :value="old('rowa.y2020', $project->rowa->y2020 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="rowa[y2021]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2021]" :value="old('rowa.y2021', $project->rowa->y2021 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <x-input.number field-name="rowa[y2022]" value="0"></x-input.number>
+                                            <x-input.number field-name="rowa[y2022]" :value="old('rowa.y2022', $project->rowa->y2022 ?? 0)"></x-input.number>
                                         </div>
                                     </div>
                                     <span class="d-block mb-1">
                                         Affected households:
                                     </span>
                                     <div class="d-flex">
-                                        <input type="text" name="rowa[hh_affected]" class="form-control">
+                                        <x-input.text field-name="rowa[hh_affected]" :value="old('rowa.hh_affected', $project->rowa->hh_affected ?? '')"></x-input.text>
                                     </div>
                                 </div>
                             @endif
@@ -400,40 +394,40 @@
 
                 <x-form-group field-name="has_rap" label="With Resettlement Component?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_rap" label="{{ $option->label }}" value="{{ $option->id }}">
+                        <x-checkbox-trigger field-name="has_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_rap', $project->has_rap ?? false)">
                             @if($option->id == 1)
                                 <div class="d-flex flex-column">
                                     <span class="d-block mb-1">
                                         Schedule of ROWA Cost:
-                                        <p class="note">
-                                            Please reflect actual or estimated cost (In Exact Amount in PhP).
-                                        </p>
                                     </span>
+                                    <p class="note">
+                                        Please reflect actual or estimated cost (In Exact Amount in PhP).
+                                    </p>
                                     <div class="d-flex flex-justify-between">
                                         <div class="col-2">
-                                            <input type="number" placeholder="2017" name="rap[y2017]" class="form-control">
+                                            <x-input.number field-name="rap[y2017]" :value="old('rap.y2017', $project->resettlement_action_plan->y2017 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2018" name="rap[y2018]" class="form-control">
+                                            <x-input.number field-name="rap[y2018]" :value="old('rap.y2018', $project->resettlement_action_plan->y2018 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2019" name="rap[y2019]" class="form-control">
+                                            <x-input.number field-name="rap[y2019]" :value="old('rap.y2019', $project->resettlement_action_plan->y2019 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2020" name="rap[y2020]" class="form-control">
+                                            <x-input.number field-name="rap[y2020]" :value="old('rap.y2020', $project->resettlement_action_plan->y2020 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2021" name="rap[y2021]" class="form-control">
+                                            <x-input.number field-name="rap[y2021]" :value="old('rap.y2021', $project->resettlement_action_plan->y2021 ?? 0)"></x-input.number>
                                         </div>
                                         <div class="col-2 ml-1">
-                                            <input type="number" placeholder="2022" name="rap[y2022]" class="form-control">
+                                            <x-input.number field-name="rap[y2022]" :value="old('rap.y2022', $project->resettlement_action_plan->y2022 ?? 0)"></x-input.number>
                                         </div>
                                     </div>
                                     <span class="d-block mb-1">
                                         Affected households:
                                     </span>
                                     <div class="d-flex">
-                                        <input type="text" name="rap[hh_affected]" class="form-control">
+                                        <x-input.text field-name="rap[hh_affected]" :value="old('rap.hh_affected', $project->resettlement_action_plan->hh_affected ?? '')"></x-input.text>
                                     </div>
                                 </div>
                             @endif
@@ -443,35 +437,35 @@
 
                 <x-form-group field-name="has_row_rap" label="With ROWA and Resettlement Action Plan?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="has_row_rap" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                        <x-checkbox type="radio" field-name="has_row_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row_rap', $project->has_row_rap ?? false)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Employment Generation" id="employment-generated" description="Please indicate the no. of persons to be employed by the project outside of the implementing agency only"></x-subhead>
 
-                <x-form-group field-name="employment_generated" label="No. of persons to be employed">
-                    <input type="text" field-name="employment_generated" id="employment_generated" class="form-control">
+                <x-form-group field-name="employment_generated" label="No. of persons to be employed" required>
+                    <x-input.text field-name="employment_generated" :value="old('employment_generated', $project->employment_generated)"></x-input.text>
                 </x-form-group>
 
                 <x-subhead subhead="Funding Source and Mode of Implementation" id="funding-source"></x-subhead>
 
-                <x-form-group field-name="ref_fund_source_id" label="Main Funding Source">
-                    <x-select field-name="ref_fund_source_id" :options="$fundSources"></x-select>
+                <x-form-group field-name="ref_fund_source_id" label="Main Funding Source" required>
+                    <x-input.select field-name="ref_fund_source_id" :options="$fundSources" :selected="old('ref_fund_source_id', $project->ref_fund_source_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="ref_funding_institution_id" label="ODA Funding Institution">
-                    <x-select field-name="ref_funding_institution_id" :options="$fundingInstitutions"></x-select>
+                    <x-input.select field-name="ref_funding_institution_id" :options="$fundingInstitutions" :selected="old('ref_funding_institution_id', $project->ref_funding_institution_id)"></x-input.select>
                     <p class="note">
                         Required only if fund source is ODA-Loan/ODA-grant
                     </p>
                 </x-form-group>
 
                 <x-form-group field-name="ref_implementation_mode_id" label="Mode of Implementation/Procurement">
-                    <x-select field-name="ref_implementation_mode_id" :options="$implementationModes"></x-select>
+                    <x-input.select field-name="ref_implementation_mode_id" :options="$implementationModes" :selected="old('ref_implementation_mode_id', $project->ref_implementation_mode_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group field-name="other_mode" label="Other Mode">
-                    <input type="text" name="other_mode" class="form-control">
+                    <x-input.text field-name="other_mode" :value="old('other_mode', $project->other_mode)"></x-input.text>
                 </x-form-group>
 
                 <x-subhead subhead="Project Cost by Fund Sources" id="project-cost-fund-source" description="Total cost should be at least PHP50,000."></x-subhead>
@@ -492,32 +486,71 @@
                         </tr>
                         </thead>
                         <thead>
-                        @foreach($fundSources as $fs)
-                            <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $fs->name }}</td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2016]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2017]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2018]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2019]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2020]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2021]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_investments[{{ $fs->id }}][y2022]" value="0"></x-input.number>
-                                </td>
-                            </tr>
-                        @endforeach
+                        @if(count($project->fs_investments))
+                            @foreach($project->fs_investments as $key => $fs_investment)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">
+                                        <input type="hidden" name="fs_investments[{{ $key }}][ref_fund_source_id]">
+                                        {{ $fs->name }}
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2016]" :value="old('fs_investments.' . $key . '.y2016', $fs_investment->y2016 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2017]" :value="old('fs_investments.' . $key . '.y2017', $fs_investment->y2017 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2018]" :value="old('fs_investments.' . $key . '.y2018', $fs_investment->y2018 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2019]" :value="old('fs_investments.' . $key . '.y2019', $fs_investment->y2019 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2020]" :value="old('fs_investments.' . $key . '.y2020', $fs_investment->y2020 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2021]" :value="old('fs_investments.' . $key . '.y2021', $fs_investment->y2021 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2022]" :value="old('fs_investments.' . $key . '.y2022', $fs_investment->y2022 ?? 0)"></x-input.number>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            @foreach($fundSources as $key => $fs)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">{{ $fs->name }}</td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2016]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2016', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2017]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2017', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2018]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2018', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2019]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2019', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2020]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2020', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2021]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2021', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_investments[{{ $key }}][y2022]"
+                                                        value="{{ old('fs_investments.' . $key . '.y2022', 0) }}"></x-input.number>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </thead>
                     </table>
                 </div>
@@ -541,49 +574,92 @@
                         </tr>
                         </thead>
                         <thead>
-                        @foreach($regions as $key => $region)
-                            <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $region->name }}</td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2016]" value="{{ old('regions.'.$key.'.y2016', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2017]" value="{{ old('regions.'.$key.'.y2017', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2018]" value="{{ old('regions.'.$key.'.y2018', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2019]" value="{{ old('regions.'.$key.'.y2019', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2020]" value="{{ old('regions.'.$key.'.y2020', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2021]" value="{{ old('regions.'.$key.'.y2021', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2022]" value="{{ old('regions.'.$key.'.y2022', 0) }}"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="region_investments[{{ $key }}][y2023]" value="{{ old('regions.'.$key.'.y2023', 0) }}"></x-input.number>
-                                </td>
-                            </tr>
-                        @endforeach
+                        @if(count($project->region_investments))
+                            @foreach($project->region_investments as $key => $region_investment)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">
+                                        <input type="hidden" name="region_investments[{{ $key }}][ref_region_id]">
+                                        {{ $region->name }}
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2016]" value="{{ old('region_investments.'.$key.'.y2016', $region_investment->y2016 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2017]" value="{{ old('region_investments.'.$key.'.y2017', $region_investment->y2017 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2018]" value="{{ old('region_investments.'.$key.'.y2018', $region_investment->y2018 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2019]" value="{{ old('region_investments.'.$key.'.y2019', $region_investment->y2019 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2020]" value="{{ old('region_investments.'.$key.'.y2020', $region_investment->y2020 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2021]" value="{{ old('region_investments.'.$key.'.y2021', $region_investment->y2021 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2022]" value="{{ old('region_investments.'.$key.'.y2022', $region_investment->y2022 ?? 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2023]" value="{{ old('region_investments.'.$key.'.y2023', $region_investment->y2023 ?? 0) }}"></x-input.number>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            @foreach($regions as $key => $region)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">{{ $region->name }}</td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2016]"
+                                                        value="{{ old('regions.'.$key.'.y2016', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2017]"
+                                                        value="{{ old('regions.'.$key.'.y2017', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2018]"
+                                                        value="{{ old('regions.'.$key.'.y2018', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2019]"
+                                                        value="{{ old('regions.'.$key.'.y2019', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2020]"
+                                                        value="{{ old('regions.'.$key.'.y2020', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2021]"
+                                                        value="{{ old('regions.'.$key.'.y2021', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2022]"
+                                                        value="{{ old('regions.'.$key.'.y2022', 0) }}"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="region_investments[{{ $key }}][y2023]"
+                                                        value="{{ old('regions.'.$key.'.y2023', 0) }}"></x-input.number>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </thead>
                     </table>
                 </div>
 
                 <x-subhead subhead="Financial Accomplishments" id="financial-accomplishments" description="In exact amount in PhP"></x-subhead>
 
-                <x-checkbox field-name="financial_accomp_na" value="1" label="Not Applicable (For PAPs not for funding in the GAA)"></x-checkbox>
+                <x-checkbox field-name="financial_accomp_na" value="1" label="Not Applicable (For PAPs not for funding in the GAA)" :value="old('financial_accomp_na', $project->financial_accomp_na ?? false)"></x-checkbox>
 
                 <x-form-group label="PAP Code" field-name="pap_code">
-                    <input type="text" class="form-control" name="pap_code">
+                    <x-input.text field-name="pap_code" :value="old('pap_code', $project->pap_code)"></x-input.text>
                 </x-form-group>
 
                 <x-form-group label="Category" field-name="ref_tier_id">
-                    <x-select field-name="ref_tier_id" :options="$tiers"></x-select>
+                    <x-input.select field-name="ref_tier_id" :options="$tiers" :selected="old('ref_tier_id', $project->ref_tier_id)"></x-input.select>
                 </x-form-group>
 
                 <x-form-group label="UACS Code" field-name="uacs_code">
@@ -664,13 +740,13 @@
                         <tr class="col-12 border-bottom">
                             <td class="col-1 p-1">2017</td>
                             <td class="col-1 p-1">
-                                <x-input.number field-name="nep[y2022]" value="{{ old('nep.y2022', $project->nep->y2022 ?? 0) }}"></x-input.number>
+                                <x-input.number field-name="nep[y2022]" :value="old('nep.y2022', $project->nep->y2022 ?? 0)"></x-input.number>
                             </td>
                             <td class="col-1 p-1">
-                                <x-input.number field-name="gaa[y2022]" value="{{ old('gaa.y2022', $project->gaa->y2022 ?? 0) }}"></x-input.number>
+                                <x-input.number field-name="gaa[y2022]" :value="old('gaa.y2022', $project->gaa->y2022 ?? 0)"></x-input.number>
                             </td>
                             <td class="col-1 p-1">
-                                <x-input.number field-name="disbursement[y2022]" value="{{ old('disbursement.y2022', $project->disbursement->y2022 ?? 0) }}"></x-input.number>
+                                <x-input.number field-name="disbursement[y2022]" :value="old('disbursement.y2022', $project->disbursement->y2022 ?? 0)"></x-input.number>
                             </td>
                         </tr>
                         </tbody>
@@ -681,18 +757,18 @@
 
                 <x-form-group label="Infrastructure Sector" field-name="infra_sectors">
                     @foreach($infraSectors as $infraSector)
-                        <x-checkbox value="{{ $infraSector->id }}" label="{{ $infraSector->label }}" field-name="infra_sectors[]"></x-checkbox>
+                        <x-checkbox value="{{ $infraSector->id }}" label="{{ $infraSector->label }}" field-name="infra_sectors[]" :checked="old('infra_sectors', $project->infra_sectors->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group label="Status of Implementation Readiness" field-name="prerequisites">
                     @foreach($prerequisites as $option)
-                        <x-checkbox value="{{ $option->id }}" label="{{ $option->label }}" field-name="prerequisites[]"></x-checkbox>
+                        <x-checkbox value="{{ $option->id }}" label="{{ $option->label }}" field-name="prerequisites[]" :checked="old('prerequisites', $project->prerequisites->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group label="Implementation Risks and Mitigation Strategies" field-name="risk">
-                    <x-textarea field-name="risk"></x-textarea>
+                    <x-textarea field-name="risk" :value="old('risk', $project->risk->risk)"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="Infrastructure Cost by Fund Source" id="infrastructure-cost-by-fund-source" description="Total cost should be at least PHP50,000."></x-subhead>
@@ -714,36 +790,80 @@
                         </tr>
                         </thead>
                         <thead>
-                        @foreach($fundSources as $key => $fs)
-                            <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $fs->name }}</td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2016]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2017]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2018]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2019]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2020]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2021]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2022]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1">
-                                    <x-input.number field-name="fs_infrastructures[{{ $key }}][y2023]" value="0"></x-input.number>
-                                </td>
-                                <td class="col-1 p-1"></td>
-                            </tr>
-                        @endforeach
+                        @if(count($project->fs_infrastructures))
+                            @foreach($project->fs_infrastructures as $key => $fs_infrastructure)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">{{ $fs->name }}</td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2016]" :value="old('fs_infrastructures.' . $key . '.y2016', $fs_infrastructure->y2016 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2017]" :value="old('fs_infrastructures.' . $key . '.y2017', $fs_infrastructure->y2017 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2018]" :value="old('fs_infrastructures.' . $key . '.y2018', $fs_infrastructure->y2018 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2019]" :value="old('fs_infrastructures.' . $key . '.y2019', $fs_infrastructure->y2019 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2020]" :value="old('fs_infrastructures.' . $key . '.y2020', $fs_infrastructure->y2020 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2021]" :value="old('fs_infrastructures.' . $key . '.y2021', $fs_infrastructure->y2021 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2022]" :value="old('fs_infrastructures.' . $key . '.y2022', $fs_infrastructure->y2022 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2023]" :value="old('fs_infrastructures.' . $key . '.y2023', $fs_infrastructure->y2023 ?? 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1"></td>
+                                </tr>
+                            @endforeach
+                        @else
+                            @foreach($fundSources as $key => $fs)
+                                <tr class="col-12 border-bottom">
+                                    <td class="col-1 p-1">
+                                        <input type="hidden" name="fs_infrastructures[{{ $key }}][ref_fund_source_id]">
+                                        {{ $fs->name }}
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2016]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2016', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2017]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2017', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2018]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2018', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2019]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2019', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2020]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2020', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2021]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2021', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2022]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2022', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1">
+                                        <x-input.number field-name="fs_infrastructures[{{ $key }}][y2023]"
+                                                        :value="old('fs_infrastructures.' . $key . '.y2023', 0)"></x-input.number>
+                                    </td>
+                                    <td class="col-1 p-1"></td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </thead>
                     </table>
                 </div>

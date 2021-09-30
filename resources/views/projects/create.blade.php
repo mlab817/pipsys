@@ -549,7 +549,7 @@
                             <th class="col-1 p-1">Total</th>
                         </tr>
                         </thead>
-                        <thead>
+                        <tbody>
                         @foreach($fundSources as $key => $fs)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $fs->name }}</td>
@@ -583,7 +583,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        </thead>
+                        </tbody>
                     </table>
                 </div>
 
@@ -606,7 +606,7 @@
                             <th class="col-1 p-1">Total</th>
                         </tr>
                         </thead>
-                        <thead>
+                        <tbody>
                         @foreach($regions as $key => $region)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $region->name }}</td>
@@ -644,7 +644,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        </thead>
+                        </tbody>
                     </table>
                 </div>
 
@@ -814,7 +814,10 @@
                         <thead>
                         @foreach($fundSources as $key => $fs)
                             <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $fs->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="hidden" name="fs_infrastructures[{{ $key }}][ref_fund_source_id]">
+                                    {{ $fs->name }}
+                                </td>
                                 <td class="col-1 p-1">
                                     <x-input.number field-name="fs_infrastructures[{{ $key }}][y2016]"
                                                     value="0"></x-input.number>

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\ViewComposers\ProjectComposer;
+use App\Http\ViewComposers\SidebarComposer;
 use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
@@ -26,5 +27,6 @@ class ViewServiceProvider extends ServiceProvider
     {
         view()->composer('projects.create', ProjectComposer::class);
         view()->composer('projects.edit', ProjectComposer::class);
+        view()->composer('partials.sidebar', SidebarComposer::class);
     }
 }

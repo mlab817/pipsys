@@ -18,7 +18,7 @@ class CreateProjectSeaTable extends Migration
             $table->foreignId('ref_socio_econ_agenda_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_socio_econ_agenda_id'],'project_sea');
+            $table->unique(['project_id','ref_socio_econ_agenda_id'],'project_sea_id');
         });
     }
 

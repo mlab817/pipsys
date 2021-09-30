@@ -18,7 +18,7 @@ class CreateProjectRegionTable extends Migration
             $table->foreignId('ref_region_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_region_id'],'project_region');
+            $table->unique(['project_id','ref_region_id'],'project_region_id');
         });
     }
 

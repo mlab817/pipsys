@@ -18,7 +18,7 @@ class CreateProjectPrerequisiteTable extends Migration
             $table->foreignId('ref_prerequisite_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_prerequisite_id'],'project_prerequisite');
+            $table->unique(['project_id','ref_prerequisite_id'],'project_prerequisite_id');
         });
     }
 

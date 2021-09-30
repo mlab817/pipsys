@@ -18,7 +18,7 @@ class CreateProjectPdpChapterTable extends Migration
             $table->foreignId('ref_pdp_chapter_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_pdp_chapter_id'],'project_pdp_chapter');
+            $table->unique(['project_id','ref_pdp_chapter_id'],'project_pdp_chapter_id');
         });
     }
 

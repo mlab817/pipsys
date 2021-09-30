@@ -30,11 +30,16 @@ class Project extends Model
     {
         static::addGlobalScope('user_type', function (Builder $builder) {
             // if user is not admin, return only projects belonging to the same office
-            if (! auth()->user()->is_admin) {
+            if (auth()->user() && ! auth()->user()->is_admin) {
                 $builder->where('office_id', '=', auth()->user()->office_id)
                     ->orWhere('creator_id', auth()->id());
             }
         });
+    }
+
+    public function covid_interventions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefCovidType::class, 'project_covid_type');
     }
 
     public function creator(): \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -60,6 +65,11 @@ class Project extends Model
             ->withDefault(['name' => 'N/A']);
     }
 
+    public function feasibility_study(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectFs::class);
+    }
+
     public function gaa(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(ProjectGaa::class);
@@ -68,6 +78,11 @@ class Project extends Model
     public function disbursement(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(ProjectDisbursement::class);
+    }
+
+    public function fund_source(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefFundSource::class);
     }
 
     public function nep(): \Illuminate\Database\Eloquent\Relations\HasOne
@@ -80,9 +95,24 @@ class Project extends Model
         return $this->hasOne(ProjectUpdate::class);
     }
 
+    public function resettlement_action_plan(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectResettlement::class);
+    }
+
+    public function rowa(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectRowa::class);
+    }
+
     public function bases(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(RefBasis::class, 'project_basis', 'ref_basis_id', 'project_id');
+    }
+
+    public function infra_sectors(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefInfraSector::class, 'project_infra_sec');
     }
 
     public function operating_units(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -100,10 +130,39 @@ class Project extends Model
         return $this->belongsToMany(RefPdpIndicator::class, 'project_pdp_indicator', 'ref_pdp_indicator_id','project_id');
     }
 
+    public function prerequisites()
+    {
+        return $this->belongsToMany(RefPrerequisite::class,'project_prerequisite');
+    }
 
     public function regions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(RefRegion::class, 'project_region', 'ref_region_id', 'project_id');
+    }
+
+    public function sdgs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefSustainableDevtAgenda::class, 'project_sdg');
+    }
+
+    public function socio_econ_agendas(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(RefSocioEconAgenda::class, 'project_sea');
+    }
+
+    public function fs_investments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ProjectFsInvestment::class);
+    }
+
+    public function fs_infrastructures(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ProjectFsInfrastructure::class);
+    }
+
+    public function region_investments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ProjectRegionInvestment::class);
     }
 
     public static function search($query): Builder

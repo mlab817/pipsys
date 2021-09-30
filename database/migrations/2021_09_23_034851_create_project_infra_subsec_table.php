@@ -18,7 +18,7 @@ class CreateProjectInfraSubsecTable extends Migration
             $table->foreignId('ref_infra_subsector_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_infra_subsector_id'],'project_infra_subsec');
+            $table->unique(['project_id','ref_infra_subsector_id'],'project_infra_subsec_id');
         });
     }
 

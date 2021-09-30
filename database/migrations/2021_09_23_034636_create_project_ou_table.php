@@ -18,7 +18,7 @@ class CreateProjectOuTable extends Migration
             $table->foreignId('ref_operating_unit_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_operating_unit_id'],'project_ou');
+            $table->unique(['project_id','ref_operating_unit_id'],'project_ou_id');
         });
     }
 

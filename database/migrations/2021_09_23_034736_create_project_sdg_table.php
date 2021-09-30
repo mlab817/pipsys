@@ -18,7 +18,7 @@ class CreateProjectSdgTable extends Migration
             $table->foreignId('ref_sustainable_devt_agenda_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
 
-            $table->unique(['project_id','ref_sustainable_devt_agenda_id'],'project_sdg');
+            $table->unique(['project_id','ref_sustainable_devt_agenda_id'],'project_sdg_id');
         });
     }
 
