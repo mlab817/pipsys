@@ -48,8 +48,9 @@
                 <x-subhead subhead="General Information" id="general-information"></x-subhead>
 
                 <x-form-group field-name="title" label="Title">
-                    <input type="text" class="form-control input-block" name="title" id="title"
-                           value="{{ old('title') }}">
+                    <x-input.text
+                        field-name="title"
+                        :value="old('title')"></x-input.text>
                     <p class="note">
                         The project title should be identical with the project's title in the budget proposal submitted
                         to DBM.
@@ -62,6 +63,9 @@
                                     label="{{ $option->label }}" description="{{ $option->description }}"
                                     :checked="old('ref_pap_type_id')"></x-checkbox>
                     @endforeach
+                    @error('ref_pap_type_id')
+                        <p class="note error">{{ $message }}</p>
+                    @enderror
                 </x-form-group>
 
                 <x-form-group field-name="bases" label="Basis for Implementation">
@@ -74,6 +78,9 @@
                             :checked="old('bases', [])"
                         ></x-checkbox>
                     @endforeach
+                    @error('bases')
+                        <p class="note error">{{ $message }}</p>
+                    @enderror
                 </x-form-group>
 
                 <x-form-group field-name="description" label="PAP Description">
@@ -110,7 +117,7 @@
                 </x-form-group>
 
                 <x-form-group field-name="regions" label="Regions">
-                    @foreach($regions as $option)
+                    @foreach($regions->whereNotIn('id',[99,100]) as $option)
                         <x-checkbox field-name="regions[]" value="{{ $option->id }}" label="{{ $option->label }}"
                                     :checked="old('regions', [])"></x-checkbox>
                     @endforeach
@@ -147,12 +154,13 @@
                                     Type of PIP:
                                 </span>
                                 @foreach($pipTypologies as $option)
-                                    <x-checkbox type="radio" field-name="ref_pip_typology_id"
-                                                label="{{ $option->label }}" value="{{ $option->id }}"
-                                                :checked="old('ref_pip_typology_id')"></x-checkbox>
-                                    @endforeach
-                                    </span>
-                                    @endif
+                                <x-checkbox type="radio"
+                                            field-name="ref_pip_typology_id"
+                                            label="{{ $option->label }}"
+                                            value="{{ $option->id }}"
+                                            :checked="old('ref_pip_typology_id')"></x-checkbox>
+                                @endforeach
+                            @endif
                         </x-checkbox-trigger>
                     @endforeach
                 </x-form-group>
@@ -166,12 +174,14 @@
                                     Type of CIP:
                                 </span>
                                 @foreach($cipTypes as $option)
-                                    <x-checkbox type="radio" field-name="ref_cip_type_id" label="{{ $option->label }}"
-                                                value="{{ $option->id }}"
-                                                :checked="old('ref_cip_type_id')"></x-checkbox>
-                                    @endforeach
-                                    </span>
-                                    @endif
+                                    <x-checkbox
+                                        type="radio"
+                                        field-name="ref_cip_type_id"
+                                        label="{{ $option->label }}"
+                                        value="{{ $option->id }}"
+                                        :checked="old('ref_cip_type_id')"></x-checkbox>
+                                @endforeach
+                            @endif
                         </x-checkbox-trigger>
                     @endforeach
                 </x-form-group>
@@ -300,6 +310,9 @@
                         <x-checkbox field-name="pdp_chapters[]" label="{{ $option->label }}" value="{{ $option->id }}"
                                     :checked="old('pdp_chapters', [])"></x-checkbox>
                     @endforeach
+                    @error('pdp_chapters.*')
+                        <p class="note error">{{ $message }}</p>
+                    @enderror
                 </x-form-group>
 
                 <x-subhead subhead="Main PDP Chapter Outcome Statements/Outputs" id="pdp-indicators"></x-subhead>
@@ -607,7 +620,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($regions as $key => $region)
+                        @foreach($regions->where('id','<>',100)->sortBy('order') as $key => $region)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">{{ $region->name }}</td>
                                 <td class="col-1 p-1">
@@ -652,7 +665,8 @@
                            description="In exact amount in PhP"></x-subhead>
 
                 <x-checkbox field-name="financial_accomp_na" value="1"
-                            label="Not Applicable (For PAPs not for funding in the GAA)" :checked="old('financial_accomp_na', false)"></x-checkbox>
+                            label="Not Applicable (For PAPs not for funding in the GAA)"
+                            :checked="old('financial_accomp_na', false)"></x-checkbox>
 
                 <x-form-group label="PAP Code" field-name="pap_code">
                     <x-input.text field-name="pap_code" :value="old('pap_code')"></x-input.text>
@@ -776,20 +790,26 @@
 
                 <x-form-group label="Infrastructure Sector" field-name="infra_sectors">
                     @foreach($infraSectors as $infraSector)
-                        <x-checkbox value="{{ $infraSector->id }}" label="{{ $infraSector->label }}"
-                                    field-name="infra_sectors[]" :checked="old('infra_sectors', [])"></x-checkbox>
+                        <x-checkbox value="{{ $infraSector->id }}"
+                                    label="{{ $infraSector->label }}"
+                                    field-name="infra_sectors[]"
+                                    :checked="old('infra_sectors', [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group label="Status of Implementation Readiness" field-name="prerequisites">
                     @foreach($prerequisites as $option)
-                        <x-checkbox value="{{ $option->id }}" label="{{ $option->label }}"
-                                    field-name="prerequisites[]" :checked="old('prerequisites', [])"></x-checkbox>
+                        <x-checkbox value="{{ $option->id }}"
+                                    label="{{ $option->label }}"
+                                    field-name="prerequisites[]"
+                                    :checked="old('prerequisites', [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group label="Implementation Risks and Mitigation Strategies" field-name="risk">
-                    <x-textarea field-name="risk" :value="old('risk')"></x-textarea>
+                    <x-textarea
+                        field-name="risk"
+                        :value="old('risk')"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="Infrastructure Cost by Fund Source" id="infrastructure-cost-by-fund-source"

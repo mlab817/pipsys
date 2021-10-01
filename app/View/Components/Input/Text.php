@@ -8,6 +8,8 @@ class Text extends Component
 {
     public string $fieldName;
 
+    public string $inputValidation;
+
     public string $value;
 
     /**
@@ -17,8 +19,9 @@ class Text extends Component
      */
     public function __construct($fieldName, $value)
     {
-        $this->fieldName = $fieldName;
-        $this->value = $value ?? '';
+        $this->inputValidation  = slugify($fieldName) . '-input-validation';
+        $this->fieldName        = $fieldName;
+        $this->value            = $value ?? '';
     }
 
     /**

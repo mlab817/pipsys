@@ -39,10 +39,12 @@ class ProjectStoreRequest extends FormRequest
                 'exists:ref_pap_types,id',
             ],
             'bases' => [
-                'sometimes',
+                'required',
                 'array',
             ],
-            'bases.*' => ['exists:ref_bases,id'],
+            'bases.*' => [
+                'exists:ref_bases,id',
+            ],
             'description'   => ['required','string','max:255'],
             'office_id' => ['exists:offices,id'],
             'operating_units' => [

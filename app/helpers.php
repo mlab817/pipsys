@@ -37,7 +37,8 @@ if (! function_exists('nanoid')) {
  * Highlight the results of the search case-insensitive
  */
 if (! function_exists('highlight_search')) {
-    function highlight_search(string $text, string $q) {
+    function highlight_search(string $text, string $q): string
+    {
         $highlighted = "<span class='search-result'>".$q."</span>";
 
         return str_ireplace($q, $highlighted, $text);

@@ -1,7 +1,12 @@
 <div>
-    <input type="text" class="form-control" id="{{ $fieldName }}" name="{{ $fieldName }}" value="{{ $value }}" aria-describedby="{{ $fieldName }}-input-validation">
+    <input type="text"
+           class="form-control"
+           id="{{ $fieldName }}"
+           name="{{ $fieldName }}"
+           value="{{ $value }}"
+           aria-describedby="{{ $inputValidation }}">
     @error($fieldName)
-        <p class="note error" id="{{ $fieldName }}-input-validation">
+        <p class="note error" id="{{ $inputValidation }}">
             {{ $message }}
         </p>
     @enderror
