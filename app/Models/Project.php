@@ -17,8 +17,53 @@ class Project extends Model
     use RevisionableTrait;
 
     protected $fillable = [
+        'pipol_code',
         'title',
         'ref_pap_type_id',
+        'total_cost',
+        'office_id',
+        'ref_spatial_coverage_id',
+        'iccable',
+        'ref_gad_id',
+        'approval_date',
+        'pip',
+        'ref_pip_typology_id',
+        'cip',
+        'ref_cip_type_id',
+        'trip',
+        'rdip',
+        'rdc_endorsement_required',
+        'rdc_endorsed',
+        'rdc_endorsed_date',
+        'research',
+        'ifp',
+        'ict',
+        'covid',
+        'icc_resubmission',
+        'target_start_year',
+        'target_end_year',
+        'pdp_chapter_id',
+        'no_pdp_indicator',
+        'ref_prep_document_id',
+        'has_fs',
+        'has_row',
+        'has_rap',
+        'has_row_rap',
+        'employment_generated',
+        'ref_fund_source_id',
+        'ref_funding_institution_id',
+        'ref_implementation_mode_id',
+        'other_mode',
+        'financial_accomp_na',
+        'pap_code',
+        'ref_tier_id',
+        'uacs_code',
+        'nep',
+        'gaa',
+        'disbursement',
+        'infra_sectors',
+        'prerequisites',
+        'risk',
     ];
 
     public function getRouteKeyName(): string
@@ -73,6 +118,11 @@ class Project extends Model
     public function gaa(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(ProjectGaa::class);
+    }
+
+    public function output(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ProjectOutput::class);
     }
 
     public function disbursement(): \Illuminate\Database\Eloquent\Relations\HasOne

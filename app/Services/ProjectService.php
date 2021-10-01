@@ -3,13 +3,12 @@
 namespace App\Services;
 
 use App\Models\Project;
+use Illuminate\Support\Arr;
 
 class ProjectService
 {
     public function create(array $data): Project
     {
-        dd($data);
-
         $project = Project::create($data);
 
         if (isset($data['description'])) {
@@ -19,13 +18,13 @@ class ProjectService
         }
 
         if (isset($data['expected_outputs'])) {
-            $project->expected_output()->create([
-                'expected_outputs' => $data['expected_outputs'],
+            $project->output()->create([
+                'output' => $data['expected_outputs'],
             ]);
         }
 
         if (isset($data['updates'])) {
-            $project->update()->create([
+            $project->project_update()->create([
                 'updates' => $data['updates'],
                 'date'    => $data['updates_date'],
             ]);

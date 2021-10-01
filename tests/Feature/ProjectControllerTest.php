@@ -3,6 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Project;
+use App\Models\ProjectDescription;
+use App\Models\ProjectOutput;
+use App\Models\ProjectUpdate;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
@@ -54,14 +57,36 @@ class ProjectControllerTest extends TestCase
 
     public function test_it_stores_project()
     {
-        $data = Project::factory()->make();
+        $this->withoutExceptionHandling();
 
-        $this
+        // create data
+        $data = Project::factory()
+            ->has(ProjectDescription::factory()->count(1),'description')
+            ->has(ProjectUpdate::factory()->count(1),'project_update')
+            ->has(ProjectOutput::factory()->count(1),'output')
+            ->make();
+
+        // submit the data
+        $response = $this
             ->actingAs($this->user)
-            ->post(route('projects.store'), $data);
+            ->post(route('projects.store'), $data->toArray());
 
+        // no errors detected
+        $response->assertSessionHasNoErrors();
+
+        // data has been saved to database
         $this->assertDatabaseHas('projects', [
-            'title' => $data->title,
+            'title' => $data['title'],
+            'ref_pap_type_id' => $data['ref_pap_type_id']
         ]);
+
+        $project = Project::where('title', $data['title'])->first();
+
+        $this->assertDatabaseHas('project_outputs',[
+            'project_id' => $project->id,
+        ]);
+
+        // redirected to projects index after creating project
+        $response->assertRedirect(route('projects.index'));
     }
 }

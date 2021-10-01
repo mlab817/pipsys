@@ -25,6 +25,7 @@ class CreateProjectsTable extends Migration
             $table->foreignId('ref_spatial_coverage_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('iccable')->nullable()->default(0);
             $table->foreignId('ref_approval_level_id')->nullable()->constrained()->nullOnDelete();
+            $table->date('approval_date')->nullable();
             $table->foreignId('ref_gad_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('pip')->nullable()->default(0);
             $table->foreignId('ref_pip_typology_id')->nullable()->constrained()->nullOnDelete();
@@ -45,11 +46,13 @@ class CreateProjectsTable extends Migration
             $table->foreignId('ref_pdp_chapter_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('no_pdp_indicator')->nullable()->default(0);
             $table->foreignId('ref_prep_document_id')->nullable()->constrained()->nullOnDelete();
+            $table->boolean('has_fs')->nullable()->default(0);
             $table->boolean('has_row')->nullable()->default(0);
             $table->boolean('has_rap')->nullable()->default(0);
             $table->boolean('has_row_rap')->nullable()->default(0);
             $table->string('employment_generated')->nullable();
             $table->foreignId('ref_fund_source_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('ref_funding_institution_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('ref_implementation_mode_id')->nullable()->constrained()->nullOnDelete();
             $table->string('other_mode')->nullable();
             $table->boolean('financial_accomp_na')->nullable()->default(0);
