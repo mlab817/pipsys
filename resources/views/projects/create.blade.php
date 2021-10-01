@@ -166,7 +166,7 @@
                                     Type of CIP:
                                 </span>
                                 @foreach($cipTypes as $option)
-                                    <x-checkbox type="radio" field-name="cip" label="{{ $option->label }}"
+                                    <x-checkbox type="radio" field-name="ref_cip_type_id" label="{{ $option->label }}"
                                                 value="{{ $option->id }}"
                                                 :checked="old('ref_cip_type_id')"></x-checkbox>
                                     @endforeach
@@ -314,25 +314,25 @@
                 <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable"
                             value="1"></x-checkbox>
 
-                <x-form-group field-name="expected_outputs" label="Expected Outputs">
-                    <x-textarea field-name="expected_outputs" label="Expected Outputs"
+                <x-form-group field-name="output" label="Expected Outputs">
+                    <x-textarea field-name="output" label="Expected Outputs"
                                 note="Actual Deliverables, i.e. 100km of paved roads"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="0-10 Point Socioeconomic Agenda" id="socio-econ-agenda"></x-subhead>
 
-                <x-form-group field-name="ref_sea" label="0-10 Point Socioeconomic Agenda">
+                <x-form-group field-name="socio_econ_agendas" label="0-10 Point Socioeconomic Agenda">
                     @foreach($socioEconAgenda as $option)
-                        <x-checkbox field-name="ref_sea[]" label="{{ $option->label }}"
+                        <x-checkbox field-name="socio_econ_agendas[]" label="{{ $option->label }}"
                                     value="{{ $option->id }}" :checked="old('ref_sea', [])"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-subhead subhead="Sustainable Development Goals (SDG)" id="sustainable-devt-agenda"></x-subhead>
 
-                <x-form-group field-name="ref_sdg" label="Sustainable Development Goals (SDG)">
+                <x-form-group field-name="sdgs" label="Sustainable Development Goals (SDG)">
                     @foreach($sdgs as $option)
-                        <x-checkbox field-name="ref_sdg[]" label="{{ $option->label }}"
+                        <x-checkbox field-name="sdgs[]" label="{{ $option->label }}"
                                     value="{{ $option->id }}" :checked="old('ref_sdg', [])"></x-checkbox>
                     @endforeach
                 </x-form-group>

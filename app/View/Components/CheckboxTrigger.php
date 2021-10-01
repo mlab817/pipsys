@@ -8,17 +8,18 @@ class CheckboxTrigger extends Component
 {
     public string $fieldName;
 
-    public string|int| bool $value;
+    public int|bool $value;
 
     public string $label;
 
     public bool $checked;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName, $value, $label, $checked = false)
+    public function __construct($fieldName, $value, $label, $checked = 0)
     {
         $this->fieldName    = $fieldName;
         $this->value        = $value;

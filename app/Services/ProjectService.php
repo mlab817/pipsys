@@ -17,9 +17,9 @@ class ProjectService
             ]);
         }
 
-        if (isset($data['expected_outputs'])) {
+        if (isset($data['output'])) {
             $project->output()->create([
-                'output' => $data['expected_outputs'],
+                'output' => $data['output'],
             ]);
         }
 
@@ -67,6 +67,14 @@ class ProjectService
                 'y2022' => $data['disbursement']['y2022'],
                 'y2023' => $data['disbursement']['y2023'],
             ]);
+        }
+
+        if (isset($data['sdgs'])) {
+            $project->sdgs()->sync($data['sdgs']);
+        }
+
+        if (isset($data['socio_econ_agendas'])) {
+            $project->socio_econ_agendas()->sync($data['socio_econ_agendas']);
         }
 
         return $project;

@@ -106,7 +106,7 @@
                 <x-subhead subhead="Approval Level" id="approval-level"></x-subhead>
 
                 <x-form-group field-name="iccable" label="Will require Investment Coordination Committee/NEDA Board Approval (ICC-able)?">
-                    <x-radio-group field-name="iccable" :options="$bool" :checked="old('iccable', $project->iccable ?? false)"></x-radio-group>
+                    <x-radio-group field-name="iccable" :options="$bool" :checked="old('iccable', $project->iccable ?? 0)"></x-radio-group>
                 </x-form-group>
 
                 <x-form-group field-name="ref_approval_level_id" label="Level of Approval">
@@ -124,13 +124,13 @@
 
                 <x-form-group field-name="pip" label="Public Investment Program">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="pip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pip', $project->pip ?? false)">
+                        <x-checkbox-trigger field-name="pip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pip', $project->pip ?? 0)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Type of PIP:
                                 </span>
                                 @foreach($pipTypologies as $option)
-                                    <x-checkbox type="radio" field-name="ref_pip_typology_id" label="{{ $option->label }}" value="{{ $option->id }}"></x-checkbox>
+                                    <x-checkbox type="radio" field-name="ref_pip_typology_id" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ref_pip_typology_id', $project->ref_pip_typology_id)"></x-checkbox>
                                 @endforeach
                             @endif
                         </x-checkbox-trigger>
@@ -139,7 +139,7 @@
 
                 <x-form-group field-name="cip" label="Core Investment Program/Project">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('cip', $project->cip ?? false)">
+                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('cip', $project->cip ?? 0)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Type of CIP:
@@ -154,21 +154,21 @@
 
                 <x-form-group field-name="trip" label="Three-Year Rolling Infrastructure Program/Project">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="trip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('trip', $project->trip ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="trip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('trip', $project->trip ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="rdip" label="Is the Program/Project included in the RDIP?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdip', $project->rdip ?? false)">
+                        <x-checkbox-trigger field-name="rdip" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdip', $project->rdip ?? 0)">
                             @if($option->id == 1)
                                 <span class="d-inline-block mt-1">Will require Regional Development Council (RDC) Endorsement?</span>
                                 @foreach($bool as $option)
-                                    <x-checkbox-trigger field-name="rdc_endorsement_required" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsement_required', $project->rdc_endorsement_required ?? false)">
+                                    <x-checkbox-trigger field-name="rdc_endorsement_required" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsement_required', $project->rdc_endorsement_required ?? 0)">
                                         @if($option->id == 1)
                                             <span class="d-inline-block mt-1">Endorsed by the RDC?</span>
                                             @foreach($bool as $option)
-                                                <x-checkbox-trigger field-name="rdc_endorsed" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsed', $project->rdc_endorsed ?? false)">
+                                                <x-checkbox-trigger field-name="rdc_endorsed" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('rdc_endorsed', $project->rdc_endorsed ?? 0)">
                                                     @if($option->id == 1)
                                                         <span class="d-inline-block mt-1">Date Endorsed</span>
                                                         <x-input.date field-name="rdc_endorsed_date" :value="old('rdc_endorsed_date', $project->rdc_endorsed_date)"></x-input.date>
@@ -185,25 +185,25 @@
 
                 <x-form-group field-name="research" label="Is it a Research and Development Program/Project?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="research" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('research', $project->research ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="research" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('research', $project->research ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="ifp" label="Is it an Infrastructure Flagship Project(IFP)?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="ifp" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ifp', $project->ifp ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="ifp" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ifp', $project->ifp ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="ict" label="Is it an ICT program/project?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="ict" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ict', $project->ict ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="ict" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ict', $project->ict ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
                 <x-form-group field-name="covid" label="Is it responsive to COVID-19/New Normal Intervention?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="covid" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('covid', $project->covid ?? false)">
+                        <x-checkbox-trigger field-name="covid" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('covid', $project->covid ?? 0)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     COVID Interventions
@@ -232,7 +232,7 @@
 
                 <x-form-group field-name="icc_resubmission" label="Will this require resubmission to the ICC? ">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="icc_resubmission" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('icc_resubmission', $project->icc_resubmission ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="icc_resubmission" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('icc_resubmission', $project->icc_resubmission ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -268,8 +268,8 @@
 
                 <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable" value="1"></x-checkbox>
 
-                <x-form-group field-name="expected_outputs" label="Expected Outputs">
-                    <x-textarea field-name="expected_outputs" label="Expected Outputs" note="Actual Deliverables, i.e. 100km of paved roads" :value="old('expected_outputs', $project->output->output ?? '')"></x-textarea>
+                <x-form-group field-name="output" label="Expected Outputs">
+                    <x-textarea field-name="output" label="Expected Outputs" note="Actual Deliverables, i.e. 100km of paved roads" :value="old('expected_outputs', $project->output->output ?? '')"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="0-10 Point Socioeconomic Agenda" id="socio-econ-agenda"></x-subhead>
@@ -282,7 +282,7 @@
 
                 <x-subhead subhead="Sustainable Development Goals (SDG)" id="sustainable-devt-agenda"></x-subhead>
 
-                <x-form-group field-name="ref_sdg" label="Sustainable Development Goals (SDG)">
+                <x-form-group field-name="sdgs" label="Sustainable Development Goals (SDG)">
                     @foreach($sdgs as $option)
                         <x-checkbox field-name="sdgs[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('ref_sdg', $project->sdgs->pluck('id')->toArray() ?? [])"></x-checkbox>
                     @endforeach
@@ -296,7 +296,7 @@
 
                 <x-form-group field-name="has_fs" label="Will require assistance for the conduct of Feasibility Study?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_fs" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_fs', $project->has_fs ?? false)">
+                        <x-checkbox-trigger field-name="has_fs" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_fs', $project->has_fs ?? 0)">
                             @if($option->id == 1)
                                 <span class="d-block mb-1">
                                     Status of Feasibility Study:
@@ -351,7 +351,7 @@
 
                 <x-form-group field-name="has_row" label="With Right of Way Acquisition (ROWA) Component">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_row" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row', $project->has_row ?? false)">
+                        <x-checkbox-trigger field-name="has_row" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row', $project->has_row ?? 0)">
                             @if($option->id == 1)
                                 <div class="d-flex flex-column">
                                     <span class="d-block mb-1">
@@ -394,7 +394,7 @@
 
                 <x-form-group field-name="has_rap" label="With Resettlement Component?">
                     @foreach($bool as $option)
-                        <x-checkbox-trigger field-name="has_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_rap', $project->has_rap ?? false)">
+                        <x-checkbox-trigger field-name="has_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_rap', $project->has_rap ?? 0)">
                             @if($option->id == 1)
                                 <div class="d-flex flex-column">
                                     <span class="d-block mb-1">
@@ -437,7 +437,7 @@
 
                 <x-form-group field-name="has_row_rap" label="With ROWA and Resettlement Action Plan?">
                     @foreach($bool as $option)
-                        <x-checkbox type="radio" field-name="has_row_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row_rap', $project->has_row_rap ?? false)"></x-checkbox>
+                        <x-checkbox type="radio" field-name="has_row_rap" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('has_row_rap', $project->has_row_rap ?? 0)"></x-checkbox>
                     @endforeach
                 </x-form-group>
 
@@ -652,7 +652,7 @@
 
                 <x-subhead subhead="Financial Accomplishments" id="financial-accomplishments" description="In exact amount in PhP"></x-subhead>
 
-                <x-checkbox field-name="financial_accomp_na" value="1" label="Not Applicable (For PAPs not for funding in the GAA)" :value="old('financial_accomp_na', $project->financial_accomp_na ?? false)"></x-checkbox>
+                <x-checkbox field-name="financial_accomp_na" value="1" label="Not Applicable (For PAPs not for funding in the GAA)" :value="old('financial_accomp_na', $project->financial_accomp_na ?? 0)"></x-checkbox>
 
                 <x-form-group label="PAP Code" field-name="pap_code">
                     <x-input.text field-name="pap_code" :value="old('pap_code', $project->pap_code)"></x-input.text>
