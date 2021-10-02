@@ -87,14 +87,14 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-//        User::create([
-//            'name'          => 'ftp',
-//            'username'      => 'ftp',
-//            'email'         => 'ftp@gmail.com',
-//            'password'      => Hash::make('password'),
-//            'activated_at'  => now(),
-//            'office_id'     => 1,
-//        ]);
+        User::create([
+            'name'          => 'ftp',
+            'username'      => 'ftp',
+            'email'         => 'ftp@gmail.com',
+            'password'      => Hash::make('password'),
+            'activated_at'  => now(),
+            'office_id'     => 1,
+        ]);
 
         Schema::disableForeignKeyConstraints();
 

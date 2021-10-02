@@ -9,11 +9,5 @@ trait HasUuid
         static::creating(function ($model) {
             $model->uuid = nanoid(8);
         });
-
-        static::saving(function ($model) {
-            if (! $model->uuid) {
-                $model->uuid = nanoid(8);
-            }
-        });
     }
 }

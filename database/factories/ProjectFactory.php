@@ -57,6 +57,7 @@ class ProjectFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'ref_pap_type_id' => RefPapType::all()->random()->id,
+//            'bases' => RefBasis::all()->random(3)->pluck('id')->toArray(),
             'total_cost' => $this->faker->randomFloat(4, 1000000, 99999999999),
             'office_id' => Office::all()->random()->id,
             'ref_spatial_coverage_id' => RefSpatialCoverage::all()->random()->id,
@@ -84,8 +85,6 @@ class ProjectFactory extends Factory
             'ref_pdp_chapter_id' => RefPdpChapter::all()->random()->id,
             'no_pdp_indicator' => $this->faker->boolean,
 //            'expected_outputs' => ProjectOutput::factory(),
-
-
             'ref_prep_document_id' => RefPrepDocument::all()->random()->id,
             'has_fs' => $this->faker->boolean,
 //            'fs' => ProjectFs::factory(),
@@ -113,7 +112,9 @@ class ProjectFactory extends Factory
 
 //            'risk' => ProjectRisk::factory(),
 //            'fs_infrastructures' => ,
-            'description' => $this->faker->paragraph,
+//            'description' => $this->faker->paragraph,
+//            'output' => $this->faker->paragraph,
+//            'risk' => $this->faker->paragraph,
         ];
     }
 

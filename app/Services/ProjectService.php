@@ -23,6 +23,12 @@ class ProjectService
             ]);
         }
 
+        if (isset($data['risk'])) {
+            $project->risk()->create([
+                'risk' => $data['risk'],
+            ]);
+        }
+
         if (isset($data['updates'])) {
             $project->project_update()->create([
                 'updates' => $data['updates'],

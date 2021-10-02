@@ -7,6 +7,7 @@ use Bkwld\Cloner\Cloneable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Venturecraft\Revisionable\RevisionableTrait;
 
 class Project extends Model
@@ -15,6 +16,7 @@ class Project extends Model
     use HasUuid;
     use Cloneable;
     use RevisionableTrait;
+    use SoftDeletes;
 
     protected $fillable = [
         'pipol_code',
@@ -58,11 +60,10 @@ class Project extends Model
         'pap_code',
         'ref_tier_id',
         'uacs_code',
-        'nep',
-        'gaa',
-        'disbursement',
-        'infra_sectors',
-        'prerequisites',
+    ];
+
+    protected $casts = [
+        'total_cost' => 'float'
     ];
 
     public function getRouteKeyName(): string

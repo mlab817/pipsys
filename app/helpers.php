@@ -29,6 +29,8 @@ if (! function_exists('nanoid')) {
     {
         $client = new \Hidehalo\Nanoid\Client();
 
+        $client->formatedId('0123456789abcdefg');
+
         return $client->generateId($length, $mode = \Hidehalo\Nanoid\Client::MODE_DYNAMIC);
     }
 }
@@ -49,5 +51,30 @@ if (! function_exists('slugify')) {
     function slugify($text): string
     {
         return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $text)));
+    }
+}
+
+if (! function_exists('shorten')) {
+    function shorten(mixed $value, $short = true): string
+    {
+        if (! is_numeric($value)) {
+            $value = 0;
+        }
+
+        $value = (float) $value;
+
+        if ($value >= 10 ** 9) {
+            return number_format($value / 10 ** 9, 2) . ($short ? ' B' : ' billion');
+        }
+
+        if ($value >= 10 ** 6) {
+            return number_format($value / 10 ** 6, 2) . ($short ? ' M' : ' million');
+        }
+
+        if ($value >= 10 ** 3) {
+            return number_format($value / 10 ** 3, 2) . ($short ? ' K' : ' thousand');
+        }
+
+        return (string) number_format($value, 2);
     }
 }

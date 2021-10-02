@@ -124,6 +124,11 @@ class ProjectController extends Controller
         if ($request->has('star')) {
             auth()->user()->stars()->toggle($project->id);
         }
+
+        return back()->with([
+            'status' => 'success',
+            'message' => 'Successfully starred program/project'
+        ]);
     }
 
     /**
@@ -134,6 +139,31 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $uuid = $project->uuid;
+
+        $project->delete();
+
+        return redirect()
+            ->route('projects.index')
+            ->with([
+                'status'    => 'success',
+                'message'   => 'Successfully deleted project. <a href='. route('projects.restore', $uuid) .' class="btn-link">Undo delete</a>'
+            ]);
+    }
+
+    public function restore(string $uuid)
+    {
+        $project = Project::withTrashed()
+            ->where('uuid', $uuid)
+            ->first();
+
+        $project->restore();
+
+        return redirect()
+            ->route('projects.index')
+            ->with([
+                'status'    => 'success',
+                'message'   => 'Successfully restored project. View it <a href='. route('projects.show', $project) .'" class="btn-link">here</a>'
+            ]);
     }
 }

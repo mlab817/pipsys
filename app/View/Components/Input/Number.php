@@ -8,7 +8,7 @@ class Number extends Component
 {
     public string $fieldName;
 
-    public float|int $value;
+    public mixed $value;
 
     public string $xRef;
 
@@ -20,7 +20,7 @@ class Number extends Component
     public function __construct($fieldName, $value)
     {
         $this->fieldName    = $fieldName;
-        $this->value        = !in_array(gettype($value),['float','int']) ? 0 : $value;
+        $this->value        = $value ?? 0;
         $this->xRef         = slugify($fieldName);
     }
 

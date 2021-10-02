@@ -329,7 +329,7 @@
 
                 <x-form-group field-name="output" label="Expected Outputs">
                     <x-textarea field-name="output" label="Expected Outputs"
-                                note="Actual Deliverables, i.e. 100km of paved roads"></x-textarea>
+                                note="Actual Deliverables, i.e. 100km of paved roads" :value="old('output')"></x-textarea>
                 </x-form-group>
 
                 <x-subhead subhead="0-10 Point Socioeconomic Agenda" id="socio-econ-agenda"></x-subhead>
