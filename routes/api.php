@@ -18,6 +18,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/projects/search', function(Request $request) {
-    return '<li role="option" class="autocomplete-item" data-autocomplete-value="bb8">BB-8 (astromech)</li>';
-})->name('api.projects.search');
+Route::middleware('auth')
+    ->get('/projects/search', [\App\Http\Controllers\Api\ProjectController::class,'index'])
+    ->name('api.projects.search');
+
+//    function(Request $request) {
+//    return response()->json($request->user());
+////    return '<li role="option" class="autocomplete-item" data-autocomplete-value="bb8">BB-8 (astromech)</li>';
+//})->name('api.projects.search');

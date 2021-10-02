@@ -88,4 +88,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Project::class,'stars', 'project_id','user_id');
     }
+
+    public function projects(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Project::class,'creator_id');
+    }
 }

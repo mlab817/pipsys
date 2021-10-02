@@ -63,7 +63,6 @@ class Project extends Model
         'disbursement',
         'infra_sectors',
         'prerequisites',
-        'risk',
     ];
 
     public function getRouteKeyName(): string

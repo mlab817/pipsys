@@ -45,7 +45,7 @@
                 <x-subhead subhead="General Information" id="general-information"></x-subhead>
 
                 <x-form-group field-name="title" label="Title">
-                    <input type="text" class="form-control input-block" name="title" id="title" :value="old('title', $project->title">
+                    <x-input.text field-name="title" :value="old('title', $project->title)"></x-input.text>
                     <p class="note">
                         The project title should be identical with the project's title in the budget proposal submitted to DBM.
                     </p>
