@@ -1060,27 +1060,27 @@
         },
         {
             "id": 21,
+            "name": "Chapter 21: Protecting the rights, promoting the welfare, and expanding opportunities for Overseas Filipinos"
+        },
+        {
+            "id": 91,
+            "name": "Chapter 09A: Expanding Economic Opportunities in Industry"
+        },
+        {
+            "id": 92,
+            "name": "Chapter 09B: Expanding Economic Opportunities in Services"
+        },
+        {
+            "id": 93,
+            "name": "Chapter 09C: Expanding Access to Economic Opportunities in I&S for Investments, Startups, MSMEs, and Cooperatives"
+        },
+        {
+            "id": 98,
             "name": "Administrative Building"
         },
         {
             "id": 99,
             "name": "No Chapter"
-        },
-        {
-            "id": 100,
-            "name": "Chapter 09B: Expanding Economic Opportunities in Services"
-        },
-        {
-            "id": 101,
-            "name": "Chapter 09C: Expanding Access to Economic Opportunities in I&S for Investments, Startups, MSMEs, and Cooperatives"
-        },
-        {
-            "id": 102,
-            "name": "Chapter 09A: Expanding Economic Opportunities in Industry"
-        },
-        {
-            "id": 103,
-            "name": "Chapter 21: Protecting the rights, promoting the welfare, and expanding opportunities for Overseas Filipinos"
         }
     ],
     "prerequisites": [

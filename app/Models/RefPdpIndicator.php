@@ -10,4 +10,16 @@ class RefPdpIndicator extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function children()
+    {
+        return $this->hasMany(RefPdpIndicator::class,'parent_id');
+    }
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'description',
+        'label',
+    ];
 }

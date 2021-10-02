@@ -261,9 +261,7 @@
                 <x-subhead subhead="Main PDP Chapter Outcome Statements/Outputs" id="pdp-indicators"></x-subhead>
 
                 <x-form-group field-name="pdp_indicators" label="Main PDP Chapter Outcome Statements/Outputs">
-                    @foreach($pdpIndicators as $option)
-                        <x-checkbox field-name="pdp_indicators[]" label="{{ $option->label }}" value="{{ $option->id }}" :checked="old('pdp_indicators', $project->pdp_indicators->pluck('id')->toArray() ?? [])"></x-checkbox>
-                    @endforeach
+                    <!-- TODO: Reimplement PDP indicators using alpine axios -->
                 </x-form-group>
 
                 <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable" value="1"></x-checkbox>

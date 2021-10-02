@@ -96,24 +96,6 @@ class DatabaseSeeder extends Seeder
             'office_id'     => 1,
         ]);
 
-        Schema::disableForeignKeyConstraints();
-
-        DB::table('ref_pdp_indicators')->truncate();
-
-        $pdpIndicators = json_decode(file_get_contents(database_path('seeders/pdp_indicators.json')), true);
-
-        foreach ($pdpIndicators['pdp_indicators'] as $indicator) {
-            // validate parent_id
-            RefPdpIndicator::create([
-                'id' => $indicator['id'],
-                'name' => $indicator['name'],
-                'label' => $indicator['name'],
-                'description' => $indicator['description'] ?? '',
-                'parent_id' => $indicator['parent_id'] ?? null,
-                'level' => $indicator['level'],
-            ]);
-        }
-
-        Schema::enableForeignKeyConstraints();
+        $this->call(RefPdpIndicatorsTableSeeder::class);
     }
 }

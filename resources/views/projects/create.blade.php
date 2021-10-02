@@ -300,29 +300,55 @@
 
                 <x-subhead subhead="Philippine Development Plan (PDP) Chapter" id="pdp-chapter"></x-subhead>
 
-                <x-form-group field-name="pdp_chapter_id" label="Main PDP Midterm Update Chapter">
-                    <x-input.select field-name="pdp_chapter_id" :options="$pdpChapters"
-                                    :checked="old('ref_pdp_chapter_id')"></x-input.select>
-                </x-form-group>
+                <div x-data="{
+                    selectedChapter: `{{ old('ref_pdp_chapter_id','') }}`,
+                    loadPdpIndicators() {
+                        const id = this.selectedChapter;
+                        if (id) {
+                            axios.get('/api/pdp_indicators/' + id)
+                                .then(res => {
+                                    this.pdpIndicators = res.data.children;
+                                    this.emptyPdpIndicators = false;
+                                });
+                        }
+                    },
+                    pdpIndicators: [],
+                    emptyPdpIndicators: true,
+                    selectedIndicators: @json(old('pdp_indicators', []))
+                }" x-init="loadPdpIndicators">
+                    <x-form-group field-name="ref_pdp_chapter_id" label="Main PDP Midterm Update Chapter">
+                        <x-input.select field-name="ref_pdp_chapter_id" :options="$pdpChapters"
+                                        :selected="old('ref_pdp_chapter_id')" @change="(evt) => (selectedChapter = evt.target.value); $nextTick(() => loadPdpIndicators());"></x-input.select>
+                    </x-form-group>
 
-                <x-form-group field-name="pdp_chapters" label="Other PDP Midterm Update Chapters">
-                    @foreach($pdpChapters as $option)
-                        <x-checkbox field-name="pdp_chapters[]" label="{{ $option->label }}" value="{{ $option->id }}"
-                                    :checked="old('pdp_chapters', [])"></x-checkbox>
-                    @endforeach
-                    @error('pdp_chapters.*')
-                        <p class="note error">{{ $message }}</p>
-                    @enderror
-                </x-form-group>
+                    <x-form-group field-name="pdp_chapters" label="Other PDP Midterm Update Chapters">
+                        @foreach($pdpChapters as $option)
+                            <x-checkbox field-name="pdp_chapters[]" label="{{ $option->label }}" value="{{ $option->id }}"
+                                        :checked="old('pdp_chapters', [])"></x-checkbox>
+                        @endforeach
+                        @error('pdp_chapters.*')
+                            <p class="note error">{{ $message }}</p>
+                        @enderror
+                    </x-form-group>
 
-                <x-subhead subhead="Main PDP Chapter Outcome Statements/Outputs" id="pdp-indicators"></x-subhead>
+                    <x-subhead subhead="Main PDP Chapter Outcome Statements/Outputs" id="pdp-indicators"></x-subhead>
 
-                <x-form-group field-name="pdp_indicators" label="Main PDP Chapter Outcome Statements/Outputs">
-                    @foreach($pdpIndicators as $option)
-                        <x-checkbox field-name="pdp_indicators[]" label="{{ $option->label }}" value="{{ $option->id }}"
-                                    :checked="old('pdp_indicators', [])"></x-checkbox>
-                    @endforeach
-                </x-form-group>
+                    <x-form-group field-name="pdp_indicators" label="Main PDP Chapter Outcome Statements/Outputs">
+                        <template x-if="emptyPdpIndicators">
+                            <div class="color-text-danger">
+                                Please select PDP Chapter first.
+                            </div>
+                        </template>
+                        <template x-for="indicator in pdpIndicators" :key="indicator.id">
+                            <div class="form-checkbox">
+                                <label :for="`pdpIndicator_${indicator.id}`">
+                                    <input type="checkbox" name="pdp_indicators[]" :value="indicator.id" :checked="selectedIndicators.indexOf(indicator.id) !== -1">
+                                    <span x-text="indicator.name"></span>
+                                </label>
+                            </div>
+                        </template>
+                    </x-form-group>
+                </div>
 
                 <x-checkbox field-name="no_pdp_indicator" label="No PDP Output Statement applicable"
                             value="1"></x-checkbox>
@@ -887,3 +913,17 @@
 
     </form>
 @stop
+
+@push('scripts')
+    <script>
+        // const pdpChapterId = document.getElementById('ref_pdp_chapter_id');
+        //
+        // pdpChapterId.addEventListener('change', function (evt) {
+        //     const id = evt.target.value
+        //     axios.get('/api/pdp_indicators/' + id)
+        //         .then(res => {
+        //             console.log(res);
+        //         })
+        // });
+    </script>
+@endpush

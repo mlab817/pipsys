@@ -26,3 +26,15 @@ Route::middleware('auth')
 //    return response()->json($request->user());
 ////    return '<li role="option" class="autocomplete-item" data-autocomplete-value="bb8">BB-8 (astromech)</li>';
 //})->name('api.projects.search');
+
+Route::get('/pdp_indicators/{id}', function ($id) {
+    return response()->json(\App\Models\RefPdpIndicator::with('children.children')
+        ->where('ref_pdp_chapter_id', $id)
+        ->first());
+});
+
+Route::get('/pdp_indicators', function () {
+    return response()->json(\App\Models\RefPdpIndicator::with('children.children')
+        ->whereNull('parent_id')
+        ->get());
+});

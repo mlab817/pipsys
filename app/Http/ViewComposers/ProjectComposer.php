@@ -92,7 +92,6 @@ class ProjectComposer
             'projectStatuses'   => RefProjectStatus::all(),
             'years'             => $years,
             'pdpChapters'       => RefPdpChapter::orderBy('name')->get(),
-            'pdpIndicators'     => RefPdpIndicator::where('level',1)->orderBy('name')->get(),
             'socioEconAgenda'   => RefSocioEconAgenda::all(),
             'sdgs'              => RefSustainableDevtAgenda::all(),
             'prepDocuments'     => RefPrepDocument::all(),
