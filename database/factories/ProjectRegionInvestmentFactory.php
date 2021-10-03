@@ -23,13 +23,15 @@ class ProjectRegionInvestmentFactory extends Factory
     public function definition()
     {
         return [
-            'ref_fund_source_id' => RefRegion::all()->random()->id,
+            'ref_region_id' => RefRegion::all()->random()->id,
+            'y2016' => $this->faker->randomFloat() * 1000,
             'y2017' => $this->faker->randomFloat() * 1000,
             'y2018' => $this->faker->randomFloat() * 1000,
             'y2019' => $this->faker->randomFloat() * 1000,
             'y2020' => $this->faker->randomFloat() * 1000,
             'y2021' => $this->faker->randomFloat() * 1000,
             'y2022' => $this->faker->randomFloat() * 1000,
+            'y2023' => $this->faker->randomFloat() * 1000,
         ];
     }
 }

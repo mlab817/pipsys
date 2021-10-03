@@ -211,7 +211,7 @@ class ProjectStoreRequest extends FormRequest
             'fs.fy2020' => ['sometimes','numeric'],
             'fs.fy2021' => ['sometimes','numeric'],
             'fs.fy2022' => ['sometimes','numeric'],
-            'has_rowa' => [
+            'has_row' => [
                 'required',
                 'bool',
             ],
@@ -265,7 +265,7 @@ class ProjectStoreRequest extends FormRequest
                 'required',
                 'array'
             ],
-            'fs_investments.*.fs_id' => [
+            'fs_investments.*.ref_fund_source_id' => [
                 'required',
                 'exists:ref_fund_sources,id',
             ],
@@ -397,7 +397,7 @@ class ProjectStoreRequest extends FormRequest
                 'required',
                 'array'
             ],
-            'fs_infrastructures.*.fs_id' => [
+            'fs_infrastructures.*.ref_fund_source_id' => [
                 'required',
                 'exists:ref_fund_sources,id',
             ],

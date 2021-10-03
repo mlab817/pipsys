@@ -157,7 +157,7 @@ class Project extends Model
 
     public function bases(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefBasis::class, 'project_basis', 'ref_basis_id', 'project_id');
+        return $this->belongsToMany(RefBasis::class, 'project_basis', 'project_id', 'ref_basis_id');
     }
 
     public function infra_sectors(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -167,32 +167,32 @@ class Project extends Model
 
     public function operating_units(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefOperatingUnit::class, 'project_ou', 'ref_operating_unit_id','project_id');
+        return $this->belongsToMany(RefOperatingUnit::class, 'project_ou', 'project_id','ref_operating_unit_id');
     }
 
     public function pdp_chapters(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefPdpChapter::class, 'project_pdp_chapter', 'ref_pdp_chapter_id','project_id');
+        return $this->belongsToMany(RefPdpChapter::class, 'project_pdp_chapter', 'project_id','ref_pdp_chapter_id');
     }
 
     public function pdp_indicators(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefPdpIndicator::class, 'project_pdp_indicator', 'ref_pdp_indicator_id','project_id');
+        return $this->belongsToMany(RefPdpIndicator::class, 'project_pdp_indicator','project_id', 'ref_pdp_indicator_id');
     }
 
     public function prerequisites()
     {
-        return $this->belongsToMany(RefPrerequisite::class,'project_prerequisite');
+        return $this->belongsToMany(RefPrerequisite::class,'project_prerequisite','project_id','ref_prerequisite_id');
     }
 
     public function regions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefRegion::class, 'project_region', 'ref_region_id', 'project_id');
+        return $this->belongsToMany(RefRegion::class, 'project_region',  'project_id', 'ref_region_id');
     }
 
     public function sdgs(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefSustainableDevtAgenda::class, 'project_sdg');
+        return $this->belongsToMany(RefSustainableDevtAgenda::class, 'project_sdg', 'project_id', '');
     }
 
     public function socio_econ_agendas(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

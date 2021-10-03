@@ -125,6 +125,8 @@ class ProjectController extends Controller
             auth()->user()->stars()->toggle($project->id);
         }
 
+
+
         return back()->with([
             'status' => 'success',
             'message' => 'Successfully starred program/project'

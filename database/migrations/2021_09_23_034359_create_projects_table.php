@@ -15,7 +15,7 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid');
+            $table->uuid('uuid')->nullable();
             $table->string('pipol_code')->nullable();
             $table->text('title');
             $table->foreignId('ref_pap_type_id')->nullable()->constrained()->nullOnDelete();

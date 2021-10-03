@@ -4,10 +4,18 @@ namespace Tests\Feature;
 
 use App\Models\Project;
 use App\Models\ProjectDescription;
+use App\Models\ProjectDisbursement;
+use App\Models\ProjectFsInfrastructure;
+use App\Models\ProjectFsInvestment;
+use App\Models\ProjectNep;
 use App\Models\ProjectOutput;
+use App\Models\ProjectRegionInvestment;
+use App\Models\ProjectResettlement;
+use App\Models\ProjectRowa;
 use App\Models\ProjectUpdate;
 use App\Models\RefBasis;
 use App\Models\User;
+use App\Services\ProjectService;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
@@ -31,6 +39,30 @@ class ProjectControllerTest extends TestCase
             'activated_at'  => now(),
             'office_id'     => 1,
         ]);
+    }
+
+    public function generateData()
+    {
+        // create data
+        $data = Project::factory()
+            ->make();
+
+        // create additional data
+        $data['description'] = $this->faker->paragraph;
+        $data['output'] = $this->faker->paragraph;
+        $data['risk'] = $this->faker->paragraph;
+        $data['updates'] = $this->faker->paragraph;
+        $data['updates_date'] = $this->faker->date;
+        $data['bases'] = RefBasis::all()->random(3)->pluck('id')->toArray();
+        $data['rowa'] = ProjectRowa::factory()->make()->toArray();
+        $data['nep'] = ProjectNep::factory()->make()->toArray();
+        $data['gaa'] = ProjectResettlement::factory()->make()->toArray();
+        $data['disbursement'] = ProjectDisbursement::factory()->make()->toArray();
+        $data['fs_investments'] = ProjectFsInvestment::factory()->count(2)->make()->toArray();
+        $data['region_investments'] = ProjectRegionInvestment::factory()->count(2)->make()->toArray();
+        $data['fs_infrastructures'] = ProjectFsInfrastructure::factory()->count(2)->make()->toArray();
+
+        return $data;
     }
 
     /**
@@ -64,18 +96,9 @@ class ProjectControllerTest extends TestCase
 
     public function test_it_stores_project()
     {
-//        $this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
 
-        // create data
-        $data = Project::factory()->make();
-
-        // create additional data
-        $data['description'] = $this->faker->paragraph;
-        $data['output'] = $this->faker->paragraph;
-        $data['risk'] = $this->faker->paragraph;
-        $data['updates'] = $this->faker->paragraph;
-        $data['updates_date'] = $this->faker->date;
-        $data['bases'] = RefBasis::all()->random(3)->pluck('id')->toArray();
+        $data = $this->generateData();
 
         // submit the data
         $response = $this
@@ -126,5 +149,28 @@ class ProjectControllerTest extends TestCase
             ->get(route('projects.show', $project->uuid));
 
         $response->assertStatus(200);
+    }
+
+    public function test_it_updates_project()
+    {
+        Event::fake();
+
+        $project = (new ProjectService)->create($this->generateData()->toArray());
+        $project->uuid = nanoid(8);
+        $project->creator()->associate($this->user);
+        $project->save();
+
+        $response = $this
+            ->actingAs($this->user)
+            ->put(route('projects.update', $project), [
+                'title' => 'A new project'
+            ]);
+
+        $response->assertStatus(302);
+
+        $this->assertDatabaseHas('projects',[
+            'title' => 'A new project',
+        ]);
+
     }
 }

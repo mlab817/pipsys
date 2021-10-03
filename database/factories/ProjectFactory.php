@@ -93,7 +93,7 @@ class ProjectFactory extends Factory
             'has_rap' => $this->faker->boolean,
 //            'rap' => ProjectResettlement::factory(),
             'has_row_rap' => $this->faker->boolean,
-            'employment_generated' => $this->faker->randomDigit(),
+            'employment_generated' => (string) $this->faker->randomDigit() . ' individuals',
             'ref_fund_source_id' => RefFundSource::all()->random()->id,
             'ref_funding_institution_id' => RefFundingInstitution::all()->random()->id,
             'ref_implementation_mode_id' => RefImplementationMode::all()->random()->id,
