@@ -110,6 +110,36 @@ class Project extends Model
             ->withDefault(['name' => 'N/A']);
     }
 
+    public function pdp_chapter(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefPdpChapter::class);
+    }
+
+    public function tier(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefTier::class);
+    }
+
+    public function fund_source(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefFundSource::class);
+    }
+
+    public function funding_institution(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefFundingInstitution::class);
+    }
+
+    public function cip_type(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefCipType::class);
+    }
+
+    public function pip_typology(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(RefPipTypology::class);
+    }
+
     public function feasibility_study(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(ProjectFs::class);
@@ -180,7 +210,7 @@ class Project extends Model
         return $this->belongsToMany(RefPdpIndicator::class, 'project_pdp_indicator','project_id', 'ref_pdp_indicator_id');
     }
 
-    public function prerequisites()
+    public function prerequisites(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(RefPrerequisite::class,'project_prerequisite','project_id','ref_prerequisite_id');
     }
@@ -197,7 +227,7 @@ class Project extends Model
 
     public function socio_econ_agendas(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(RefSocioEconAgenda::class, 'project_sea');
+        return $this->belongsToMany(RefSocioEconAgenda::class, 'project_sea','project_id','ref_socio_econ_agenda_id');
     }
 
     public function fs_investments(): \Illuminate\Database\Eloquent\Relations\HasMany
