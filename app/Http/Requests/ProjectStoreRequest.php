@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\ProjectFs;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProjectStoreRequest extends FormRequest
 {
@@ -84,7 +86,6 @@ class ProjectStoreRequest extends FormRequest
                 'exists:ref_approval_levels,id'
             ],
             'approval_date' => [
-                'sometimes',
                 'date',
             ],
             'pip' => [
@@ -202,15 +203,18 @@ class ProjectStoreRequest extends FormRequest
                 'sometimes',
                 'array',
             ],
-            'fs.status' => ['sometimes'],
-            'fs.start_date' => ['sometimes','date'],
-            'fs.completion_date' => ['sometimes','date'],
-            'fs.fy2017' => ['sometimes','numeric'],
-            'fs.fy2018' => ['sometimes','numeric'],
-            'fs.fy2019' => ['sometimes','numeric'],
-            'fs.fy2020' => ['sometimes','numeric'],
-            'fs.fy2021' => ['sometimes','numeric'],
-            'fs.fy2022' => ['sometimes','numeric'],
+            'fs.status' => [
+                'required',
+                Rule::in(array_keys(ProjectFs::FS_STATUS)),
+            ],
+            'fs.start_date' => ['date'],
+            'fs.completion_date' => ['date'],
+            'fs.fy2017' => ['numeric'],
+            'fs.fy2018' => ['numeric'],
+            'fs.fy2019' => ['numeric'],
+            'fs.fy2020' => ['numeric'],
+            'fs.fy2021' => ['numeric'],
+            'fs.fy2022' => ['numeric'],
             'has_row' => [
                 'required',
                 'bool',

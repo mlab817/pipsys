@@ -160,11 +160,6 @@ class Project extends Model
         return $this->hasOne(ProjectDisbursement::class);
     }
 
-    public function fund_source(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(RefFundSource::class);
-    }
-
     public function nep(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(ProjectNep::class);

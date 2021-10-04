@@ -1,7 +1,9 @@
 @extends('layouts.header-only')
 
 @section('page-header')
-    <x-page-header title="Projects"></x-page-header>
+    <x-page-header
+        title="Projects"
+        description="Projects owned by the user and his/her office"></x-page-header>
 @stop
 
 @section('content')

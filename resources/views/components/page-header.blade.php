@@ -5,6 +5,11 @@
                 <h1 class="h2 lh-condensed">
                     {{ $title }}
                 </h1>
+                @if($description)
+                <p class="color-text-tertiary">
+                    {{ $description }}
+                </p>
+                @endif
             </div>
         </div>
     </div>

@@ -5,6 +5,9 @@
 @stop
 
 @section('content')
+    @if($errors->any())
+        {{ dd($errors) }}
+    @endif
     <form action="{{ route('projects.store') }}" method="POST" accept-charset="UTF-8" class="mt-4 mb-4">
         @csrf
 
@@ -591,7 +594,10 @@
                         <tbody>
                         @foreach($fundSources as $key => $fs)
                             <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $fs->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="hidden" name="fs_investments[{{ $key }}][ref_fund_source_id]" value="{{ $fs->id }}">
+                                    {{ $fs->name }}
+                                </td>
                                 <td class="col-1 p-1">
                                     <x-input.number field-name="fs_investments[{{ $key }}][y2016]"
                                                     value="{{ old('fs_investments.' . $key . '.y2016', 0) }}"></x-input.number>
@@ -619,6 +625,10 @@
                                 <td class="col-1 p-1">
                                     <x-input.number field-name="fs_investments[{{ $key }}][y2022]"
                                                     value="{{ old('fs_investments.' . $key . '.y2022', 0) }}"></x-input.number>
+                                </td>
+                                <td class="col-1 p-1">
+                                    <x-input.number field-name="fs_investments[{{ $key }}][y2023]"
+                                                    value="{{ old('fs_investments.' . $key . '.y2023', 0) }}"></x-input.number>
                                 </td>
                             </tr>
                         @endforeach
@@ -648,7 +658,10 @@
                         <tbody>
                         @foreach($regions->where('id','<>',100)->sortBy('order') as $key => $region)
                             <tr class="col-12 border-bottom">
-                                <td class="col-1 p-1">{{ $region->name }}</td>
+                                <td class="col-1 p-1">
+                                    <input type="hidden" name="region_investments[{{ $key }}][ref_region_id]" value="{{ $region->id }}">
+                                    {{ $region->name }}
+                                </td>
                                 <td class="col-1 p-1">
                                     <x-input.number field-name="region_investments[{{ $key }}][y2016]"
                                                     value="{{ old('regions.'.$key.'.y2016', 0) }}"></x-input.number>
@@ -861,7 +874,7 @@
                         @foreach($fundSources as $key => $fs)
                             <tr class="col-12 border-bottom">
                                 <td class="col-1 p-1">
-                                    <input type="hidden" name="fs_infrastructures[{{ $key }}][ref_fund_source_id]">
+                                    <input type="hidden" name="fs_infrastructures[{{ $key }}][ref_fund_source_id]" value="{{ $fs->id }}">
                                     {{ $fs->name }}
                                 </td>
                                 <td class="col-1 p-1">
